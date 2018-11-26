@@ -1,0 +1,58 @@
+description = "Список отчетов"
+==
+{% set reports = __SELF__.posts %}
+{% for report in reports %}
+<div class="post-wrapper">
+    <div class="post post--small">
+        <figure class="post__figure">
+            <a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}"><img src="{{ report.image.getThumb(230,150,'crop') }}" ></a>
+        </figure>
+
+        <div class="post__info">
+            <header class="post__header">
+                <h3>
+                    <a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">{{report.title }}</a>
+                </h3>
+            </header>
+            <div class="post__text">
+                {{ substr(report.content,200,'...') }}
+            </div>
+            <hr>
+            <div class="post__date">
+                Опубликовано: {{ report.published_at|rudate("%e %BP, %Y") }}
+            </div>
+          <!--  <div class="autor__name">
+                Автор: {{report.user}}
+            </div> -->
+            <div class="views">
+                Просмотров: {{report.count_views}}
+            </div>
+            <footer class="post__footer">
+                {% partial "share_list" %}
+            </footer>
+        </div>
+    </div>
+</div>
+{% else %}
+<p>{{ noPostsMessage }}</p>
+{% endfor %}
+
+{% if reports.lastPage > 1 %}
+<ul class="pagination">
+    {% if reports.currentPage > 1 %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage-1) }) }}">Назад</a>
+        <li>...</li>
+    {% endif %}
+    {% for page in 1..reports.lastPage %}
+        {% if reports.currentPage == page %}
+            <li class="active">{{ page }}</li>
+        {% else %}
+            <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if reports.lastPage > reports.currentPage %}
+        <li>...</li>
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage+1) }) }}">Далее</a>
+    {% endif %}
+</ul>
+{% endif %}

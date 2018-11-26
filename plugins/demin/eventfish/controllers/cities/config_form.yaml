@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: City
+
+# Model Form Field configuration
+form: $/demin/eventfish/models/city/fields.yaml
+
+# Model Class name
+modelClass: Demin\Eventfish\Models\City
+
+# Default redirect location
+defaultRedirect: demin/eventfish/cities
+
+# Create page
+create:
+    title: Create City
+    redirect: demin/eventfish/cities/update/:id
+    redirectClose: demin/eventfish/cities
+
+# Update page
+update:
+    title: Edit City
+    redirect: demin/eventfish/cities
+    redirectClose: demin/eventfish/cities
+
+# Preview page
+preview:
+    title: Preview City

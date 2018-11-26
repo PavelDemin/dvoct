@@ -1,0 +1,10 @@
+name: TypeFishing
+form: $/demin/eventfish/models/typefishing/fields.yaml
+modelClass: demin\Eventfish\Models\TypeFishing
+defaultRedirect: demin/eventfish/typefishing
+create:
+    redirect: 'demin/eventfish/typefishing/update/:id'
+    redirectClose: demin/eventfish/typefishing
+update:
+    redirect: demin/eventfish/typefishing
+    redirectClose: demin/eventfish/typefishing

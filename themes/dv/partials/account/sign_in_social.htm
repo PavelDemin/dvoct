@@ -1,0 +1,12 @@
+<form
+        data-request="onSignin">
+    <div class="post-soc">
+    {% for name, link in social_login_links %}
+
+    <a href="{{ link }}">
+        <span class="icon-{{name|lower}}"></span>
+    </a>
+    {% endfor %}
+    </div>
+
+</form>

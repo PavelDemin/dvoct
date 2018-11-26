@@ -1,0 +1,39 @@
+title = "Статьи"
+url = "/articles/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts article]
+pageNumber = "{{ :page }}"
+postsPerPage = 12
+noPostsMessage = "Нет постов"
+sortOrder = "published_at desc"
+categoryPage = "articles/articles-category"
+postPage = "articles/article-post"
+
+[blogCategories category_menu]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "articles/articles-category"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+==
+<?php
+function onEnd(){
+    $this->layout->components['SeoCmsPage']->seo_title = "Рыболовные статьи";
+}
+?>
+==
+<div class="col-md-3">
+    {% component 'category_menu' %}
+    {% component 'popularPosts' %}
+</div>
+<div class="col-md-9">
+    <h3 class="section-title">Последние статьи</h3>
+    {% component "article" %}
+</div>

@@ -1,0 +1,11 @@
+{% set videos = __SELF__.videos %}
+{% for video in videos %}
+<h4><a href="{{ video.slug }}">{{ video.title }}</a></h4>
+<p>{{ video.content|raw }}</p>
+{{ video.url_video }}
+<a href="#"><img
+        data-src="{{ video.image.path }}"
+        src="{{ video.image.path }}"
+        alt="{{ video.image.description }}"
+        style="width: 150px" /></a>
+{% endfor %}

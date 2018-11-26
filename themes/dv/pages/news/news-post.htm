@@ -1,0 +1,29 @@
+title = "Новости пост"
+url = "/news/post/:slug?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+
+[post news]
+slug = "{{ :slug }}"
+==
+<?php
+function onEnd(){
+// Overwrite for better SEO.
+$this->layout->components['SeoCmsPage']->seo_title = $this->page->components['news']->post->title;
+//$this->layout->components['SeoCmsPage']->seo_description = 'My dynamic description.';
+}
+?>
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    {% component 'news::news-post' %}
+</div><!--.main-content-->

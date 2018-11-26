@@ -1,0 +1,37 @@
+1543183874a:1:{s:19:"rezultat-poiska.htm";a:12:{s:8:"fileName";s:19:"rezultat-poiska.htm";s:7:"content";s:635:"title = "Результат поиска"
+url = "/search"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    <h3>Результат поиска: "<b></b>"</h3>
+    <hr>
+    <div class="list-posts list-posts--alignment clearfix">
+        
+    </div>
+</div><!--.main-content-->";s:5:"mtime";i:1479125296;s:6:"markup";s:395:"<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    <h3>Результат поиска: "<b></b>"</h3>
+    <hr>
+    <div class="list-posts list-posts--alignment clearfix">
+        
+    </div>
+</div><!--.main-content-->";s:4:"code";N;s:5:"title";s:31:"Результат поиска";s:3:"url";s:7:"/search";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:12:"popularPosts";a:3:{s:10:"postsLimit";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:9:"blog/post";}}}

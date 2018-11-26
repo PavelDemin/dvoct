@@ -1,0 +1,32 @@
+title = "Рыболовные отчеты"
+url = "/reports/:page?|^[0-9]+$"
+layout = "default"
+description = "Страница с рыболовными отчетами"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ReportList report]
+pageNumber = "{{ :page }}"
+postsPerPage = 12
+noPostsMessage = "Нет отчетов"
+sortOrder = "published_at desc"
+postPage = "reports/report-post"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "articles/article-post"
+==
+<div class="sidebar press--right">
+{% component 'popularPosts' %}
+{% partial "widget_last_post_forum" %}
+{% partial "widget_cloud_tag" %}
+		
+</div><!--.sidebar-->
+    		<div class="main-content press--left">
+                <h3>Рыболовные отчеты</h3>
+				<div class="list-posts list-posts--alignment clearfix">
+					{% component 'report::list' %}
+				</div>
+			</div><!--.main-content-->

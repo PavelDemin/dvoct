@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Vkposts
+
+# Model Form Field configuration
+form: $/demin/vkapi/models/vkpost/fields.yaml
+
+# Model Class name
+modelClass: Demin\Vkapi\Models\Vkpost
+
+# Default redirect location
+defaultRedirect: demin/vkapi/vkpost
+
+# Create page
+create:
+    title: Создать публикацию
+    redirect: demin/vkapi/vkposts/update/:id
+    redirectClose: demin/vkapi/vkposts
+
+# Update page
+update:
+    title: Редактировать публикацию
+    redirect: demin/vkapi/vkposts
+    redirectClose: demin/vkapi/vkposts
+
+# Preview page
+preview:
+    title: Предварительный просмотр

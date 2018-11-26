@@ -1,0 +1,11 @@
+columns:
+    fishing_place:
+        label: 'Место ловли'
+        type: text
+        searchable: false
+    description:
+        label: Описание
+        type: text
+    city_id:
+        label: Город
+        type: number

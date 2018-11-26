@@ -1,0 +1,56 @@
+title = "Статья"
+url = "/articles/post/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPost article]
+slug = "{{ :slug }}"
+categoryPage = "articles/articles-category"
+
+[blogCategories category_menu]
+slug = "{{ :cat }}"
+displayEmpty = 0
+categoryPage = "articles/articles-category"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "Нет похожих материалов"
+postPage = "about"
+
+[relatedPosts relatedpost]
+slug = "{{ :slug }}"
+results = 4
+
+[SeoBlogPost]
+post = "post"
+==
+<?php
+function onStart()
+{
+    $post = DB::table('rainlab_blog_posts')->where('slug', $this->param('slug'))->first();
+    if (!$post) return App::make('Cms\Classes\Controller')->setStatusCode(404)->run('/404');
+}
+?>
+==
+{% component 'SeoBlogPost' data=post %}
+<div class="sidebar press--right">
+
+{% component 'category_menu' %}
+{% component 'popularPosts' %}
+{% partial "widget_last_post_forum" %}
+{% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+
+<div class="main-content press--left">
+	  {% component 'article::post' %}
+	<div class="timeline-posts">
+		<h3>Похожие материалы</h3>
+		<div class="timeline-posts__list clearfix">
+			{% component 'relatedpost::related' %}
+		</div>
+		<div></div>
+		
+	</div><!--.timeline-posts-->
+</div><!--.main-content-->

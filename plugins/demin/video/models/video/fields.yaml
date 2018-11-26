@@ -1,0 +1,43 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Заголовок
+
+    slug:
+        label: URL
+        preset: title
+
+    url_video:
+        label: Ссылка на видео
+
+
+    content:
+        label: Описание
+        type: richeditor
+
+    user:
+        label: Автор
+
+    image:
+        label: Изображение
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+
+    published:
+        label: Опубликовано
+        type: checkbox
+
+    published_at:
+        label: Дата публикации
+        span: left
+        type: datepicker
+        mode: date
+        trigger:
+            action: enable
+            field: published
+            condition: checked

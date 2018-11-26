@@ -1,0 +1,30 @@
+{% set report = __SELF__.posts %}
+<h4><a href="{{ report.url_to_forum }}">{{ report.title }}</a></h4>
+<p>{{ report.content|raw }}</p>
+<a href="#"><img
+        data-src="{{ report.image.path }}"
+        src="{{ report.image.path }}"
+        alt="{{ report.image.description }}"
+        style="width: 150px" /></a>
+
+{% if posts.lastPage > 1 %}
+<ul class="pagination">
+    {% if posts.currentPage > 1 %}
+    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+    {% endif %}
+
+    {% for page in 1..posts.lastPage %}
+    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    {% if posts.lastPage > posts.currentPage %}
+    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+    {% endif %}
+</ul>
+{% endif %}
+
+
+
+

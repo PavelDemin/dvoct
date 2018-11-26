@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+     title:
+            label: Заголовок
+
+     url_to_forum:
+            label: Ссылка на отчет
+
+     created_at:
+            label: Дата создания

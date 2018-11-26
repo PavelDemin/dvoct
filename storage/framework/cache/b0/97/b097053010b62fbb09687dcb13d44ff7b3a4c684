@@ -1,0 +1,66 @@
+1543183874a:1:{s:20:"video/video-post.htm";a:13:{s:8:"fileName";s:20:"video/video-post.htm";s:7:"content";s:1232:"title = "Видео ролик"
+url = "/video/:slug|^[a-z0-9\-]+$"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[VideoPost video]
+slug = "{{ :slug }}"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+==
+<?php
+function onStart() {
+    $post = DB::table('demin_video_videos')->where('slug', $this->param('slug'))->first();
+    if (!$post) return App::make('Cms\Classes\Controller')->setStatusCode(404)->run('/404');
+}
+
+function onEnd() {
+    // Overwrite for better SEO.
+    $this->layout->components['SeoCmsPage']->seo_title = $this->page->components['video']->video->title;
+    //$this->layout->components['SeoCmsPage']->seo_description = 'My dynamic description.';
+}
+?>
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    {% component 'video::post' %}
+    <div class="timeline-posts">
+        <h3>Похожие материалы</h3>
+        <div class="timeline-posts__list clearfix">
+
+        </div>
+    </div><!--.timeline-posts-->
+    
+</div><!--.main-content-->";s:5:"mtime";i:1483738596;s:6:"markup";s:475:"<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    {% component 'video::post' %}
+    <div class="timeline-posts">
+        <h3>Похожие материалы</h3>
+        <div class="timeline-posts__list clearfix">
+
+        </div>
+    </div><!--.timeline-posts-->
+    
+</div><!--.main-content-->";s:4:"code";s:467:"function onStart() {
+    $post = DB::table('demin_video_videos')->where('slug', $this->param('slug'))->first();
+    if (!$post) return App::make('Cms\Classes\Controller')->setStatusCode(404)->run('/404');
+}
+
+function onEnd() {
+    // Overwrite for better SEO.
+    $this->layout->components['SeoCmsPage']->seo_title = $this->page->components['video']->video->title;
+    //$this->layout->components['SeoCmsPage']->seo_description = 'My dynamic description.';
+}";s:5:"title";s:21:"Видео ролик";s:3:"url";s:26:"/video/:slug|^[a-z0-9\-]+$";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:15:"VideoPost video";a:1:{s:4:"slug";s:11:"{{ :slug }}";}s:12:"popularPosts";a:3:{s:10:"postsLimit";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:9:"blog/post";}}}

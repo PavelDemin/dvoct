@@ -1,0 +1,11 @@
+list: $/demin/eventfish/models/typefishing/columns.yaml
+modelClass: demin\Eventfish\Models\TypeFishing
+title: TypeFishing
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'demin/eventfish/typefishing/update/:id'

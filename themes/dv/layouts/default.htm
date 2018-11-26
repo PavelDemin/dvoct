@@ -1,0 +1,45 @@
+description = "Основной шаблон сайта"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
+
+[SeoCmsPage]
+==
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <link href="{{ [
+            'assets/libs/slick/slick.css',
+            'assets/libs/bootstrap/bootstrap-grid.min.css',
+            'assets/css/main.css'
+            ]|theme }}" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic">
+    {% styles %}
+    <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+    {% component 'SeoCmsPage' %}
+</head>
+<body>
+{% component 'session' %}
+{% partial "header" %}
+<main class="container">
+    <div class="row">
+        {% page %}
+    </div>
+</main>
+{% partial "footer" %}
+<script src="{{[
+            'assets/libs/jquery/jquery-3.3.1.min.js',
+            'assets/libs/slick/slick.min.js',
+            'assets/js/main.js'
+		    ]|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

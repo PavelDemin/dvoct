@@ -1,0 +1,16 @@
+1542225724a:1:{s:27:"report/counter_comments.htm";a:6:{s:8:"fileName";s:27:"report/counter_comments.htm";s:7:"content";s:176:"description = "Counter"
+==
+<?php
+function onEnd() {
+    $this['qty'] = Db::table('xeor_comments_comments')->where('cid', $this['cid'])->count();
+
+}
+?>
+==
+{{ qty }}
+
+";s:5:"mtime";i:1473403228;s:6:"markup";s:9:"{{ qty }}";s:4:"code";s:120:"
+function onEnd() {
+    $this['qty'] = Db::table('xeor_comments_comments')->where('cid', $this['cid'])->count();
+
+}";s:11:"description";s:7:"Counter";}}

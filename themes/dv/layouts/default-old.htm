@@ -1,0 +1,44 @@
+description = "Основной шаблон сайта"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
+
+[SeoCmsPage]
+==
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="{{ [
+            'assets/css/main.css'
+            ]|theme }}" rel="stylesheet" type='text/css' media='all'>
+    {% styles %}
+    {% component 'SeoCmsPage' %}
+</head>
+<body>
+
+
+{% component 'session' %}
+{% partial "header" %}
+		<div class="page">
+			<div class="page-container clearfix l-container">
+				{% page %}
+			</div><!--.page-container-->
+		</div><!--.page-->
+{% partial "footer" %}
+<script src="{{[
+            'assets/libs/jquery/jquery-3.3.1.min.js',
+            'assets/libs/slick/slick.min.js',
+            'assets/js/main.js'
+		    ]|theme }}"></script>
+
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

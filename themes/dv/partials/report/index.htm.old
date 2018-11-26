@@ -1,0 +1,34 @@
+description = "Список отчетов на главной странице"
+==
+{% set reports = __SELF__.posts %}
+
+{% for report in reports %}
+
+
+<div class="post clearfix">
+    <figure class="post__figure post__figure--big press--left">
+        <a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}"><img alt="" src="{{ report.image.getThumb(200,163, 'crop') }}"></a>
+    </figure>
+    <div class="post__info">
+        <header class="post__header">
+            <div class="post__date">
+               {{ report.published_at|rudate("%e %BP, %Y") }}
+               <div class="pull-right">
+                   <i class="fa fa-eye" aria-hidden="true"></i> {{ report.count_views}}
+                   <a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}#comment" class="fa_comment">
+                       <i class="fa fa-comment" aria-hidden="true"></i></a>
+                       {% partial "report/counter_comments" cid=report.slug %}
+               </div>
+            </div>
+            <hr>
+            <h4 class="post__title">
+                <a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">{{ report.title }}</a>
+            </h4>
+        </header>
+        <div class="post__text">
+           <p> {{ html_strip(substr(report.content,230,'...')) }}.</p>
+        </div>
+        <a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}" class="go_to_forum_bnt">Читать дальше...</a>
+    </div>
+</div>
+{% endfor %}

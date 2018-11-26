@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table demin_eventfish_events_fishing'
+    - builder_table_create_demin_eventfish_events_fishing.php
+1.0.3:
+    - 'Created table demin_eventfish_type_fishing'
+    - builder_table_create_demin_eventfish_type_fishing.php
+1.0.4:
+    - 'Updated table demin_eventfish_events_fishing'
+    - builder_table_update_demin_eventfish_events_fishing.php

@@ -1,0 +1,25 @@
+description = "Список новостей на главной"
+==
+{% set posts = __SELF__.posts %}
+<div class="widget widget__news">
+								<h3>Новости</h3>
+								<div class="widget__news__list">
+                                    {% for post in posts %}
+									<div class="news-item clearfix">
+										<header class="post__header">
+											<figure class="post__figure post__figure--small press--left">
+												<a href="#"><img src="/storage/app/media{{ post.image }}" alt="{{ post.title }}" width="72px"></a>
+											</figure>
+											<div class="post__info post__info--small">
+												<div class="post__date">
+                                                    {{ post.published_at|rudate("%e %BP, %Y") }}
+												</div>												
+												<h4 class="post__title">
+													<a href="news/post/{{ post.slug }}">{{ post.title }}</a>
+												</h4>
+											</div>
+										</header>
+                                </div>
+                                    {% endfor %}
+								</div>
+							</div><!--.widget__news-->

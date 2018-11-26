@@ -1,0 +1,33 @@
+description = "Страницы"
+==
+<?php
+function onStart()
+{
+    $this['test'] = array('name'=>'pavel','age'=>'25');
+}
+?>
+==
+{% partial "header" %}
+		<div class="page">
+			<div class="page-container clearfix l-container">
+				
+				<div class="sidebar press--right">
+
+{% partial "widget_right_menu" %}
+{% partial "widget_popular_post" %}
+{% partial "widget_last_post_forum" %}
+{% partial "widget_cloud_tag" %}
+				
+				</div><!--.sidebar-->
+
+				<div class="main-content press--left">
+				    <div class="post post--big">
+
+                    	{% page %}
+{% partial "test" %}
+
+					</div>
+				</div><!--.main-content-->
+			</div><!--.page-container-->
+		</div><!--.page-->
+{% partial "footer" %}

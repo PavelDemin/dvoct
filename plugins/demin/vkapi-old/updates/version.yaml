@@ -1,0 +1,4 @@
+1.0.1: First version of vkapi
+1.0.2:
+  - Run table migrations
+  - create_vkposts_table.php

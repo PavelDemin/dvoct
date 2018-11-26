@@ -1,0 +1,22 @@
+<?php
+$comment = $record;
+$id = $comment->id;
+if ($comment->user_id > 0) {
+
+}
+else {
+    $ip = $comment->hostname;
+    $name = isset($comment->name) ? $comment->name : e(trans('xeor.comments::lang.backend.guest'));
+    $mail = isset($comment->mail) ? $comment->mail . '<br>' : '';
+    $homepage = isset($comment->homepage) ? $comment->homepage . '<br>' : '';
+}
+
+$stars = \Xeor\Comments\Classes\Helper::getScore($comment->id, 'stars');
+$number = \Xeor\Comments\Classes\Helper::getScore($comment->id, 'number');
+
+?>
+
+<?= $id ?> <strong><?= $name ?></strong><br>
+<?= $mail ?>
+<?= $homepage ?>
+<?= $ip ?>

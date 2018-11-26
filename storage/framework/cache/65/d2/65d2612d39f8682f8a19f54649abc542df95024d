@@ -1,0 +1,43 @@
+1542198603a:1:{s:14:"share_list.htm";a:5:{s:8:"fileName";s:14:"share_list.htm";s:7:"content";s:821:"<div class="shareit">
+    <div class="shareit__title">
+        Поделиться:
+    </div>
+    <div class="post-soc">
+        <a href="#">
+            <span class="icon-vk-small"></span>
+        </a>
+        <a href="http://twitter.com/home?status={{ (this.page.title ~ ' ' ~ url_current())|url_encode }}" title="Share on Twitter" target="_blank">
+            <span class="icon-twitter"></span>
+        </a>
+        <a href="#">
+            <span class="icon-ok-small"></span>
+        </a>
+        <a href="https://plus.google.com/share?url={{ (this.page.title ~ ' ' ~ url_current())|url_encode }}" title="Share on Google+" target="_blank">
+            <span class="icon-google"></span>
+        </a>
+        <a href="#">
+            <span class="icon-mail"></span>
+        </a>
+    </div>
+</div>";s:5:"mtime";i:1472039684;s:6:"markup";s:821:"<div class="shareit">
+    <div class="shareit__title">
+        Поделиться:
+    </div>
+    <div class="post-soc">
+        <a href="#">
+            <span class="icon-vk-small"></span>
+        </a>
+        <a href="http://twitter.com/home?status={{ (this.page.title ~ ' ' ~ url_current())|url_encode }}" title="Share on Twitter" target="_blank">
+            <span class="icon-twitter"></span>
+        </a>
+        <a href="#">
+            <span class="icon-ok-small"></span>
+        </a>
+        <a href="https://plus.google.com/share?url={{ (this.page.title ~ ' ' ~ url_current())|url_encode }}" title="Share on Google+" target="_blank">
+            <span class="icon-google"></span>
+        </a>
+        <a href="#">
+            <span class="icon-mail"></span>
+        </a>
+    </div>
+</div>";s:4:"code";N;}}

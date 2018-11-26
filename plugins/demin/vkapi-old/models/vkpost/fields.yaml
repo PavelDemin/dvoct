@@ -1,0 +1,30 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+
+    title:
+        label: Заголовок
+
+    url:
+        label: URL
+
+    content:
+        label: Текст
+        type: richeditor
+
+    is_published:
+        label: Опубликовано
+        type: checkbox
+
+    published_at:
+        label: Дата публикации
+        span: left
+        type: datepicker
+        mode: date
+
+

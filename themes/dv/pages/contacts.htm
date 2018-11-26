@@ -1,0 +1,33 @@
+title = "Контакты"
+url = "/contacts"
+layout = "default"
+description = "Страница для связи с адинистрацией"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "articles/article-post"
+
+[contactForm]
+injectBootstrapAssets = 0
+injectMainScript = 1
+==
+<div class="sidebar press--right">
+
+{% component 'popularPosts' %}
+{% partial "widget_last_post_forum" %}
+{% partial "widget_cloud_tag" %}
+				
+				</div><!--.sidebar-->
+
+				<div class="main-content press--left">
+				    <div class="post post--big">
+                        <h1>Связь с администрацией</h1>
+                        <hr>
+                        <h3>Воспользуйтесь формой ниже, для связи с администрацией сайта.</h3>
+                        {% component 'contactForm' %}
+                    </div>
+				</div><!--.main-content-->

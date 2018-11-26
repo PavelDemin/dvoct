@@ -1,0 +1,39 @@
+title = "Статьи по категориям"
+url = "/articles/category/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts article]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "articles/articles-category"
+postPage = "articles/article-post"
+
+[blogCategories category_menu]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "articles/articles-category"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+
+==
+function onEnd() {
+$this->layout->components['SeoCmsPage']->seo_title = "Статьи на тему - " .$this['category']['name'];
+}
+==
+<div class="col-md-3">
+    {% component 'category_menu' %}
+    {% component 'popularPosts' %}
+</div>
+<div class="col-md-9">
+    <h1 class="section-title">Статьи на тему - {{ category.name }}</h1>
+    {% component "article" %}
+</div>

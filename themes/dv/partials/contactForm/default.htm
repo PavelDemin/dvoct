@@ -1,0 +1,41 @@
+<div class="confirm-container">
+    <!--This will contain the confirmation when the email is successfully sent-->
+</div>
+<form class="comment-form form-group" role="form" name="contacts"
+      data-request="{{ __SELF__ }}::onMailSent"
+      data-request-update="'{{ __SELF__ }}::confirm': '.confirm-container'">
+
+    <div class="form-groups">
+        <div class="form__cell">
+            <div class="form-row">
+                <input type="text" id="name" name="name" value="" placeholder="Ваше имя" class="name form-control" onfocus="if (this.placeholder == 'Ваше имя') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Ваше имя';}">
+            </div>
+        </div>
+        <div class="form__cell">
+            <div class="form-row">
+                <input id="email" name="email" value="" type="email" required placeholder="Ваш email" class="mail form-control" onfocus="if (this.placeholder == 'Ваш email') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Ваш email';}">
+            </div>
+        </div>
+        <div class="form__cell">
+            <div class="form-row">
+                <input id="subject" name="subject" value="" type="text" required placeholder="Введите тему сообщения" class="name form-control" onfocus="if (this.placeholder == 'Введите тему сообщения') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Введите тему сообщения';}">
+            </div>
+        </div>
+        <div class="form-row">
+            <textarea placeholder="Ваше сообщение" required onfocus="placeholder='';" onblur="placeholder='Ваше сообщение';"  name="body" id="body" class="content form-control" rows="3"></textarea>
+        </div>
+        {% if __SELF__.enableCaptcha %}
+        <div class="form__cell">
+            <div class="form-row">
+                <div class="g-recaptcha" data-sitekey="{{ __SELF__.siteKey }}"></div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="clearfix">
+            <div class="form-row leave-comment__footer">
+                <input type="submit" class="btn btn--large"  value="Отправить сообщение">
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,4 @@
+title: EventsList
+modelClass: demin\Eventfish\Models\EventsFishing
+toolbar:
+    buttons: reorder_toolbar

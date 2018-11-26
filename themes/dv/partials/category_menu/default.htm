@@ -1,0 +1,15 @@
+==
+{% set categories = __SELF__.categories %}
+{% set currentCategorySlug = __SELF__.currentCategorySlug %}
+
+<h3 class="section-title">Меню разделов</h3>
+<div class="block">
+    <nav class="sub-nav">
+        <ul class="sub-nav__list">
+            {% for category in categories %}
+            {% set postCount = category.post_count %}
+            <li {% if category.slug == currentCategorySlug %}class="sub-nav__item-active"{% endif %} class="sub-nav__item"><a class="sub-nav__link" href="{{ category.url }}">{{ category.name }}</a>{% if postCount %}<span class="sub-nav__count">{{ postCount }}</span>{% endif %}</li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>

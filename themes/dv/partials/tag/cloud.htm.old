@@ -1,0 +1,6 @@
+description = "Облако тегов"
+==
+{% set tags = __SELF__.tags %}
+    {% for tag in tags %}
+    <a class="btn" href="/articles/tags/{{tag.slug}}">{{ tag.name }}</a>
+{% endfor %}

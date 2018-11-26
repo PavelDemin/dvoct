@@ -1,0 +1,65 @@
+description = "Шапка сайта"
+
+[blogCategories header_menu]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "articles/articles-category"
+==
+<header class="header">
+			<div class="header-composition">
+				<div class="topbar l-container clearfix">
+					<div class="logo press--left">
+						<a href="#">
+							<img src="{{ 'assets/images/logo.png'|theme }}" alt="dv-fishing.ru">
+							Рыбалка в Хабаровском крае
+						</a>
+					</div>
+					<div class="b-search press--right">
+						<form action="" method="get">
+							<input name="q" type="text" placeholder="Поиск по сайту...">
+							<button type="submit" class="search-btn" id="button"></button>
+						</form>
+					</div>
+					<div class="b-soc">
+						<a href="https://vk.com/club118899369" target="_blank"><span class="icon-vk-new"></span></a>
+						<a href="http://dv-fishing.ru/forum/viewtopic.php?f=21&t=2626" target="_blank"><span class="icon-whatsap"></span></a>
+        			</div>
+				</div>
+{% component 'account::signin' %}
+
+			</div>
+
+			<div class="b-navigation ">
+				<div class="l-container">
+					<nav class="menu clearfix">
+						<ul>
+							<li class="menu__item--active">
+								<a href="/">Главная</a>
+							</li>
+							<li>
+								<a href="{{ 'reports/report-list'|page }}">Рыболовные отчеты</a>
+							</li>
+							<li>
+								<a href="{{ 'articles/articles-list'|page }}">Статьи</a>
+                                {% component 'header_menu' %}
+							</li>
+							<li>
+								<a href="{{ 'video/video-list'|page }}">Видео</a>
+							</li>
+							<li>
+								<a href="/forum/">Форум</a>
+							</li>
+							<li>
+								<a href="{{ 'maps'|page }}">Рыболовная карта</a>
+							</li>
+                            <li>
+                                <a href="{{ 'gofishing'|page }}">На рыбалку!</a>
+                            </li>
+							<li>
+								<a href="{{ 'about'|page }}">О портале</a>
+							</li>
+						</ul>
+					</nav><!--.menu-->
+				</div>
+			</div><!--.b-navigation-->
+		</header><!--.header-->

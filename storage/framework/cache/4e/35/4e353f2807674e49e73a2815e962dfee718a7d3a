@@ -1,0 +1,101 @@
+1543183874a:1:{s:11:"profile.htm";a:11:{s:8:"fileName";s:11:"profile.htm";s:7:"content";s:1379:"title = "Мой профиль"
+url = "/profile"
+layout = "default"
+is_hidden = "1"
+
+[resetPassword]
+paramCode = "code"
+
+[session]
+security = "user"
+==
+<?php
+function onStart()
+{
+    $this['test'] = array('name'=>'pavel','age'=>'25');
+}
+?>
+==
+<div class="sidebar press--right">
+
+<div class="widget widget__forum">
+						<h3>Управление</h3>
+						<div class="widget__forum__list">
+							<ul>
+								<li>
+									<a href="#">Настройки</a>
+								</li>
+								<li>
+									<a href="#">Сообщения</a>
+								</li>
+								<li>
+									<a href="/profile/password_recovery">Восстановить пароль</a>
+								</li>
+								<li>
+									<a href="#">Добавить статью</a>
+								</li>
+								
+							</ul>
+						</div>						
+					</div><!--.widget__forum-->
+
+{% partial "widget_last_post_forum" %}
+{% partial "widget_cloud_tag" %}
+				
+				</div><!--.sidebar-->
+
+				<div class="main-content press--left">
+				    <div class="post post--big">
+
+                   <h1>Мой профиль</h1>
+                    
+                   <p>Ваше имя: <b>{{ user.name }}</b></p>
+                   <p>Ваш возраст: <b>{{test.age }}</b></p>
+                   
+                   {% component 'resetPassword' %}
+
+					</div>
+				</div><!--.main-content-->";s:5:"mtime";i:1477504378;s:6:"markup";s:1118:"<div class="sidebar press--right">
+
+<div class="widget widget__forum">
+						<h3>Управление</h3>
+						<div class="widget__forum__list">
+							<ul>
+								<li>
+									<a href="#">Настройки</a>
+								</li>
+								<li>
+									<a href="#">Сообщения</a>
+								</li>
+								<li>
+									<a href="/profile/password_recovery">Восстановить пароль</a>
+								</li>
+								<li>
+									<a href="#">Добавить статью</a>
+								</li>
+								
+							</ul>
+						</div>						
+					</div><!--.widget__forum-->
+
+{% partial "widget_last_post_forum" %}
+{% partial "widget_cloud_tag" %}
+				
+				</div><!--.sidebar-->
+
+				<div class="main-content press--left">
+				    <div class="post post--big">
+
+                   <h1>Мой профиль</h1>
+                    
+                   <p>Ваше имя: <b>{{ user.name }}</b></p>
+                   <p>Ваш возраст: <b>{{test.age }}</b></p>
+                   
+                   {% component 'resetPassword' %}
+
+					</div>
+				</div><!--.main-content-->";s:4:"code";s:84:"
+function onStart()
+{
+    $this['test'] = array('name'=>'pavel','age'=>'25');
+}";s:5:"title";s:21:"Мой профиль";s:3:"url";s:8:"/profile";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"1";s:13:"resetPassword";a:1:{s:9:"paramCode";s:4:"code";}s:7:"session";a:1:{s:8:"security";s:4:"user";}}}

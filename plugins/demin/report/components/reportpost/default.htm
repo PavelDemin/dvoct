@@ -1,0 +1,10 @@
+{% set report = __SELF__.post %}
+
+<h4><a href="{{ report.url_to_forum }}">{{ report.title }}</a></h4>
+<p>{{ report.content|raw }}</p>
+<a href="#"><img
+        data-src="{{ report.image.path }}"
+        src="{{ report.image.path }}"
+        alt="{{ report.image.description }}"
+        style="width: 150px" /></a>
+

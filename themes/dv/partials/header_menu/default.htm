@@ -1,0 +1,11 @@
+==
+{% set categories = __SELF__.categories %}
+{% set currentCategorySlug = __SELF__.currentCategorySlug %}
+<ul class="menu__list menu__list-dropdown">
+    {% for category in categories %}
+    {% set postCount = category.post_count %}
+    <li class="menu__item menu__item-dropdown">
+    <a class="menu__link" href="{{ category.url }}">{{ category.name }}</a>
+    </li>
+    {% endfor %}
+</ul>

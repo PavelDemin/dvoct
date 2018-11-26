@@ -1,0 +1,4 @@
+title: TypeFishing
+modelClass: demin\Eventfish\Models\TypeFishing
+toolbar:
+    buttons: reorder_toolbar

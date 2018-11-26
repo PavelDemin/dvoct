@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+          label: Заголовок
+
+    url_video:
+          label: Ссылка на видео
+
+    created_at:
+          label: Дата создания

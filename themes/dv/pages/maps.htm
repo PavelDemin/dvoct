@@ -1,0 +1,43 @@
+title = "Карта"
+url = "/maps"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ReportMap]
+
+[ReportList report]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "Нет отчетов"
+sortOrder = "published_at desc"
+postPage = "reports/report-post"
+
+[popularPosts]
+postsLimit = 5
+==
+<?php
+function onStart()
+{
+
+$this->layout->components['SeoCmsPage']->seo_title = "Рыболовная карта Хабаровского края";
+}
+?>
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+
+<div class="main-content press--left">
+    <div class="post post--big">
+        <h1>Карта рыболовных отчетов</h1>
+        {% component 'ReportMap' %}
+        <h3>Последние отчеты о рыбалке</h3>
+        <div class="list-posts">
+        {% component 'report::index' %}
+        </div>
+    </div>
+</div><!--.main-content-->

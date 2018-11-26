@@ -1,0 +1,30 @@
+description = "Новость"
+==
+{% set post = __SELF__.post %}
+<div class="breadcrumb">
+    <a href="/">Новости</a> > {{ post.title }}
+</div>
+<div class="post post--big">
+    <header class="post__header post__header__big">
+        <figure class="post__figure press--left">
+            <img  src="/storage/app/media{{ post.image }}" style="width: 200px" />
+        </figure>
+        <div class="post__info post__info--big clearfix">
+            <h3 class="title--big">
+                {{ post.title }}
+            </h3>
+            <div class="post__date">
+                Опубликовано: {{ post.published_at|rudate("%e %BP, %Y") }}
+            </div>
+            {% partial "share" %}
+        </div>
+    </header>
+    <div class="post__text">
+        <div class="content">{{ post.introductory|raw }}
+        </div>
+    </div>
+    <hr>
+    <footer class="post__footer clearfix">
+        {% partial "share" %}
+    </footer>
+</div><!--.post-->

@@ -1,0 +1,4 @@
+1.0.1: First version of video
+1.0.2:
+  - Run table migrations
+  - create_videos_table.php

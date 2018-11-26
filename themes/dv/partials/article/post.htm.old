@@ -1,0 +1,83 @@
+description = "Статья"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "articles/articles-category"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "articles/articles-category"
+==
+{% set post = __SELF__.post %}
+
+<div class="breadcrumb">						
+						<a href="{{ 'articles/articles-list'|page }}">Статьи</a> >
+						{% for category in post.categories %}
+						<a href="{{ category.url }}">{{ category.name }}</a>
+						{% endfor %}
+						> {{ post.title }}
+					</div>
+    				<div class="post post--big">
+						<header class="post__header post__header__big">
+							{% if post.featured_images.count %}
+							 {% for image in post.featured_images %}
+							<figure class="post__figure press--left">
+                                <img alt="{{ post.title }}" src="{{ image.getThumb(200,150, 'crop') }}">
+							</figure>
+							{% endfor %}
+                         {% endif %}
+							<div class="post__info post__info--big clearfix">
+								<h3 class="title--big">
+									{{ post.title }}
+								</h3>															
+								<div class="post__date">
+									Опубликовано: {{ post.published_at|rudate("%e %BP, %Y") }}
+								</div>
+								<div class="autor__name">
+									Добавил:
+									{{ post.user.full_name }}
+								</div>
+							<!--	<div class="rating">
+									Рейтинг статьи:  
+									<div class="rating-stars">
+						                <input type="hidden" value="2"/>
+						                <input type="hidden" value="2"/>
+						                <input type="hidden" value="2"/>
+						                <input type="hidden" value="2"/>
+						                <input type="hidden" value="2"/>
+						            </div>
+						            <span class="assessment">
+										3.5/5 <a href="#">Оценить</a>
+									</span>
+								</div>-->
+								<div class="btn__group tags">
+								{% for tag in post.tags %}
+                                   <a class="btn" href="/articles/tags/{{tag.slug}}">{{ tag.name }}</a>
+                                {% endfor %}
+								</div>
+                                {% partial "share" %}
+							</div>
+						</header>
+						<div class="post__text">
+							<div class="content">{{ post.content_html|raw }}</div>
+						</div>	
+						<hr>
+						<footer class="post__footer clearfix">
+							<div class="autor__item__header press--left">
+								<figure class="autor__item__figure">
+									<img src="{{ post.user.getAvatarThumb(75, {mode:'crop',quality:'100'}) }}" width="75px" height="75px" alt="{{ post.user.full_name }}">
+								</figure>
+								<div class="autor__item__info">
+																			
+									<div class="post__date">
+									Опубликовано: {{ post.published_at|rudate("%e %BP, %Y") }}
+								</div>
+								<div class="autor__name">
+									Добавил: {{ post.user.full_name }}
+								</div>
+								</div>
+							</div>
+                            {% partial "share" %}
+						</footer>												
+					</div><!--.post-->

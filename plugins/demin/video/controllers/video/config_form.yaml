@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Video
+
+# Model Form Field configuration
+form: $/demin/video/models/video/fields.yaml
+
+# Model Class name
+modelClass: Demin\Video\Models\Video
+
+# Default redirect location
+defaultRedirect: demin/video/video
+
+# Create page
+create:
+    title: Create Video
+    redirect: demin/video/video/update/:id
+    redirectClose: demin/video/video
+
+# Update page
+update:
+    title: Edit Video
+    redirect: demin/video/video
+    redirectClose: demin/video/video
+
+# Preview page
+preview:
+    title: Preview Video

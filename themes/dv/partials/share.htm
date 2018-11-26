@@ -1,0 +1,22 @@
+<div class="shareit press--right">
+									<span class="shareit__title">
+										Поделиться:
+									</span>
+									<span class="post-soc">
+										<a href="http://vk.com/share.php?url={{(url_current())|url_encode }}" target='_blank'>
+                                            <span class="icon-vk-small"></span>
+                                        </a>
+										<a href="http://twitter.com/home?status={{ (this.page.title ~ ' ' ~ url_current())|url_encode }}" title="Share on Twitter" target="_blank">
+                                            <span class="icon-twitter"></span>
+                                        </a>
+										<a href="https://connect.ok.ru/offer?url={{(url_current())|url_encode }}" target='_blank'>
+                                            <span class="icon-ok-small"></span>
+                                        </a>
+										<a href="https://plus.google.com/share?url={{(this.page.title ~ ' ' ~ url_current())|url_encode }}" title="Share on Google+" target="_blank">
+                                            <span class="icon-google"></span>
+                                        </a>
+										<a href="http://connect.mail.ru/share?url={{(url_current())|url_encode}}u&amp;title={{this.page.title}}" target='_blank'>
+                                            <span class="icon-mail"></span>
+                                        </a>
+									</span>
+</div>

@@ -1,0 +1,49 @@
+1543183874a:1:{s:26:"articles/articles-list.htm";a:14:{s:8:"fileName";s:26:"articles/articles-list.htm";s:7:"content";s:902:"title = "Статьи"
+url = "/articles/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts article]
+pageNumber = "{{ :page }}"
+postsPerPage = 12
+noPostsMessage = "Нет постов"
+sortOrder = "published_at desc"
+categoryPage = "articles/articles-category"
+postPage = "articles/article-post"
+
+[blogCategories category_menu]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "articles/articles-category"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+==
+<?php
+function onEnd(){
+    $this->layout->components['SeoCmsPage']->seo_title = "Рыболовные статьи";
+}
+?>
+==
+<div class="col-md-3">
+    {% component 'category_menu' %}
+    {% component 'popularPosts' %}
+</div>
+<div class="col-md-9">
+    <h3 class="section-title">Последние статьи</h3>
+    {% component "article" %}
+</div>
+";s:5:"mtime";i:1542920299;s:6:"markup";s:227:"<div class="col-md-3">
+    {% component 'category_menu' %}
+    {% component 'popularPosts' %}
+</div>
+<div class="col-md-9">
+    <h3 class="section-title">Последние статьи</h3>
+    {% component "article" %}
+</div>";s:4:"code";s:113:"function onEnd(){
+    $this->layout->components['SeoCmsPage']->seo_title = "Рыболовные статьи";
+}";s:5:"title";s:12:"Статьи";s:3:"url";s:16:"/articles/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:17:"blogPosts article";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"12";s:14:"noPostsMessage";s:19:"Нет постов";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:26:"articles/articles-category";s:8:"postPage";s:21:"articles/article-post";}s:28:"blogCategories category_menu";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"0";s:12:"categoryPage";s:26:"articles/articles-category";}s:12:"popularPosts";a:3:{s:10:"postsLimit";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:9:"blog/post";}}}

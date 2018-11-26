@@ -1,0 +1,53 @@
+{% if message != '' %}
+<div class="comment comment-error">{{ message }}</div>
+{% endif %}
+
+{% if comment != '' %}
+<div id="comment-{{ comment.id }}" class="media comment comment__item new">
+    <div class="comment__item__content clearfix">
+        <figure class="comment__user-ava">
+            {% if comment.user_avatar != '' %}
+            <img src="{{ comment.user_avatar }}">
+            {% else %}
+            <img src="/storage/app/media/no_ava.png" width="64px" height="64px">
+            {% endif %}
+        </figure>
+        <div class="comment__user__info">
+            <div class="autor__name">
+                {% if comment.user_name != '' %}
+                <a href="#">{{ comment.user_name }}</a>
+                {% endif %}
+                {% if comment.name != '' %}
+                <a href="#">{{ comment.name }}</a>
+                {% endif %}
+            </div>
+            <div class="post__date">
+                Опубликовано: {{ comment.published_at|date('m.d.Y') }}
+            </div>
+            <div class="comment__text">
+                {{ comment.content_html|raw }}
+            </div>
+            <div class="comment-actions">
+                <div class="comment-actions">
+                    {% if ( level < depth ) or ( depth == 0 ) %}
+                    <a href="#"
+                       class="action-link reply"
+                       data-id="{{ comment.id }}"
+                       data-level="{{ level }}"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if comment.user_id != 0 %}
+                    <a href="#"
+                       data-id="{{ comment.id }}"
+                       class="action-link edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="#"
+                       data-id="{{ comment.id }}"
+                       class="action-link delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div id="reply-{{ comment.id }}" class="level">
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

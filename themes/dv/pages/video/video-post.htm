@@ -1,0 +1,43 @@
+title = "Видео ролик"
+url = "/video/:slug|^[a-z0-9\-]+$"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[VideoPost video]
+slug = "{{ :slug }}"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+==
+<?php
+function onStart() {
+    $post = DB::table('demin_video_videos')->where('slug', $this->param('slug'))->first();
+    if (!$post) return App::make('Cms\Classes\Controller')->setStatusCode(404)->run('/404');
+}
+
+function onEnd() {
+    // Overwrite for better SEO.
+    $this->layout->components['SeoCmsPage']->seo_title = $this->page->components['video']->video->title;
+    //$this->layout->components['SeoCmsPage']->seo_description = 'My dynamic description.';
+}
+?>
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    {% component 'video::post' %}
+    <div class="timeline-posts">
+        <h3>Похожие материалы</h3>
+        <div class="timeline-posts__list clearfix">
+
+        </div>
+    </div><!--.timeline-posts-->
+    
+</div><!--.main-content-->

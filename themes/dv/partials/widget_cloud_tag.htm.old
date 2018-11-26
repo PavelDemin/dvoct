@@ -1,0 +1,14 @@
+description = "Облако тегов"
+
+[tags tag]
+results = 20
+sortOrder = "created_at desc"
+==
+<div class="widget widget__tags">
+	<h3>Облако тегов</h3>
+	<div class="widget__tags__content">
+		<div class="btn__group">
+			{% component 'tag::cloud' %}
+		</div>
+	</div>
+</div>

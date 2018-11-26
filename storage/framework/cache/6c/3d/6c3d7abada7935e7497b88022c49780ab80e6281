@@ -1,0 +1,51 @@
+1543183874a:1:{s:12:"register.htm";a:14:{s:8:"fileName";s:12:"register.htm";s:7:"content";s:805:"title = "Регистрация нового пользователя"
+url = "/register"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+
+[account]
+redirect = "index-page"
+paramCode = "code"
+
+[session]
+security = "guest"
+redirect = "index-page"
+==
+<div class="sidebar press--right">
+
+
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+
+</div><!--.sidebar-->
+
+<div class="main-content press--left">
+    <div class="post post--big">
+        <h1>Регистрация</h1>
+        {% component 'account::register' %}
+        {% component 'session' %}
+    </div>
+</div><!--.main-content-->";s:5:"mtime";i:1472039654;s:6:"markup";s:418:"<div class="sidebar press--right">
+
+
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+
+</div><!--.sidebar-->
+
+<div class="main-content press--left">
+    <div class="post post--big">
+        <h1>Регистрация</h1>
+        {% component 'account::register' %}
+        {% component 'session' %}
+    </div>
+</div><!--.main-content-->";s:4:"code";N;s:5:"title";s:60:"Регистрация нового пользователя";s:3:"url";s:9:"/register";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:12:"popularPosts";a:3:{s:10:"postsLimit";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:9:"blog/post";}s:7:"account";a:2:{s:8:"redirect";s:10:"index-page";s:9:"paramCode";s:4:"code";}s:7:"session";a:2:{s:8:"security";s:5:"guest";s:8:"redirect";s:10:"index-page";}}}

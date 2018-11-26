@@ -1,0 +1,32 @@
+{
+    "name": "eseath/laravel-vk",
+    "description": "A Laravel package for working with vk.com API.",
+    "keywords": ["vk", "vk.com", "api", "laravel"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ruslan A.",
+            "email": "eseath@yandex.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Eseath\\VK\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "5.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.7",
+        "orchestra/testbench": "~3.3"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,11 @@
+description = "Counter"
+==
+<?php
+function onEnd() {
+    $this['qty'] = Db::table('xeor_comments_comments')->where('cid', $this['cid'])->count();
+
+}
+?>
+==
+{{ qty }}
+

@@ -1,0 +1,36 @@
+title = "Регистрация нового пользователя"
+url = "/register"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+
+[account]
+redirect = "index-page"
+paramCode = "code"
+
+[session]
+security = "guest"
+redirect = "index-page"
+==
+<div class="sidebar press--right">
+
+
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+
+</div><!--.sidebar-->
+
+<div class="main-content press--left">
+    <div class="post post--big">
+        <h1>Регистрация</h1>
+        {% component 'account::register' %}
+        {% component 'session' %}
+    </div>
+</div><!--.main-content-->

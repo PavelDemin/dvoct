@@ -1,0 +1,58 @@
+title = "Мой профиль"
+url = "/profile"
+layout = "default"
+is_hidden = "1"
+
+[resetPassword]
+paramCode = "code"
+
+[session]
+security = "user"
+==
+<?php
+function onStart()
+{
+    $this['test'] = array('name'=>'pavel','age'=>'25');
+}
+?>
+==
+<div class="sidebar press--right">
+
+<div class="widget widget__forum">
+						<h3>Управление</h3>
+						<div class="widget__forum__list">
+							<ul>
+								<li>
+									<a href="#">Настройки</a>
+								</li>
+								<li>
+									<a href="#">Сообщения</a>
+								</li>
+								<li>
+									<a href="/profile/password_recovery">Восстановить пароль</a>
+								</li>
+								<li>
+									<a href="#">Добавить статью</a>
+								</li>
+								
+							</ul>
+						</div>						
+					</div><!--.widget__forum-->
+
+{% partial "widget_last_post_forum" %}
+{% partial "widget_cloud_tag" %}
+				
+				</div><!--.sidebar-->
+
+				<div class="main-content press--left">
+				    <div class="post post--big">
+
+                   <h1>Мой профиль</h1>
+                    
+                   <p>Ваше имя: <b>{{ user.name }}</b></p>
+                   <p>Ваш возраст: <b>{{test.age }}</b></p>
+                   
+                   {% component 'resetPassword' %}
+
+					</div>
+				</div><!--.main-content-->

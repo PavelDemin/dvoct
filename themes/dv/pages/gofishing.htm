@@ -1,0 +1,28 @@
+title = "На рыбалку"
+url = "/gofishing"
+layout = "default"
+description = "На рыбалку!"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[EventsFishing eventsfishing]
+
+[popularPosts]
+postsLimit = 3
+noPostsMessage = "No posts found"
+postPage = "articles/article-post"
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    <div class="main-content press--left">
+        <div class="post post--big">
+
+{% component 'eventsfishing::event' %}
+
+        </div>
+</div><!--.main-content-->

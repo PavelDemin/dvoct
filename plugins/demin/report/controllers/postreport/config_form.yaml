@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Post Report
+
+# Model Form Field configuration
+form: $/demin/report/models/postreport/fields.yaml
+
+# Model Class name
+modelClass: Demin\Report\Models\PostReport
+
+# Default redirect location
+defaultRedirect: demin/report/postreport
+
+# Create page
+create:
+    title: Create Post Report
+    redirect: demin/report/postreport/update/:id
+    redirectClose: demin/report/postreport
+
+# Update page
+update:
+    title: Edit Post Report
+    redirect: demin/report/postreport
+    redirectClose: demin/report/postreport
+
+# Preview page
+preview:
+    title: Preview Post Report

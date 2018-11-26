@@ -1,0 +1,10 @@
+name: EventsList
+form: $/demin/eventfish/models/eventsfishing/fields.yaml
+modelClass: demin\Eventfish\Models\EventsFishing
+defaultRedirect: demin/eventfish/eventslist
+create:
+    redirect: 'demin/eventfish/eventslist/update/:id'
+    redirectClose: demin/eventfish/eventslist
+update:
+    redirect: demin/eventfish/eventslist
+    redirectClose: demin/eventfish/eventslist

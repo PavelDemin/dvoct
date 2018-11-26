@@ -1,0 +1,7 @@
+columns:
+    name:
+        label: 'Способ ловли'
+        type: text
+    slug:
+        label: Транслит
+        type: text

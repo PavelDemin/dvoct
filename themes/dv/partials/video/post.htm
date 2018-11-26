@@ -1,0 +1,28 @@
+description = "Видео ролик"
+
+==
+{% set video = __SELF__.video %}
+
+<div class="breadcrumb">
+    <a href="{{ 'video/video-list'|page }}">Видео</a> > {{ video.title }}
+</div>
+<div class="post post--big">
+    <header class="post__header post__header__big">
+            <h3 class="title--big">
+                {{ video.title }}
+            </h3>
+    </header>
+    <div class="post__text">
+        <div class="content">
+            <iframe width="560" height="315" src="{{ video.url_video }}" frameborder="0" allowfullscreen></iframe>
+            {{ video.content|raw }}
+        </div>
+    </div>
+    <hr>
+    <footer class="post__footer clearfix">
+        <div class="post__date">
+            Опубликовано: {{ video.published_at|rudate("%e %BP, %Y") }}
+        </div>
+        {% partial "share" %}
+    </footer>
+</div><!--.post-->

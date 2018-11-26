@@ -1,0 +1,23 @@
+title = "Нет такой страницы"
+url = "/404"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = 404
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+</div><!--.sidebar-->
+
+<div class="main-content press--left">
+    <div class="post post--big">
+        <h1>Нет такой страницы. Ошибка 404.</h1>
+    </div>
+</div><!--.main-content-->

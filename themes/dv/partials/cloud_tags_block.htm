@@ -1,0 +1,14 @@
+description = "Облако тегов"
+
+[tags tag]
+results = 20
+sortOrder = "created_at desc"
+==
+<h3><a class="section-title" href="#">Облако тегов</a></h3>
+<div class="block">
+    <div class="block-tag">
+        <ul class="block-tag__list">
+            {% component 'tag::cloud' %}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+1543152999a:1:{s:16:"report/index.htm";a:6:{s:8:"fileName";s:16:"report/index.htm";s:7:"content";s:1500:"description = "Список отчетов на главной странице"
+==
+{% set reports = __SELF__.posts %}
+<h3><a class="section-title" href="#">Последние отчеты</a></h3>
+{% for report in reports %}
+<article class="block">
+    <header class="block__header"><a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">
+        <picture>
+            <source media="(max-width: 991px)" srcset="{{ report.image.getThumb(200,163, 'crop') }}"><img class="block__image" src="{{ report.image.getThumb(200,163, 'crop') }}">
+        </picture></a>
+        <div class="block-info">
+            <div class="block-info__date">{{ report.published_at|rudate("%e %BP, %Y") }}</div>
+            <div class="block-info__view"><i class="icon-eye"></i><span class="block-info__text">{{ report.count_views}}</span></div>
+            <div class="block-info__comment"><a class="block-info__link" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}#comments"><i class="icon-comment"></i><span class="block-info__text">125</span></a></div>
+        </div>
+        <h2 class="block__title"><a class="block__link" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">{{ report.title }}</a></h2>
+        <div class="block__text block__text-indent">{{ html_strip(substr(report.content,300,'...')) }}</div>
+    </header><a class="block__link block__link-btn" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">Читать дальше...</a>
+</article>
+{% endfor %}";s:5:"mtime";i:1542805288;s:6:"markup";s:1416:"{% set reports = __SELF__.posts %}
+<h3><a class="section-title" href="#">Последние отчеты</a></h3>
+{% for report in reports %}
+<article class="block">
+    <header class="block__header"><a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">
+        <picture>
+            <source media="(max-width: 991px)" srcset="{{ report.image.getThumb(200,163, 'crop') }}"><img class="block__image" src="{{ report.image.getThumb(200,163, 'crop') }}">
+        </picture></a>
+        <div class="block-info">
+            <div class="block-info__date">{{ report.published_at|rudate("%e %BP, %Y") }}</div>
+            <div class="block-info__view"><i class="icon-eye"></i><span class="block-info__text">{{ report.count_views}}</span></div>
+            <div class="block-info__comment"><a class="block-info__link" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}#comments"><i class="icon-comment"></i><span class="block-info__text">125</span></a></div>
+        </div>
+        <h2 class="block__title"><a class="block__link" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">{{ report.title }}</a></h2>
+        <div class="block__text block__text-indent">{{ html_strip(substr(report.content,300,'...')) }}</div>
+    </header><a class="block__link block__link-btn" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">Читать дальше...</a>
+</article>
+{% endfor %}";s:4:"code";N;s:11:"description";s:64:"Список отчетов на главной странице";}}

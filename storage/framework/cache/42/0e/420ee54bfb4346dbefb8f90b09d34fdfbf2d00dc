@@ -1,0 +1,226 @@
+1542226159a:1:{s:18:"index-page-old.htm";a:16:{s:8:"fileName";s:18:"index-page-old.htm";s:7:"content";s:3678:"title = "Главная"
+url = "/"
+layout = "default"
+description = "Главная страница сайта"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ReportSlider slider]
+
+[VideoList video]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "Нет видео"
+sortOrder = "published_at desc"
+postPage = "video/video-post"
+
+[ReportList report]
+pageNumber = "{{ :page }}"
+postsPerPage = 9
+noPostsMessage = "Нет отчетов"
+sortOrder = "published_at desc"
+postPage = "reports/report-post"
+
+[blogPosts article]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "articles/articles-category"
+postPage = "articles/article-post"
+==
+<?php
+function onEnd()
+{
+    $this->layout->components['SeoCmsPage']->seo_title = "Рыбалка в Хабаровском крае, рыбалка на Амуре, горная рыбалка, рыболовные отчеты, ловля хариуса, ловля тайменя";
+}
+?>
+==
+<div class="sidebar press--left">
+	{% component 'article::new_article' %}
+	<!--<div class="widget widget__forum">
+		<h3>Последнее на форуме</h3>
+		<div class="widget__forum__list">
+			<ul>
+				<li>
+					<a href="#">Болталка</a>
+				</li>
+				<li>
+					<a href="#">Плавсредства. Виды и выбор</a>
+				</li>
+				<li>
+					<a href="#">Одиночные путешествия</a>
+				</li>
+				<li>
+					<a href="#">Вся рыбалка в России станет платной?!</a>
+				</li>
+				<li>
+					<a href="#">Поздравляем!</a>
+				</li>
+				<li>
+					<a href="#">Щука</a>
+				</li>
+				<li>
+					<a href="#">р. Горин</a>
+				</li>
+				<li>
+					<a href="#">Болталка</a>
+				</li>
+				<li>
+					<a href="#">Плавсредства. Виды и выбор</a>
+				</li>
+				<li>
+					<a href="#">Одиночные путешествия</a>
+				</li>
+			</ul>
+		</div>
+		<div class="redirect-link">
+			<a href="/forum">Перейти в раздел статей</a>
+		</div>
+	</div>-->
+	<!--.widget__forum-->
+
+</div><!--.sidebar-->
+
+<div class="main-content press--right">
+	<div class="clearfix">
+		<div class="timeline press--left">
+			<div class="b-slider">
+				<div class="clearfix">
+					<h3 class="press--left">Лучшие рыболовные отчеты</h3>
+					<div class="redirect-link press--right">
+						<a href="{{'reports/report-list'|page}}">Перейти в раздел отчетов</a>
+					</div>
+				</div>
+				<div class="slider__items">
+					<ul id="out-of-the-box-demo">
+						{% component 'slider::slider' %}
+					</ul>
+				</div>
+				<div class="slider-control">
+					<a href="#" class="slider--prev"></a>
+					<a href="#" class="slider--next"></a>
+				</div>
+			</div><!--.b-slider-->
+
+			<h3>Отчеты о рыбалке</h3>
+			<div class="list-posts">
+				{% component 'report::index' %}
+			</div><!--.list-posts-->
+			<div class="redirect-link">
+				<a href="{{'reports/report-list'|page}}">Перейти в раздел отчетов</a>
+			</div>
+		</div><!--.timeline-->
+		<div class="sidebar press--right">
+
+			<div class="widget widget__post">
+				<h3>Видео обзоры</h3>
+				<div class="list-posts">
+					{% component 'video::new' %}
+				</div>
+				<div class="redirect-link">
+					<a href="{{ 'video' }}">Перейти в раздел видео</a>
+				</div>
+			</div>
+			{% partial "widget_cloud_tag" %}
+		</div><!--.sidebar-->
+
+	</div>
+
+</div><!--.main-content-->";s:5:"mtime";i:1494186544;s:6:"markup";s:2604:"<div class="sidebar press--left">
+	{% component 'article::new_article' %}
+	<!--<div class="widget widget__forum">
+		<h3>Последнее на форуме</h3>
+		<div class="widget__forum__list">
+			<ul>
+				<li>
+					<a href="#">Болталка</a>
+				</li>
+				<li>
+					<a href="#">Плавсредства. Виды и выбор</a>
+				</li>
+				<li>
+					<a href="#">Одиночные путешествия</a>
+				</li>
+				<li>
+					<a href="#">Вся рыбалка в России станет платной?!</a>
+				</li>
+				<li>
+					<a href="#">Поздравляем!</a>
+				</li>
+				<li>
+					<a href="#">Щука</a>
+				</li>
+				<li>
+					<a href="#">р. Горин</a>
+				</li>
+				<li>
+					<a href="#">Болталка</a>
+				</li>
+				<li>
+					<a href="#">Плавсредства. Виды и выбор</a>
+				</li>
+				<li>
+					<a href="#">Одиночные путешествия</a>
+				</li>
+			</ul>
+		</div>
+		<div class="redirect-link">
+			<a href="/forum">Перейти в раздел статей</a>
+		</div>
+	</div>-->
+	<!--.widget__forum-->
+
+</div><!--.sidebar-->
+
+<div class="main-content press--right">
+	<div class="clearfix">
+		<div class="timeline press--left">
+			<div class="b-slider">
+				<div class="clearfix">
+					<h3 class="press--left">Лучшие рыболовные отчеты</h3>
+					<div class="redirect-link press--right">
+						<a href="{{'reports/report-list'|page}}">Перейти в раздел отчетов</a>
+					</div>
+				</div>
+				<div class="slider__items">
+					<ul id="out-of-the-box-demo">
+						{% component 'slider::slider' %}
+					</ul>
+				</div>
+				<div class="slider-control">
+					<a href="#" class="slider--prev"></a>
+					<a href="#" class="slider--next"></a>
+				</div>
+			</div><!--.b-slider-->
+
+			<h3>Отчеты о рыбалке</h3>
+			<div class="list-posts">
+				{% component 'report::index' %}
+			</div><!--.list-posts-->
+			<div class="redirect-link">
+				<a href="{{'reports/report-list'|page}}">Перейти в раздел отчетов</a>
+			</div>
+		</div><!--.timeline-->
+		<div class="sidebar press--right">
+
+			<div class="widget widget__post">
+				<h3>Видео обзоры</h3>
+				<div class="list-posts">
+					{% component 'video::new' %}
+				</div>
+				<div class="redirect-link">
+					<a href="{{ 'video' }}">Перейти в раздел видео</a>
+				</div>
+			</div>
+			{% partial "widget_cloud_tag" %}
+		</div><!--.sidebar-->
+
+	</div>
+
+</div><!--.main-content-->";s:4:"code";s:286:"
+function onEnd()
+{
+    $this->layout->components['SeoCmsPage']->seo_title = "Рыбалка в Хабаровском крае, рыбалка на Амуре, горная рыбалка, рыболовные отчеты, ловля хариуса, ловля тайменя";
+}";s:5:"title";s:14:"Главная";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:11:"description";s:42:"Главная страница сайта";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:19:"ReportSlider slider";a:0:{}s:15:"VideoList video";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"5";s:14:"noPostsMessage";s:17:"Нет видео";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:16:"video/video-post";}s:17:"ReportList report";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"9";s:14:"noPostsMessage";s:21:"Нет отчетов";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:19:"reports/report-post";}s:17:"blogPosts article";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:26:"articles/articles-category";s:8:"postPage";s:21:"articles/article-post";}}}

@@ -1,0 +1,20 @@
+plugin:
+    name: 'demin.eventfish::lang.plugin.name'
+    description: 'Приглашения на рыбалку'
+    author: 'Pavel Demin'
+    icon: oc-icon-automobile
+    homepage: ''
+navigation:
+    main_menu_item:
+        label: 'На рыбалку!'
+        url: demin/eventfish/eventslist
+        icon: icon-car
+        sideMenu:
+            side-menu-item2:
+                label: 'Список заявок'
+                url: demin/eventfish/eventslist
+                icon: icon-list-alt
+            side-menu-item:
+                label: 'Способ ловли'
+                url: demin/eventfish/typefishing
+                icon: icon-sitemap

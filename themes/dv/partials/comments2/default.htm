@@ -1,0 +1,140 @@
+[captcha]
+
+[sociallogin]
+
+[account]
+paramCode = "code"
+==
+{% set comments = __SELF__.comments %}
+{% set user = __SELF__.user %}
+{% set depth = __SELF__.depth %}
+{% set rate = __SELF__.options.rate %}
+
+<div class="b-comments__content" id="comment">
+    <h3>Комментарии:</h3>
+    <hr>
+    <div id="comments">
+        <div class="list-comments">
+    {{ comment }}
+    {% macro comments_tree(pid, level, comments, user, depth) %}
+    {% import _self as macros %}
+    {% for comment in comments %}
+    {% if pid == comment.pid %}
+    {% set margin = level * 20 %}
+            <div id="comment-{{ comment.id }}" class="media comment comment__item">
+                <div class="comment__item__content clearfix">
+                    <figure class="comment__user-ava">
+                        {% if comment.user_avatar != '' %}
+                        <img src="{{ comment.user_avatar }}">
+                        {% else %}
+                        <img src="/storage/app/media/no_ava.png" width="64px" height="64px">
+                        {% endif %}
+                    </figure>
+                    <div class="comment__user__info">
+                        <div class="autor__name">
+                            {% if comment.user_name != '' %}
+                                <a href="#">{{ comment.user_name }}</a>
+                            {% endif %}
+                            {% if comment.name != '' %}
+                                 <a href="#">{{ comment.name }}</a>
+                            {% endif %}
+                        </div>
+                        <div class="post__date">
+                            Оставлен: {{ comment.published_at|rudate("%e %BP, %Y") }}
+                        </div>
+                        <div class="comment__text">
+
+                            {{ comment.content_html|raw }}
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-actions">
+                            {% if ( level < depth ) or ( depth == 0 ) %}
+                            <a href="#"
+                               class="action-link reply"
+                               data-id="{{ comment.id }}"
+                               data-level="{{ level }}"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                            {% endif %}
+
+                            {% if (comment.user_id != 0) and (user.id == comment.user_id) %}
+                            <a href="#"
+                               data-id="{{ comment.id }}"
+                               class="action-link edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a href="#"
+                               data-id="{{ comment.id }}"
+                               class="action-link delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            {% endif %}
+                            </div>
+                        </div>
+                        {% set level = level + 1 %}
+                        <div id="reply-{{ comment.id }}" class="level level-{{ level }}">
+                            {{ macros.comments_tree(comment.id, level, comments, user, depth) }}
+                        </div>
+                        {% set level = level - 1 %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endmacro %}
+
+            {% import _self as macros %}
+
+            {{ macros.comments_tree(0, 0, comments, user, depth) }}
+        </div><!--.list-comments-->
+    </div>
+        <div id="comment-form-wrapper" class="b-leave-comment">
+
+            <form id="comment-form"
+                  class="comment-form form-group"
+                  data-request="onComment"
+                  data-request-update="'{{ __SELF__ }}::new': '@#comments'"
+                  data-request-success="afterSubmit($el, context, data, textStatus, jqXHR)"
+                  data-options="{{ dataOptions }}"
+                  role="form">
+                <div class="form">
+                   {% if loggedin != true %}
+                    <div class="form__cell">
+                        <div class="form-row">
+                            <div class="shareit">
+                                <div class="shareit__title">
+                                    Авторизация через социальные сети:
+                                </div>
+                                {% component 'sociallogin' %}
+                                {% component 'account::sign_in_social' %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__cell">
+                        <div class="form-row">
+                        <input type="text" id="name" name="name" value="" required placeholder="Ваше имя" class="name form-control" onfocus="if (this.placeholder == 'Ваше имя') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Ваше имя';}">
+                        </div>
+                    </div>
+                    <div class="form__cell">
+                        <div class="form-row">
+                        <input id="mail" name="mail" value="" type="email" required placeholder="Введите email" class="mail form-control" onfocus="if (this.placeholder == 'Введите email') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Введите email';}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <textarea placeholder="Ваше сообщение" required onfocus="placeholder='';" onblur="placeholder='Ваше сообщение';"  name="content" id="content" class="content form-control" rows="3"></textarea>
+                    </div>
+                    {% component 'captcha' %}
+                    {% else %}
+                    <div class="form-row">
+                        <textarea placeholder="Ваше сообщение" required onfocus="placeholder='';" onblur="placeholder='Ваше сообщение';"  name="content" id="content" class="content form-control" rows="3"></textarea>
+                    </div>
+                    {% endif %}
+                    <input type="hidden" name="pid" id="to" class="to">
+                    <input type="hidden" name="id" id="edit" class="edit">
+                    <input type="hidden" name="level" id="level" class="level">
+                    <div class="clearfix">
+                         <div class="form-row leave-comment__footer">
+                             <input type="submit" class="btn btn--large" id="submit" value="Оставить комментарий">
+                         </div>
+                         <div class="cancel-reply">
+                            <a href="#" class="cancel-reply-link btn btn-default"><i class="fa fa-times" aria-hidden="true"></i></a>
+                         </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</div>

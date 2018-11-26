@@ -1,0 +1,25 @@
+title = "Результат поиска"
+url = "/search"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+    {% partial "widget_cloud_tag" %}
+
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    <h3>Результат поиска: "<b></b>"</h3>
+    <hr>
+    <div class="list-posts list-posts--alignment clearfix">
+        
+    </div>
+</div><!--.main-content-->

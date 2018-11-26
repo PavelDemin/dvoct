@@ -1,0 +1,6 @@
+{
+    "require": {
+        "vladkens/vk": "^0.1.9",
+        "eseath/laravel-vk": "^1.0"
+    }
+}

@@ -1,0 +1,49 @@
+description = "Список отчетов"
+==
+{% set reports = __SELF__.posts %}
+<div class="block-list">
+    <button data-request-update="{{ __SELF__ }}::onDescReports : '#myDiv'">Go</button>
+    <div id="myDiv"></div>
+{% for report in reports %}
+    <div class="block-list__item">
+        <article class="block">
+            <header class="block__header">
+                <img class="block__image" src="{{ report.image.getThumb(230,150,'crop') }}"></a>
+                <h2 class="block__title"><a class="block__link" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">{{report.title }}</a></h2>
+                <div class="block__text">{{ substr(report.content,200,'...') }}</div>
+            </header>
+            <div class="block-info">
+                <div class="block-info__date">{{ report.published_at|rudate("%e %BP, %Y") }}</div>
+                <div class="block-info__view"><i class="icon-eye"></i><span class="block-info__text">12588</span></div>
+                <div class="block-info__comment"><a class="block-info__link" href="#"><i class="icon-comment"></i><span class="block-info__text">12588</span></a></div>
+            </div>
+            <footer class="block-footer">
+                <div class="block__share">Поделиться статьей:</div>
+                <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,whatsapp"></div>
+            </footer>
+        </article>
+    </div>
+    {% else %}
+    <p>{{ noPostsMessage }}</p>
+    {% endfor %}
+</div>
+
+    {% if reports.lastPage > 1 %}
+    <ul class="pagination">
+        {% if reports.currentPage > 1 %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage-1) }) }}">Назад</a>
+        <li>...</li>
+        {% endif %}
+        {% for page in 1..reports.lastPage %}
+        {% if reports.currentPage == page %}
+        <li class="active">{{ page }}</li>
+        {% else %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if reports.lastPage > reports.currentPage %}
+        <li>...</li>
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage+1) }) }}">Далее</a>
+        {% endif %}
+    </ul>
+    {% endif %}

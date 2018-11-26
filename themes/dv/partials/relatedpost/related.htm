@@ -1,0 +1,25 @@
+description = "Похожие материалы"
+==
+<?php
+function onStart()
+{
+    $this[ 'noPostsMessage'] = "Нет похожих материалов!";
+}
+?>
+==
+{% set posts = __SELF__.posts %}
+<h3 class="section-title">Похожие статьи</h3>
+<div class="block-list block-list-related">
+    {% for post in posts %}
+    <div class="block-list__item">
+        <article class="block">
+            <header class="block__header"><a href="{{ post.url }}"><img class="block__image" src="{{ post.featured_images.first.getThumb(65, 65, 'crop') }}"></a>
+                <h2 class="block__title"><a class="block__link" href="{{ post.url }}">{{ post.title }}</a></h2>
+                <div class="block__text">{{ html_strip(post.summary) |slice(0,100) }}...</div>
+            </header><a class="block__link" href="{{ post.url }}">Читать далее...</a>
+        </article>
+    </div>
+    {% else %}
+    <p>{{ noPostsMessage }}</p>
+    {% endfor %}
+</div>

@@ -1,0 +1,85 @@
+description = "Подвал сайта"
+==
+<footer class="footer">
+			<div class="l-container clearfix">
+				<nav class="footer__nav press--left">
+					<ul class="footer__nav__item">
+						<li>
+							<a href="/">Главная</a>
+						</li>
+						<li>
+							<a href="{{ 'reports/report-list'|page }}">Отчеты</a>
+						</li>
+						<li>
+							<a href="{{ 'articles/articles-list'|page }}">Статьи</a>
+						</li>
+						<li>
+                            <a href="{{ 'video/video-list'|page }}">Видео</a>
+						</li>
+					</ul>
+					<ul class="footer__nav__item">
+						<li>
+                            <a href="/forum">Форум</a>
+						</li>
+						<li>
+                            <a href="{{ 'maps'|page }}">Карта</a>
+						</li>
+						<li>
+                            <a href="{{ 'gofishing'|page }}">На рыбалку!</a>
+						</li>
+						<li>
+                            <a href="{{ 'about'|page }}">О портале</a>
+						</li>
+					</ul>
+
+					<ul class="footer__nav__item">
+                        {% if not user %}
+                        <li>
+                            <a href="{{ 'gofishing'|page }}">Вход</a>
+                        </li>
+                        <li>
+                            <a href="{{ 'about'|page }}">Регистрация</a>
+                        </li>
+                        {% else %}
+                     <!--   <li>
+                            <a href="{{ 'profile'|page }}">Профиль</a>
+                        </li> -->
+                        {% endif %}
+						<li>
+							<a href="{{ 'adv'|page }}">Реклама на портале</a>
+						</li>
+						<li>
+							<a href="{{ 'contacts'|page }}">Контакты</a>
+						</li>
+
+					</ul>
+				</nav><!--.footer__nav-->
+
+				<div class="b-soc press--left">
+                    <div class="b-soc">
+                        <a href="https://vk.com/club118899369" target="_blank"><span class="icon-vk-new"></span></a>
+                        <a href="http://dv-fishing.ru/forum/viewtopic.php?f=21&t=2626" target="_blank"><span class="icon-whatsap"></span></a>
+                    </div>
+				</div><!--.b-soc-->
+
+				<div class="analitika press--left">
+					<div class="b-foreign-widgets press--left">
+						<div class="foreign-widgets__item">
+							<img src="{{'assets/images/src/widget.png' | theme }}" alt="">
+						</div>
+					</div>
+				<!--	<div class="count-post press--right">
+						<div class="count-post__item">Статей: 53</div>
+						<div class="count-post__item">Отчетов: 9</div>
+						<div class="count-post__item">Комментариев: 14</div>
+						<div class="count-post__item">Пользователей: 2359</div>
+					</div> -->
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="l-container">
+					&copy; 2009 - {{"now"|date("Y")}} DV-FISHING.RU    Копирование и публикация материалов без активной ссылки на первоисточник запрещены.
+				</div>
+			</div>
+		</footer><!--.footer-->
+		

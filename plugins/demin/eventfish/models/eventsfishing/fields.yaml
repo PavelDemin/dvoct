@@ -1,0 +1,82 @@
+fields:
+    is_offer:
+        label: 'Вы приглашаете?'
+        span: auto
+        required: 1
+        type: checkbox
+    fishing_place:
+        label: 'Место ловли'
+        oc.commentPosition: ''
+        span: auto
+        required: 0
+        type: text
+    description:
+        label: Описание
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        stretch: 0
+        type: richeditor
+    type_fishing_id:
+        label: 'Способ ловли'
+        oc.commentPosition: ''
+        options:
+            1: Спиннинг
+            2: Нахлыст
+            3: Карпфишинг
+            4: Фидер
+        span: auto
+        required: 1
+        type: dropdown
+    city_id:
+        label: 'Ваш город'
+        oc.commentPosition: ''
+        options:
+            1: Москва
+            2: Хабаровск
+            3: Комсомольск-на-амуре
+            4: Новосибирск
+        span: auto
+        required: 1
+        type: dropdown
+    lon:
+        label: Долгота
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    lat:
+        label: Широта
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    start_date:
+        label: 'Начальная дата'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    end_date:
+        label: 'Конечная дата'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    user_id:
+        label: Пользователь
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    status:
+        label: 'Приглашение активно?'
+        span: auto
+        default: 1
+        type: switch
+    is_verified:
+        label: 'Прошла проверку?'
+        span: auto
+        default: 0
+        disabled: 0
+        type: switch

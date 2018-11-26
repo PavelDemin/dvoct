@@ -1,0 +1,128 @@
+{% set eventsfish = __SELF__.eventsfish %}
+<p>На рыбалку !!!</p>
+{% for q in eventsfish %}
+      <p>{{ q.description }}</p>
+{% endfor %}
+
+<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+    <div class="invite_to_fishing">
+        Пригласить на рыбалку!
+        <span id="form_invite">
+        {{ form_open({ request: 'onEventFish', class: 'pure-form pure-form-stacked' }) }}
+        <fieldset>
+            <label>
+                <span>Описание:</span>
+                <textarea class="pure-input-2-3" name="description" placeholder="Опишите в подробностях предстоящую рыбалку"></textarea>
+            </label>
+            <label>
+                <span>Начальная дата:</span>
+                <input class="pure-input-2-3" type="date" name="start_date" value="{{ 'now'|date('Y-m-d') }}">
+            </label>
+            <label>
+                <span>Конечная дата:</span>
+                <input class="pure-input-2-3" type="date" name="end_date" value="{{ 'now'|date('Y-m-d') }}">
+            </label>
+            <label>
+                <span class="pure-input-2-3">Способ ловли:</span>
+                <select class="pure-input-2-3" name="type_fishing_id">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </label>
+            <label>
+                <span>Ваш город:</span>
+                <select class="pure-input-2-3" name="city_id">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </label>
+            <label>
+                <span>Пользователь:</span>
+                <input class="pure-input-2-3" type="text" name="user_id" placeholder="ID пользователя">
+            </label>
+            <button type="submit">Отправить</button>
+        </fieldset>
+        {{ form_close() }}
+        </span>
+    </div>
+
+    <div class="want_to_fishing">
+        <span id="form_want">
+        {{ form_open({ request: 'onEventFish', class: 'pure-form pure-form-stacked' }) }}
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="is_offer">Вы приглашаете?</label>
+                <input type="checkbox" id="is_offer" name="is_offer">
+            </div>
+            <div class="pure-control-group">
+                <label for="fishing_place">Место рыбалки:</label>
+                <input class="pure-input-2-3" id="fishing_place" type="text" name="fishing_place"  placeholder="Укажите место предпологаемой рыбалки">
+            </div>
+            <label>
+                <span>Описание:</span>
+                <textarea class="pure-input-2-3" name="description" placeholder="Опишите в подробностях предстоящую рыбалку"></textarea>
+            </label>
+            <label>
+                <span>Начальная дата:</span>
+                <input class="pure-input-2-3" type="date" name="start_date" value="{{ 'now'|date('Y-m-d') }}">
+            </label>
+            <label>
+                <span>Конечная дата:</span>
+                <input class="pure-input-2-3" type="date" name="end_date" value="{{ 'now'|date('Y-m-d') }}">
+            </label>
+            <label>
+                <span class="pure-input-2-3">Способ ловли:</span>
+                <select class="pure-input-2-3" name="type_fishing_id">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </label>
+            <label>
+                <span>Ваш город:</span>
+                <select class="pure-input-2-3" name="city_id">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </label>
+            <label>
+                <span>Долгота:</span>
+                <input class="pure-input-2-3" type="text" name="lon" placeholder="Долгота">
+            </label>
+            <label>
+                <span>Широта:</span>
+                <input class="pure-input-2-3" type="text" name="lat" placeholder="Широта">
+            </label>
+            <label>
+                <span>Пользователь:</span>
+                <input class="pure-input-2-3" type="text" name="user_id" placeholder="ID пользователя">
+            </label>
+            <button type="submit">Отправить</button>
+        </fieldset>
+        {{ form_close() }}
+        </span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

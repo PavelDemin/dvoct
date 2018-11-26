@@ -1,0 +1,19 @@
+
+
+                                <li>
+									<div class="slider-item">
+										<figure class="slider-item__figure">
+											<a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}"><img src="{{ report.image.getThumb(622,260, 'crop') }}" alt="{{ report.title }}"></a>
+										</figure>
+										<a href="{{ 'reports/report-post'|page({ slug: report.slug }) }}"><div class="slider-item__text">
+											<div class="slider-item__text__title">
+												{{ report.title }}
+											</div>
+											<div class="slider-item__text__content">
+												{{ substr(report.content,220,'...') }}
+											</div>
+										</div></a>
+									</div>
+								</li>
+
+{% endfor %}

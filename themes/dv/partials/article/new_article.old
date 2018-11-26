@@ -1,0 +1,36 @@
+description = "Вывод на главной популярных статей"
+==
+{% set posts = __SELF__.posts %}
+<div class="widget widget__post">
+    <div class="list-posts">
+<h3>Последние статьи</h3>
+{% for post in posts %}
+<div class="post">
+								<header class="post__header">
+									<figure class="post__figure post__figure--small press--left">
+										<a href="{{ post.url }}"><img alt="" src="{{ post.featured_images.first.getThumb(70,69,'crop') }}"></a>
+									</figure>
+									<div>
+										<h4 class="post__title">
+											<a href="{{ post.url }}">{{ post.title }}</a>
+										</h4>
+									</div>
+								</header>
+								<div class="post__text">
+								{{ html_strip(post.summary) |slice(0,100) }}...
+								<a href="{{ post.url }}">Читать полностью...</a>
+								</div>
+								<footer class="post__footer">
+									<div class="btn__group">
+										{% for tag in post.tags %}
+                                        <a class="btn" href="/articles/tags/{{tag.slug}}">{{ tag.name }}</a>
+                                         {% endfor %}
+									</div>
+								</footer>
+							</div><!--.post-->
+{% endfor %}
+    </div>
+    <div class="redirect-link">
+        <a href="{{ 'articles/articles-list'|page }}">Перейти в раздел статей</a>
+    </div>
+</div><!--.widget__post-->

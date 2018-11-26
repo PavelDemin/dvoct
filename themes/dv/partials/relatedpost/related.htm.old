@@ -1,0 +1,44 @@
+description = "Похожие материалы"
+==
+<?php
+function onStart()
+{
+    $this[ 'noPostsMessage'] = "Нет похожих материалов!";
+}
+?>
+==
+{% set posts = __SELF__.posts %}
+
+{% for post in posts %}
+
+                        <div class="timeline-post__item">
+								<div class="timeline-post__item__header">
+									<figure class="timeline-post__item__figure">
+										<a href="{{ post.url }}"><img alt="" src="{{ post.featured_images.first.getThumb(65, 65, 'crop') }}"></a>
+									</figure>
+									<div class="timeline-post__item__info">
+										<div class="post__date">
+											{{ post.published_at|date('d.m.Y') }}
+										</div>
+										<div class="autor__name">
+								    	Добавил: {{ post.user.full_name }}
+								        </div>
+										<!--<div class="rating-autor">
+											<div class="rating-autor__title">Рейтинг:</div>		
+											<div class="rating-stars--autor">
+								                <input type="hidden" value="2"/>
+								                <input type="hidden" value="2"/>
+								                <input type="hidden" value="2"/>
+								                <input type="hidden" value="2"/>
+								                <input type="hidden" value="2"/>
+								            </div>
+										</div>-->
+									</div>
+								</div>
+								<h4 class="post__title ">
+									<a href="{{ post.slug }}">{{ post.title }}</a>
+								</h4>
+							</div>
+{% else %}
+        <p>{{ noPostsMessage }}</p>
+{% endfor %}

@@ -1,0 +1,42 @@
+title = "Поиск по тегам"
+url = "/articles/tags/:slug/:page?"
+layout = "default"
+description = "Поиск постов по тегам"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[searchPosts tag]
+slug = "{{ :slug }}"
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+postPage = "articles/article-post"
+sortOrder = "published_at desc"
+
+[blogCategories category_menu]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "articles/articles-category"
+
+[popularPosts]
+postsLimit = 5
+==
+
+function onEnd() {
+$this['tags'] = DB::table('rahman_blogtags_tags')->select('name')->where('slug',$this->param('slug'))->get();
+foreach ($this['tags'] as $k => $v) {
+$this->layout->components['SeoCmsPage']->seo_title = "Статьи на тему &laquo;" .$v->name. "&raquo;";
+}
+}
+
+==
+<div class="col-md-3">
+    {% component 'category_menu' %}
+    {% component 'popularPosts' %}
+</div>
+<div class="col-md-9">
+    {% for tag in tags %}
+    <h3 class="section-title">Статьи на тему "{{tag.name}}"</h3>
+    {% endfor %}
+    {% component 'tag::search-tag' %}
+</div>

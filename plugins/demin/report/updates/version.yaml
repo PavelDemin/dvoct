@@ -1,0 +1,4 @@
+1.0.1: First version of report
+1.0.2:
+  - Run table migrations
+  - create_post_reports_table.php

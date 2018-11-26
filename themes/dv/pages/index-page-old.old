@@ -1,0 +1,91 @@
+title = "Главная"
+url = "/"
+layout = "default"
+description = "Главная страница сайта"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ReportSlider slider]
+
+[VideoList video]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "Нет видео"
+sortOrder = "published_at desc"
+postPage = "video/video-post"
+
+[ReportList report]
+pageNumber = "{{ :page }}"
+postsPerPage = 9
+noPostsMessage = "Нет отчетов"
+sortOrder = "published_at desc"
+postPage = "reports/report-post"
+
+[blogPosts article]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "articles/articles-category"
+postPage = "articles/article-post"
+==
+<?php
+function onEnd()
+{
+    $this->layout->components['SeoCmsPage']->seo_title = "Рыбалка в Хабаровском крае, рыбалка на Амуре, горная рыбалка, рыболовные отчеты, ловля хариуса, ловля тайменя";
+}
+?>
+==
+<div class="sidebar press--left">
+	{% component 'article::new_article' %}
+
+
+</div><!--.sidebar-->
+
+<div class="main-content press--right">
+	<div class="clearfix">
+		<div class="timeline press--left">
+			<div class="b-slider">
+				<div class="clearfix">
+					<h3 class="press--left">Лучшие рыболовные отчеты</h3>
+					<div class="redirect-link press--right">
+						<a href="{{'reports/report-list'|page}}">Перейти в раздел отчетов</a>
+					</div>
+				</div>
+				<div class="slider__items">
+					<ul id="out-of-the-box-demo">
+						{% component 'slider::slider' %}
+					</ul>
+				</div>
+				<div class="slider-control">
+					<a href="#" class="slider--prev"></a>
+					<a href="#" class="slider--next"></a>
+				</div>
+			</div><!--.b-slider-->
+
+			<h3>Отчеты о рыбалке</h3>
+			<div class="list-posts">
+				{% component 'report::index' %}
+			</div><!--.list-posts-->
+			<div class="redirect-link">
+				<a href="{{'reports/report-list'|page}}">Перейти в раздел отчетов</a>
+			</div>
+		</div><!--.timeline-->
+		<div class="sidebar press--right">
+
+			<div class="widget widget__post">
+				<h3>Видео обзоры</h3>
+				<div class="list-posts">
+					{% component 'video::new' %}
+				</div>
+				<div class="redirect-link">
+					<a href="{{ 'video' }}">Перейти в раздел видео</a>
+				</div>
+			</div>
+			{% partial "widget_cloud_tag" %}
+		</div><!--.sidebar-->
+
+	</div>
+
+</div><!--.main-content-->
