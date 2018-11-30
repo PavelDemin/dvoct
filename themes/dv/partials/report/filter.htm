@@ -1,0 +1,10 @@
+description = "Фильтр отчетов"
+==
+<h3 class="section-title">Фильтровать</h3>
+<div class="block">
+    {{ form_ajax('onSave', { class: 'form-horizontal'}) }}
+    <label for="typeCatching">Тип ловли:</label>
+    <select id="typeCatching" name="typeCatching">
+        <option></option>
+    {{ form_close() }}
+</div>

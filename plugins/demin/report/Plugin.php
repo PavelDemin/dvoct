@@ -85,7 +85,11 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-list-alt',
                         'url'         => \Backend::url('demin/report/postreport'),
                     ],
-
+                    'typecatching' => [
+                        'label'       => 'Способы ловли',
+                        'icon'        => 'icon-list-alt',
+                        'url'         => \Backend::url('demin/report/typecatching'),
+                    ],
 
                 ]
             ],

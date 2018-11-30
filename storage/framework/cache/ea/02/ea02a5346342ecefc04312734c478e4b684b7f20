@@ -1,9 +1,7 @@
-1543183874a:1:{s:15:"report/list.htm";a:6:{s:8:"fileName";s:15:"report/list.htm";s:7:"content";s:2303:"description = "Список отчетов"
+1543494221a:1:{s:15:"report/list.htm";a:6:{s:8:"fileName";s:15:"report/list.htm";s:7:"content";s:2189:"description = "Список отчетов"
 ==
 {% set reports = __SELF__.posts %}
 <div class="block-list">
-    <button data-request-update="{{ __SELF__ }}::onDescReports : '#myDiv'">Go</button>
-    <div id="myDiv"></div>
 {% for report in reports %}
     <div class="block-list__item">
         <article class="block">
@@ -46,10 +44,8 @@
         <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage+1) }) }}">Далее</a>
         {% endif %}
     </ul>
-    {% endif %}";s:5:"mtime";i:1543183260;s:6:"markup";s:2256:"{% set reports = __SELF__.posts %}
+    {% endif %}";s:5:"mtime";i:1543434340;s:6:"markup";s:2142:"{% set reports = __SELF__.posts %}
 <div class="block-list">
-    <button data-request-update="{{ __SELF__ }}::onDescReports : '#myDiv'">Go</button>
-    <div id="myDiv"></div>
 {% for report in reports %}
     <div class="block-list__item">
         <article class="block">

@@ -23,39 +23,34 @@ class __TwigTemplate_66c49080474f831cf7268265f45912fff7dfe6319fa3e909b09c55b39e6
         $context["reports"] = twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "posts", array());
         // line 2
         echo "<div class=\"block-list\">
-    <button data-request-update=\"";
-        // line 3
-        echo twig_escape_filter($this->env, ($context["__SELF__"] ?? null), "html", null, true);
-        echo "::onDescReports : '#myDiv'\">Go</button>
-    <div id=\"myDiv\"></div>
 ";
-        // line 5
+        // line 3
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["reports"] ?? null));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["report"]) {
-            // line 6
+            // line 4
             echo "    <div class=\"block-list__item\">
         <article class=\"block\">
             <header class=\"block__header\">
                 <img class=\"block__image\" src=\"";
-            // line 9
+            // line 7
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["report"], "image", array()), "getThumb", array(0 => 230, 1 => 150, 2 => "crop"), "method"), "html", null, true);
             echo "\"></a>
                 <h2 class=\"block__title\"><a class=\"block__link\" href=\"";
-            // line 10
+            // line 8
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("reports/report-post", array("slug" => twig_get_attribute($this->env, $this->source, $context["report"], "slug", array())));
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["report"], "title", array()), "html", null, true);
             echo "</a></h2>
                 <div class=\"block__text\">";
-            // line 11
+            // line 9
             echo call_user_func_array($this->env->getFunction('substr')->getCallable(), array(twig_get_attribute($this->env, $this->source, $context["report"], "content", array()), 200, "..."));
             echo "</div>
             </header>
             <div class=\"block-info\">
                 <div class=\"block-info__date\">";
-            // line 14
+            // line 12
             echo call_user_func_array($this->env->getFilter('rudate')->getCallable(), array(twig_get_attribute($this->env, $this->source, $context["report"], "published_at", array()), "%e %BP, %Y"));
             echo "</div>
                 <div class=\"block-info__view\"><i class=\"icon-eye\"></i><span class=\"block-info__text\">12588</span></div>
@@ -71,7 +66,7 @@ class __TwigTemplate_66c49080474f831cf7268265f45912fff7dfe6319fa3e909b09c55b39e6
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 25
+            // line 23
             echo "    <p>";
             echo twig_escape_filter($this->env, ($context["noPostsMessage"] ?? null), "html", null, true);
             echo "</p>
@@ -80,39 +75,39 @@ class __TwigTemplate_66c49080474f831cf7268265f45912fff7dfe6319fa3e909b09c55b39e6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['report'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 25
         echo "</div>
 
     ";
-        // line 29
+        // line 27
         if ((twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "lastPage", array()) > 1)) {
-            // line 30
+            // line 28
             echo "    <ul class=\"pagination\">
         ";
-            // line 31
+            // line 29
             if ((twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "currentPage", array()) > 1)) {
-                // line 32
+                // line 30
                 echo "        <a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", array()), "baseFileName", array()), array(($context["pageParam"] ?? null) => (twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "currentPage", array()) - 1)));
                 echo "\">Назад</a>
         <li>...</li>
         ";
             }
-            // line 35
+            // line 33
             echo "        ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "lastPage", array())));
             foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-                // line 36
+                // line 34
                 echo "        ";
                 if ((twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "currentPage", array()) == $context["page"])) {
-                    // line 37
+                    // line 35
                     echo "        <li class=\"active\">";
                     echo twig_escape_filter($this->env, $context["page"], "html", null, true);
                     echo "</li>
         ";
                 } else {
-                    // line 39
+                    // line 37
                     echo "        <a href=\"";
                     echo $this->extensions['Cms\Twig\Extension']->pageFilter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", array()), "baseFileName", array()), array(($context["pageParam"] ?? null) => $context["page"]));
                     echo "\">";
@@ -120,24 +115,24 @@ class __TwigTemplate_66c49080474f831cf7268265f45912fff7dfe6319fa3e909b09c55b39e6
                     echo "</a>
         ";
                 }
-                // line 41
+                // line 39
                 echo "        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 42
+            // line 40
             echo "        ";
             if ((twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "lastPage", array()) > twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "currentPage", array()))) {
-                // line 43
+                // line 41
                 echo "        <li>...</li>
         <a href=\"";
-                // line 44
+                // line 42
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", array()), "baseFileName", array()), array(($context["pageParam"] ?? null) => (twig_get_attribute($this->env, $this->source, ($context["reports"] ?? null), "currentPage", array()) + 1)));
                 echo "\">Далее</a>
         ";
             }
-            // line 46
+            // line 44
             echo "    </ul>
     ";
         }
@@ -155,15 +150,13 @@ class __TwigTemplate_66c49080474f831cf7268265f45912fff7dfe6319fa3e909b09c55b39e6
 
     public function getDebugInfo()
     {
-        return array (  141 => 46,  136 => 44,  133 => 43,  130 => 42,  124 => 41,  116 => 39,  110 => 37,  107 => 36,  102 => 35,  95 => 32,  93 => 31,  90 => 30,  88 => 29,  84 => 27,  75 => 25,  59 => 14,  53 => 11,  47 => 10,  43 => 9,  38 => 6,  33 => 5,  28 => 3,  25 => 2,  23 => 1,);
+        return array (  136 => 44,  131 => 42,  128 => 41,  125 => 40,  119 => 39,  111 => 37,  105 => 35,  102 => 34,  97 => 33,  90 => 30,  88 => 29,  85 => 28,  83 => 27,  79 => 25,  70 => 23,  54 => 12,  48 => 9,  42 => 8,  38 => 7,  33 => 4,  28 => 3,  25 => 2,  23 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% set reports = __SELF__.posts %}
 <div class=\"block-list\">
-    <button data-request-update=\"{{ __SELF__ }}::onDescReports : '#myDiv'\">Go</button>
-    <div id=\"myDiv\"></div>
 {% for report in reports %}
     <div class=\"block-list__item\">
         <article class=\"block\">

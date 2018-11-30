@@ -74,12 +74,6 @@ class ReportList extends ComponentBase
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
 
-    public function onDescReports() {
-        return [
-            '#myDiv' => $this->renderPartial('test')
-        ];
-    }
-
     public function onRun()
     {
         $this->prepareVars();

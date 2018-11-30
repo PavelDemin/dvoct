@@ -1,0 +1,8 @@
+type-catching:
+    label: Виды ловли
+    view:
+        list: $/demin/report/models/typecatching/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/demin/report/models/typecatching/fields.yaml
+        recordsPerPage: 10

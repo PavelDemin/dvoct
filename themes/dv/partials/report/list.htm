@@ -2,8 +2,6 @@ description = "Список отчетов"
 ==
 {% set reports = __SELF__.posts %}
 <div class="block-list">
-    <button data-request-update="{{ __SELF__ }}::onDescReports : '#myDiv'">Go</button>
-    <div id="myDiv"></div>
 {% for report in reports %}
     <div class="block-list__item">
         <article class="block">

@@ -1,4 +1,4 @@
-1543183874a:1:{s:24:"popularPosts/default.htm";a:6:{s:8:"fileName";s:24:"popularPosts/default.htm";s:7:"content";s:1169:"description = "Виждет популярных статей"
+1543525561a:1:{s:24:"popularPosts/default.htm";a:6:{s:8:"fileName";s:24:"popularPosts/default.htm";s:7:"content";s:1169:"description = "Виждет популярных статей"
 ==
 {% set posts = __SELF__.posts %}
 <h3 class="section-title">Популярные статьи</h3>

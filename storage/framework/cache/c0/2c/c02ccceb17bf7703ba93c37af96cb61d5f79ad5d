@@ -1,4 +1,4 @@
-1543183874a:1:{s:25:"articles/article-post.htm";a:16:{s:8:"fileName";s:25:"articles/article-post.htm";s:7:"content";s:998:"title = "Статья"
+1543525561a:1:{s:25:"articles/article-post.htm";a:16:{s:8:"fileName";s:25:"articles/article-post.htm";s:7:"content";s:998:"title = "Статья"
 url = "/articles/post/:slug"
 layout = "default"
 is_hidden = 0

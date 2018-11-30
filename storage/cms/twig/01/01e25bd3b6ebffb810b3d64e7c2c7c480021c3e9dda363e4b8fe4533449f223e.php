@@ -24,18 +24,23 @@ class __TwigTemplate_954dbae481dcdc33005b1b09b154c0891d8f1063353be97449833b2dc2d
     ";
         // line 2
         $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("popularPosts"        , $context['__cms_component_params']        );
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("report::filter"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
         // line 3
+        echo "    ";
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("popularPosts"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
+        // line 4
         echo "</div>
 <div class=\"col-md-9\">
     <h3 class=\"section-title\">Рыболовные отчеты</h3>
     ";
-        // line 6
+        // line 7
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("report::list"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 7
+        // line 8
         echo "</div>";
     }
 
@@ -51,12 +56,13 @@ class __TwigTemplate_954dbae481dcdc33005b1b09b154c0891d8f1063353be97449833b2dc2d
 
     public function getDebugInfo()
     {
-        return array (  39 => 7,  35 => 6,  30 => 3,  26 => 2,  23 => 1,);
+        return array (  44 => 8,  40 => 7,  35 => 4,  30 => 3,  26 => 2,  23 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("<div class=\"col-md-3\">
+    {% component 'report::filter' %}
     {% component 'popularPosts' %}
 </div>
 <div class=\"col-md-9\">

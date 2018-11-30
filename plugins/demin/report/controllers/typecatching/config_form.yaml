@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Type Catching
+
+# Model Form Field configuration
+form: $/demin/report/models/typecatching/fields.yaml
+
+# Model Class name
+modelClass: Demin\Report\Models\TypeCatching
+
+# Default redirect location
+defaultRedirect: demin/report/typecatching
+
+# Create page
+create:
+    title: Create Type Catching
+    redirect: demin/report/typecatching/update/:id
+    redirectClose: demin/report/typecatching
+
+# Update page
+update:
+    title: Edit Type Catching
+    redirect: demin/report/typecatching
+    redirectClose: demin/report/typecatching
+
+# Preview page
+preview:
+    title: Preview Type Catching

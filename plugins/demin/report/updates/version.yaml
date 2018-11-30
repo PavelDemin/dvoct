@@ -1,4 +1,13 @@
-1.0.1: First version of report
+1.0.1: 'First version of report'
 1.0.2:
-  - Run table migrations
-  - create_post_reports_table.php
+    - 'Run table migrations'
+    - create_post_reports_table.php
+1.0.3:
+    - 'Run table migrations'
+    - create_type_catching_table.php
+1.0.4:
+    - 'Drop table demin_report_post_reports_type_catching'
+    - builder_table_delete_demin_report_post_reports_type_catching.php
+1.0.5:
+    - 'Create table demin_report_post_reports_type_catching'
+    - builder_table_create_demin_report_post_reports_type_catching.php

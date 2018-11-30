@@ -1,4 +1,4 @@
-1543152999a:1:{s:31:"article/last_articles_block.htm";a:6:{s:8:"fileName";s:31:"article/last_articles_block.htm";s:7:"content";s:1060:"description = "Вывод на главной последних статей"
+1543524152a:1:{s:31:"article/last_articles_block.htm";a:6:{s:8:"fileName";s:31:"article/last_articles_block.htm";s:7:"content";s:1060:"description = "Вывод на главной последних статей"
 ==
 {% set posts = __SELF__.posts %}
 <h3 class="section-title">Последние статьи</h3>

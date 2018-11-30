@@ -1,4 +1,4 @@
-1543183874a:1:{s:23:"reports/report-list.htm";a:14:{s:8:"fileName";s:23:"reports/report-list.htm";s:7:"content";s:705:"title = "Рыболовные отчеты"
+1543525561a:1:{s:23:"reports/report-list.htm";a:14:{s:8:"fileName";s:23:"reports/report-list.htm";s:7:"content";s:742:"title = "Рыболовные отчеты"
 url = "/reports/:page?|^[0-9]+$"
 layout = "default"
 description = "Страница с рыболовными отчетами"
@@ -19,12 +19,14 @@ noPostsMessage = "No posts found"
 postPage = "articles/article-post"
 ==
 <div class="col-md-3">
+    {% component 'report::filter' %}
     {% component 'popularPosts' %}
 </div>
 <div class="col-md-9">
     <h3 class="section-title">Рыболовные отчеты</h3>
     {% component 'report::list' %}
-</div>";s:5:"mtime";i:1543182188;s:6:"markup";s:198:"<div class="col-md-3">
+</div>";s:5:"mtime";i:1543438247;s:6:"markup";s:235:"<div class="col-md-3">
+    {% component 'report::filter' %}
     {% component 'popularPosts' %}
 </div>
 <div class="col-md-9">

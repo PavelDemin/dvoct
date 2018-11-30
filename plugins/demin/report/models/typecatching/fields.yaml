@@ -1,0 +1,5 @@
+fields:
+    name:
+        label: 'Тип ловли'
+        span: auto
+        type: text

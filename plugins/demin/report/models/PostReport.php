@@ -33,7 +33,12 @@ class PostReport extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [];
-    public $belongsToMany = [];
+    public $belongsToMany = [
+        'type_catching' => [
+            'Demin\Report\Models\TypeCatching',
+            'table' => 'demin_report_post_reports_type_catching'
+        ]
+    ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
