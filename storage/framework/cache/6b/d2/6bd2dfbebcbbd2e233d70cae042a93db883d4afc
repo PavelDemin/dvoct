@@ -1,0 +1,78 @@
+1543679057a:1:{s:11:"default.htm";a:9:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1277:"description = "Основной шаблон сайта"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
+
+[SeoCmsPage]
+==
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <link href="{{ [
+            'assets/libs/slick/slick.css',
+            'assets/libs/bootstrap/bootstrap-grid.min.css',
+            'assets/css/main.css'
+            ]|theme }}" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic">
+    {% styles %}
+    <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+    {% component 'SeoCmsPage' %}
+</head>
+<body>
+{% component 'session' %}
+{% partial "header" %}
+<main class="container">
+    <div class="row">
+        {% page %}
+    </div>
+</main>
+{% partial "footer" %}
+<script src="{{[
+            'assets/libs/jquery/jquery-3.3.1.min.js',
+            'assets/libs/slick/slick.min.js',
+            'assets/js/main.js'
+		    ]|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>";s:5:"mtime";i:1543644870;s:6:"markup";s:1118:"<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <link href="{{ [
+            'assets/libs/slick/slick.css',
+            'assets/libs/bootstrap/bootstrap-grid.min.css',
+            'assets/css/main.css'
+            ]|theme }}" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic">
+    {% styles %}
+    <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+    {% component 'SeoCmsPage' %}
+</head>
+<body>
+{% component 'session' %}
+{% partial "header" %}
+<main class="container">
+    <div class="row">
+        {% page %}
+    </div>
+</main>
+{% partial "footer" %}
+<script src="{{[
+            'assets/libs/jquery/jquery-3.3.1.min.js',
+            'assets/libs/slick/slick.min.js',
+            'assets/js/main.js'
+		    ]|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>";s:4:"code";N;s:11:"description";s:40:"Основной шаблон сайта";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:10:"SeoCmsPage";a:0:{}}}

@@ -1,0 +1,41 @@
+1543679057a:1:{s:18:"news/news-post.htm";a:13:{s:8:"fileName";s:18:"news/news-post.htm";s:7:"content";s:722:"title = "Новости пост"
+url = "/news/post/:slug?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[popularPosts]
+postsLimit = 5
+
+[post news]
+slug = "{{ :slug }}"
+==
+<?php
+function onEnd(){
+// Overwrite for better SEO.
+$this->layout->components['SeoCmsPage']->seo_title = $this->page->components['news']->post->title;
+//$this->layout->components['SeoCmsPage']->seo_description = 'My dynamic description.';
+}
+?>
+==
+<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    {% component 'news::news-post' %}
+</div><!--.main-content-->";s:5:"mtime";i:1543672044;s:6:"markup";s:246:"<div class="sidebar press--right">
+    {% component 'popularPosts' %}
+    {% partial "widget_last_post_forum" %}
+
+</div><!--.sidebar-->
+<div class="main-content press--left">
+    {% component 'news::news-post' %}
+</div><!--.main-content-->";s:4:"code";s:242:"
+function onEnd(){
+// Overwrite for better SEO.
+$this->layout->components['SeoCmsPage']->seo_title = $this->page->components['news']->post->title;
+//$this->layout->components['SeoCmsPage']->seo_description = 'My dynamic description.';
+}";s:5:"title";s:23:"Новости пост";s:3:"url";s:17:"/news/post/:slug?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:12:"popularPosts";a:1:{s:10:"postsLimit";s:1:"5";}s:9:"post news";a:1:{s:4:"slug";s:11:"{{ :slug }}";}}}

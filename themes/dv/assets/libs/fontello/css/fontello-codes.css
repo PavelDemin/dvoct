@@ -1,15 +1,15 @@
 
-.icon-search:before { content: '\e800'; } /* '' */
-.icon-login:before { content: '\e801'; } /* '' */
-.icon-dot-3:before { content: '\e802'; } /* '' */
-.icon-user:before { content: '\e803'; } /* '' */
+.icon-up-big:before { content: '\e800'; } /* '' */
+.icon-down-big:before { content: '\e801'; } /* '' */
+.icon-comment:before { content: '\e802'; } /* '' */
+.icon-eye:before { content: '\e803'; } /* '' */
 .icon-dot:before { content: '\e804'; } /* '' */
-.icon-eye:before { content: '\e805'; } /* '' */
-.icon-comment:before { content: '\e806'; } /* '' */
+.icon-dot-3:before { content: '\e805'; } /* '' */
+.icon-user:before { content: '\e806'; } /* '' */
+.icon-login:before { content: '\e807'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
 .icon-angle-circled-left:before { content: '\f137'; } /* '' */
 .icon-angle-circled-right:before { content: '\f138'; } /* '' */
-.icon-youtube-play:before { content: '\f16a'; } /* '' */
 .icon-vkontakte:before { content: '\f189'; } /* '' */
 .icon-whatsapp:before { content: '\f232'; } /* '' */
 .icon-window-close:before { content: '\f2d3'; } /* '' */

@@ -365,4 +365,13 @@
   'Backend\\FormWidgets\\RichEditor' => 'modules/backend/formwidgets/RichEditor.php',
   'RainLab\\Builder\\Classes\\DatabaseTableSchemaCreator' => 'plugins/rainlab/builder/classes/DatabaseTableSchemaCreator.php',
   'RainLab\\Builder\\Classes\\TableMigrationCodeGenerator' => 'plugins/rainlab/builder/classes/TableMigrationCodeGenerator.php',
+  'backend\\Controllers\\index' => 'modules/backend/controllers/index.php',
+  'backend\\Controllers\\auth' => 'modules/backend/controllers/auth.php',
+  'rainlab\\builder\\Controllers\\index' => 'plugins/rainlab/builder/controllers/index.php',
+  'system\\Controllers\\eventlogs' => 'modules/system/controllers/eventlogs.php',
+  'cms\\Controllers\\index' => 'modules/cms/controllers/index.php',
+  'system\\Controllers\\settings' => 'modules/system/controllers/settings.php',
+  'Rainlab\\Blog\\Models\\Category' => 'plugins/rainlab/blog/models/Category.php',
+  'Rahman\\Blogtags\\Components\\Tags' => 'plugins/rahman/blogtags/components/Tags.php',
+  'demin\\report\\Controllers\\postreport' => 'plugins/demin/report/controllers/postreport.php',
 );

@@ -1,0 +1,81 @@
+1543679075a:1:{s:26:"widget_last_post_forum.htm";a:6:{s:8:"fileName";s:26:"widget_last_post_forum.htm";s:7:"content";s:1277:"description = "Последние сообщения на форуме"
+==
+<div class="widget widget__forum">
+						<h3>Последнее на форуме</h3>
+						<div class="widget__forum__list">
+							<ul>
+								<li>
+									<a href="#">Болталка</a>
+								</li>
+								<li>
+									<a href="#">Плавсредства. Виды и выбор</a>
+								</li>
+								<li>
+									<a href="#">Одиночные путешествия</a>
+								</li>
+								<li>
+									<a href="#">Вся рыбалка в России станет платной?!</a>
+								</li>
+								<li>
+									<a href="#">Поздравляем!</a>
+								</li>
+								<li>
+									<a href="#">Щука</a>
+								</li>
+								<li>
+									<a href="#">р. Горин</a>
+								</li>
+								<li>
+									<a href="#">Болталка</a>
+								</li>
+								<li>
+									<a href="#">Плавсредства. Виды и выбор</a>
+								</li>
+								<li>
+									<a href="#">Одиночные путешествия</a>
+								</li>
+							</ul>
+						</div>
+						<div class="redirect-link">
+							<a href="#">Перейти в раздел форум</a>
+						</div>
+					</div><!--.widget__forum-->";s:5:"mtime";i:1543644870;s:6:"markup";s:1200:"<div class="widget widget__forum">
+						<h3>Последнее на форуме</h3>
+						<div class="widget__forum__list">
+							<ul>
+								<li>
+									<a href="#">Болталка</a>
+								</li>
+								<li>
+									<a href="#">Плавсредства. Виды и выбор</a>
+								</li>
+								<li>
+									<a href="#">Одиночные путешествия</a>
+								</li>
+								<li>
+									<a href="#">Вся рыбалка в России станет платной?!</a>
+								</li>
+								<li>
+									<a href="#">Поздравляем!</a>
+								</li>
+								<li>
+									<a href="#">Щука</a>
+								</li>
+								<li>
+									<a href="#">р. Горин</a>
+								</li>
+								<li>
+									<a href="#">Болталка</a>
+								</li>
+								<li>
+									<a href="#">Плавсредства. Виды и выбор</a>
+								</li>
+								<li>
+									<a href="#">Одиночные путешествия</a>
+								</li>
+							</ul>
+						</div>
+						<div class="redirect-link">
+							<a href="#">Перейти в раздел форум</a>
+						</div>
+					</div><!--.widget__forum-->";s:4:"code";N;s:11:"description";s:55:"Последние сообщения на форуме";}}

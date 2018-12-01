@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Demin\Report\Models\PostReport;
+use Demin\Report\Models\TypeCatching;
 use Cms\Classes\Page;
 use Redirect;
 
@@ -77,7 +78,7 @@ class ReportList extends ComponentBase
     public function onRun()
     {
         $this->prepareVars();
-
+        
         $this->posts = $this->page['posts'] = $this->listPosts();
 
         if ($pageNumberParam = $this->paramName('pageNumber')) {
@@ -94,6 +95,20 @@ class ReportList extends ComponentBase
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
         $this->noPostsMessage = $this->page['noPostsMessage'] = $this->property('noPostsMessage');
         $this->postPage = $this->page['postPage'] = $this->property('postPage');
+        $this->page['type_catching'] = TypeCatching::all();
+    }
+
+    protected function prepareTypeCatching() {
+        $options = post('Filter', []);
+        $this->posts = $this->page['posts'] = PostReport::listFrontEnd($options);
+        $this->page['sortOptions'] = PostReport::$allowedSortingOptions;
+        
+        
+    }
+
+
+    public function onFilterTypeCatching() {
+        $this->prepareTypeCatching();
     }
 
     protected function listPosts()

@@ -66,6 +66,7 @@ class PostReport extends Model
             'perPage' => 10,
             'sort'    => 'created_at',
             'search'  => '',
+            'type_catching' => null,
             'status'  => 1
         ], $options));
 
@@ -94,6 +95,20 @@ class PostReport extends Model
             }
         }
 
+        if($type_catching !== null) {
+
+            if(!is_array($type_catching)){
+                $type_catching = [$type_catching];
+            }
+
+            foreach ($var as $type_catching){
+                $query->whereHas('TypeCatching', function($q) use ($var){
+                    $q->where('id', '=', $var);
+                });
+            }
+
+        }
+
         $search = trim($search);
         echo $search;
 
@@ -107,6 +122,7 @@ class PostReport extends Model
     public function scopeIsPublished($query) {
         return $query->where('published', 1);
     }
+
 
     public function afterCreate() {
         $vk = new Vkpost();

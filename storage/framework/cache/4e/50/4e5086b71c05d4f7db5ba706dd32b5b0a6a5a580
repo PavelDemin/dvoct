@@ -1,0 +1,91 @@
+1543679059a:1:{s:10:"footer.htm";a:6:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:3410:"description = "Подвал сайта"
+==
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 footer-composition">
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-7">
+                            <nav class="menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="/">Главная</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'reports/report-list'|page }}">Отчеты</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'articles/articles-list'|page }}">Статьи</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'video/video-list'|page }}">Видео</a></li>
+                                </ul>
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="/forum">Форум</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'maps'|page }}">Карта</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'about'|page }}">О портале</a></li>
+                                </ul>
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'adv'|page }}">Реклама на портале</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'contacts'|page }}">Контакты</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-4 offset-md-3 col-sm-5">
+                            <div class="footer-right-block">
+                                <div class="social">
+                                    <div class="social__item"><a class="social__link" href="https://vk.com/club118899369" target="_blank"><i class="icon-vkontakte"></i></a></div>
+                                    <div class="social__item"><a class="social__link" href="https://dv-fishing.ru/forum/viewtopic.php?f=21&t=2626" target="_blank"><i class="icon-whatsapp"></i></a></div>
+                                </div>
+                                <div class="stat"><img src="../assets/image/hit.gif"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="footer-copy"><span>© 2009 - {{"now"|date("Y")}} DV-FISHING.RU &nbsp;</span><span class="footer-copy__hide">Копирование и публикация материалов без активной ссылки на первоисточник запрещены.                                     </span></div>
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1543644870;s:6:"markup";s:3365:"<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 footer-composition">
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-7">
+                            <nav class="menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="/">Главная</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'reports/report-list'|page }}">Отчеты</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'articles/articles-list'|page }}">Статьи</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'video/video-list'|page }}">Видео</a></li>
+                                </ul>
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="/forum">Форум</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'maps'|page }}">Карта</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'about'|page }}">О портале</a></li>
+                                </ul>
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'adv'|page }}">Реклама на портале</a></li>
+                                    <li class="menu-footer__item"><a class="menu-footer__link" href="{{ 'contacts'|page }}">Контакты</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-4 offset-md-3 col-sm-5">
+                            <div class="footer-right-block">
+                                <div class="social">
+                                    <div class="social__item"><a class="social__link" href="https://vk.com/club118899369" target="_blank"><i class="icon-vkontakte"></i></a></div>
+                                    <div class="social__item"><a class="social__link" href="https://dv-fishing.ru/forum/viewtopic.php?f=21&t=2626" target="_blank"><i class="icon-whatsapp"></i></a></div>
+                                </div>
+                                <div class="stat"><img src="../assets/image/hit.gif"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="footer-copy"><span>© 2009 - {{"now"|date("Y")}} DV-FISHING.RU &nbsp;</span><span class="footer-copy__hide">Копирование и публикация материалов без активной ссылки на первоисточник запрещены.                                     </span></div>
+        </div>
+    </div>
+</div>";s:4:"code";N;s:11:"description";s:23:"Подвал сайта";}}

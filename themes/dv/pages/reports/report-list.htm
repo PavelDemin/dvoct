@@ -6,23 +6,24 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
+[popularPosts]
+category = "{{ :category }}"
+postsLimit = 3
+noPostsMessage = "No posts found"
+postPage = "blog/post"
+
 [ReportList report]
 pageNumber = "{{ :page }}"
-postsPerPage = 12
+postsPerPage = 9
 noPostsMessage = "Нет отчетов"
 sortOrder = "published_at desc"
 postPage = "reports/report-post"
-
-[popularPosts]
-postsLimit = 5
-noPostsMessage = "No posts found"
-postPage = "articles/article-post"
 ==
 <div class="col-md-3">
-    {% component 'report::filter' %}
+		{% partial 'report/filter' %}
     {% component 'popularPosts' %}
 </div>
 <div class="col-md-9">
     <h3 class="section-title">Рыболовные отчеты</h3>
-    {% component 'report::list' %}
+{% component 'report::list' %}
 </div>

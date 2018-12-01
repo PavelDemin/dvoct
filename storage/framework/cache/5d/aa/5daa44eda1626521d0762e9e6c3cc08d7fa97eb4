@@ -1,0 +1,77 @@
+1543679058a:1:{s:15:"report/list.htm";a:6:{s:8:"fileName";s:15:"report/list.htm";s:7:"content";s:1822:"description = "Список отчетов"
+==
+{% set reports = __SELF__.posts %}
+<div class="content-sort">
+    <div class="content-sort__text">Сортировать по: </div>
+    <ul class="content-sort__list">
+        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
+        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
+    </ul>
+</div>
+<div class="block-list" id="blockList">
+{% partial "report/block_list" reports=reports %}
+</div>
+<div class="content-sort">
+    <div class="content-sort__text">Сортировать по: </div>
+    <ul class="content-sort__list">
+        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
+        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
+    </ul>
+</div>
+
+    {% if reports.lastPage > 1 %}
+    <ul class="pagination">
+        {% if reports.currentPage > 1 %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage-1) }) }}">Назад</a>
+        <li>...</li>
+        {% endif %}
+        {% for page in 1..reports.lastPage %}
+        {% if reports.currentPage == page %}
+        <li class="pagination-active">{{ page }}</li>
+        {% else %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if reports.lastPage > reports.currentPage %}
+        <li>...</li>
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage+1) }) }}">Далее</a>
+        {% endif %}
+    </ul>
+    {% endif %}";s:5:"mtime";i:1543668326;s:6:"markup";s:1773:"{% set reports = __SELF__.posts %}
+<div class="content-sort">
+    <div class="content-sort__text">Сортировать по: </div>
+    <ul class="content-sort__list">
+        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
+        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
+    </ul>
+</div>
+<div class="block-list" id="blockList">
+{% partial "report/block_list" reports=reports %}
+</div>
+<div class="content-sort">
+    <div class="content-sort__text">Сортировать по: </div>
+    <ul class="content-sort__list">
+        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
+        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
+    </ul>
+</div>
+
+    {% if reports.lastPage > 1 %}
+    <ul class="pagination">
+        {% if reports.currentPage > 1 %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage-1) }) }}">Назад</a>
+        <li>...</li>
+        {% endif %}
+        {% for page in 1..reports.lastPage %}
+        {% if reports.currentPage == page %}
+        <li class="pagination-active">{{ page }}</li>
+        {% else %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if reports.lastPage > reports.currentPage %}
+        <li>...</li>
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (reports.currentPage+1) }) }}">Далее</a>
+        {% endif %}
+    </ul>
+    {% endif %}";s:4:"code";N;s:11:"description";s:27:"Список отчетов";}}

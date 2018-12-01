@@ -1,29 +1,22 @@
 description = "Список отчетов"
 ==
 {% set reports = __SELF__.posts %}
-<div class="block-list">
-{% for report in reports %}
-    <div class="block-list__item">
-        <article class="block">
-            <header class="block__header">
-                <img class="block__image" src="{{ report.image.getThumb(230,150,'crop') }}"></a>
-                <h2 class="block__title"><a class="block__link" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">{{report.title }}</a></h2>
-                <div class="block__text">{{ substr(report.content,200,'...') }}</div>
-            </header>
-            <div class="block-info">
-                <div class="block-info__date">{{ report.published_at|rudate("%e %BP, %Y") }}</div>
-                <div class="block-info__view"><i class="icon-eye"></i><span class="block-info__text">12588</span></div>
-                <div class="block-info__comment"><a class="block-info__link" href="#"><i class="icon-comment"></i><span class="block-info__text">12588</span></a></div>
-            </div>
-            <footer class="block-footer">
-                <div class="block__share">Поделиться статьей:</div>
-                <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,whatsapp"></div>
-            </footer>
-        </article>
-    </div>
-    {% else %}
-    <p>{{ noPostsMessage }}</p>
-    {% endfor %}
+<div class="content-sort">
+    <div class="content-sort__text">Сортировать по: </div>
+    <ul class="content-sort__list">
+        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
+        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
+    </ul>
+</div>
+<div class="block-list" id="blockList">
+{% partial "report/block_list" reports=reports %}
+</div>
+<div class="content-sort">
+    <div class="content-sort__text">Сортировать по: </div>
+    <ul class="content-sort__list">
+        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
+        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
+    </ul>
 </div>
 
     {% if reports.lastPage > 1 %}
@@ -34,7 +27,7 @@ description = "Список отчетов"
         {% endif %}
         {% for page in 1..reports.lastPage %}
         {% if reports.currentPage == page %}
-        <li class="active">{{ page }}</li>
+        <li class="pagination-active">{{ page }}</li>
         {% else %}
         <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
         {% endif %}

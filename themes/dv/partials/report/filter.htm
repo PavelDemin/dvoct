@@ -1,10 +1,14 @@
-description = "Фильтр отчетов"
+description = "Demo partial"
 ==
 <h3 class="section-title">Фильтровать</h3>
 <div class="block">
-    {{ form_ajax('onSave', { class: 'form-horizontal'}) }}
-    <label for="typeCatching">Тип ловли:</label>
+    {{ form_ajax('onFilterTypeCatching', { class: 'FilterTypeCatching', update: { 'report/block_list': '#blockList' } }) }}
+    <label for="typeCatching">Вид ловли:</label>
     <select id="typeCatching" name="typeCatching">
-        <option></option>
+    	<option value="">Все виды</option>
+    	{% for var in type_catching %}
+        <option value="{{var.id}}">{{var.name}}</option>
+     {% endfor %}
+    </select> 
     {{ form_close() }}
 </div>
