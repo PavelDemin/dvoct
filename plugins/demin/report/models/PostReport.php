@@ -101,8 +101,8 @@ class PostReport extends Model
                 $type_catching = [$type_catching];
             }
 
-            foreach ($var as $type_catching){
-                $query->whereHas('TypeCatching', function($q) use ($var){
+            foreach ($type_catching as $var){
+                $query->whereHas('type_catching', function($q) use ($var){
                     $q->where('id', '=', $var);
                 });
             }

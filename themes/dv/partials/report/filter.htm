@@ -4,7 +4,7 @@ description = "Demo partial"
 <div class="block">
     {{ form_ajax('onFilterTypeCatching', { class: 'FilterTypeCatching', update: { 'report/block_list': '#blockList' } }) }}
     <label for="typeCatching">Вид ловли:</label>
-    <select id="typeCatching" name="typeCatching">
+    <select id="typeCatching" name="Filter[type_catching][]" >
     	<option value="">Все виды</option>
     	{% for var in type_catching %}
         <option value="{{var.id}}">{{var.name}}</option>

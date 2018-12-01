@@ -1,0 +1,25 @@
+1543680762a:1:{s:17:"slider/slider.htm";a:6:{s:8:"fileName";s:17:"slider/slider.htm";s:7:"content";s:792:"description = "Отчеты в слайдере"
+==
+{% set reports = __SELF__.rs %}
+<div class="slider">
+    <div class="slider__nav slider__nav-prev"><i class="icon-angle-circled-left"></i></div>
+    <div class="slider__nav slider__nav-next"><i class="icon-angle-circled-right"></i></div>
+    <div class="slider__dots">  </div>
+    <ul class="slider__list">
+{% for report in reports %}
+        <li class="slider__item"><img class="slider__image" src="{{ report.image.getThumb(622,260, 'crop') }}"><a class="slider-dropdown" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">
+            <h2 class="slider-dropdown__title">{{ report.title }}</h2><span class="slider-dropdown__desc">{{ substr(report.content,220,'...') }}</span></a></li>
+{% endfor %}
+    </ul>
+</div>";s:5:"mtime";i:1543644870;s:6:"markup";s:738:"{% set reports = __SELF__.rs %}
+<div class="slider">
+    <div class="slider__nav slider__nav-prev"><i class="icon-angle-circled-left"></i></div>
+    <div class="slider__nav slider__nav-next"><i class="icon-angle-circled-right"></i></div>
+    <div class="slider__dots">  </div>
+    <ul class="slider__list">
+{% for report in reports %}
+        <li class="slider__item"><img class="slider__image" src="{{ report.image.getThumb(622,260, 'crop') }}"><a class="slider-dropdown" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">
+            <h2 class="slider-dropdown__title">{{ report.title }}</h2><span class="slider-dropdown__desc">{{ substr(report.content,220,'...') }}</span></a></li>
+{% endfor %}
+    </ul>
+</div>";s:4:"code";N;s:11:"description";s:32:"Отчеты в слайдере";}}

@@ -100,7 +100,7 @@ class ReportList extends ComponentBase
 
     protected function prepareTypeCatching() {
         $options = post('Filter', []);
-        $this->posts = $this->page['posts'] = PostReport::listFrontEnd($options);
+        $this->reports = $this->page['reports'] = PostReport::listFrontEnd($options);
         $this->page['sortOptions'] = PostReport::$allowedSortingOptions;
         
         
