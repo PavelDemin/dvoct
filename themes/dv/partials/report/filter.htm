@@ -2,9 +2,9 @@ description = "Demo partial"
 ==
 <h3 class="section-title">Фильтровать</h3>
 <div class="block">
-    {{ form_ajax('onFilterTypeCatching', { class: 'FilterTypeCatching', update: { 'report/block_list': '#blockList' } }) }}
+    {{ form_ajax('onFilterTypeCatching', { class: 'FilterTypeCatching', update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' } }) }}
     <label for="typeCatching">Вид ловли:</label>
-    <select id="typeCatching" name="Filter[type_catching][]" >
+    <select id="typeCatching" name="Filter[type_catching]" >
     	<option value="">Все виды</option>
     	{% for var in type_catching %}
         <option value="{{var.id}}">{{var.name}}</option>

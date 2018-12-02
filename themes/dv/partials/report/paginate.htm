@@ -1,0 +1,19 @@
+ {% if reports.lastPage > 1 %}
+    <ul class="pagination">
+        {% if reports.currentPage > 1 %}
+            <a href="{{reports.currentPage-1}}">Назад</a>
+            <li>...</li>
+        {% endif %}
+        {% for page in 1..reports.lastPage %}
+            {% if reports.currentPage == page %}
+                <li class="pagination-active">{{ page }}</li>
+            {% else %}
+                <a href="{{ reports.currentPage }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if reports.lastPage > reports.currentPage %}
+            <li>...</li>
+            <a href="{{reports.currentPage+1}}">Далее</a>
+        {% endif %}
+    </ul>
+    {% endif %}

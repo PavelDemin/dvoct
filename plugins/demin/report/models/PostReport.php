@@ -59,14 +59,14 @@ class PostReport extends Model
 
     ];
 
-    public function scopeListFrontEnd($query, $options)
+    public function scopeListFrontEnd($query, $options = [])
     {
         extract(array_merge([
             'page'    => 1,
-            'perPage' => 10,
-            'sort'    => 'created_at',
+            'perPage' => 9,
+            'sort'    => 'published_at desc',
             'search'  => '',
-            'type_catching' => null,
+            'type_catching' => "",
             'status'  => 1
         ], $options));
 
@@ -95,8 +95,7 @@ class PostReport extends Model
             }
         }
 
-        if($type_catching !== null) {
-
+        if(!empty($type_catching)) {
             if(!is_array($type_catching)){
                 $type_catching = [$type_catching];
             }
@@ -116,6 +115,12 @@ class PostReport extends Model
             $query->searchWhere($search, $searchableFields);
         }
 
+        $lastPage = $query->paginate($perPage, $page)->lastPage();
+
+        if($lastPage < $page){
+            $page = 1;
+        }
+
         return $query->paginate($perPage, $page);
     }
 
@@ -124,13 +129,13 @@ class PostReport extends Model
     }
 
 
-    public function afterCreate() {
+   /* public function afterCreate() {
         $vk = new Vkpost();
         $vk->title = $this->title;
         $vk->url = "http://dv.loc/report/" . $this->slug;
         $vk->content = $this->content;
         $vk->save();
 
-    }
+    }*/
 
 }

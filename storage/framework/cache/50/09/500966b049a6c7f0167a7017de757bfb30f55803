@@ -1,4 +1,4 @@
-1543680762a:1:{s:16:"report/index.htm";a:6:{s:8:"fileName";s:16:"report/index.htm";s:7:"content";s:1519:"description = "Список отчетов на главной странице"
+1543766889a:1:{s:16:"report/index.htm";a:6:{s:8:"fileName";s:16:"report/index.htm";s:7:"content";s:1519:"description = "Список отчетов на главной странице"
 ==
 {% set reports = __SELF__.posts %}
 <h3><a class="section-title" href="#">Последние отчеты</a></h3>

@@ -1,4 +1,4 @@
-1543680762a:1:{s:26:"video/last_video_block.htm";a:6:{s:8:"fileName";s:26:"video/last_video_block.htm";s:7:"content";s:728:"description = "Список видео на главной"
+1543766889a:1:{s:26:"video/last_video_block.htm";a:6:{s:8:"fileName";s:26:"video/last_video_block.htm";s:7:"content";s:728:"description = "Список видео на главной"
 ==
 {% set videos = __SELF__.videos %}
 <h3><a class="section-title" href="#">Видео обзоры</a></h3>

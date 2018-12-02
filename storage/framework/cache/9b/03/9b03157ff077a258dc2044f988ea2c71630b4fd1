@@ -1,4 +1,4 @@
-1543680763a:1:{s:13:"tag/cloud.htm";a:6:{s:8:"fileName";s:13:"tag/cloud.htm";s:7:"content";s:233:"description = "Облако тегов"
+1543766889a:1:{s:13:"tag/cloud.htm";a:6:{s:8:"fileName";s:13:"tag/cloud.htm";s:7:"content";s:233:"description = "Облако тегов"
 ==
 {% set tags = __SELF__.tags %}
 {% for tag in tags %}

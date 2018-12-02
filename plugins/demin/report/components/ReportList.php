@@ -36,7 +36,7 @@ class ReportList extends ComponentBase
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'Недопустимый Формат. Ожидаемый тип данных - действительное число.',
-                'default'           => '10'
+                'default'           => '9'
             ],
             'noPostsMessage' => [
                 'title'             => 'Нет отчетов',
@@ -78,40 +78,47 @@ class ReportList extends ComponentBase
     public function onRun()
     {
         $this->prepareVars();
-        
-        $this->posts = $this->page['posts'] = $this->listPosts();
+        $this->prepareTypeCatching();
 
-        if ($pageNumberParam = $this->paramName('pageNumber')) {
+ /*       if ($pageNumberParam = $this->paramName('pageNumber')) {
             $currentPage = $this->property('pageNumber');
 
-            if ($currentPage > ($lastPage = $this->posts->lastPage()) && $currentPage > 1) {
+            if ($currentPage > ($lastPage = $this->page['posts']->lastPage()) && $currentPage > 1) {
                 return Redirect::to($this->currentPageUrl([$pageNumberParam => $lastPage]));
             }
-        }
+        }*/
     }
 
     protected function prepareVars()
     {
-        $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
-        $this->noPostsMessage = $this->page['noPostsMessage'] = $this->property('noPostsMessage');
-        $this->postPage = $this->page['postPage'] = $this->property('postPage');
-        $this->page['type_catching'] = TypeCatching::all();
+      $this->page['pageParam'] = $this->paramName('pageNumber');
+      //$this->page['noPostsMessage'] = $this->property('noPostsMessage');
+      $this->page['postPage'] = $this->property('postPage');
+       // $this->page['reports'] = $this->listPosts();
+        $params = [
+            'page'    => $this->property('pageNumber'),
+            'sort'    => $this->property('sortOrder'),
+            'perPage' => $this->property('postsPerPage')
+        ];
+        //$postOptions = post('Filter', []);
+        $options = array_merge($params,post('Filter', []));
+        $this->page['reports'] = PostReport::listFrontEnd($options);
+        $this->page['sortOptions'] = PostReport::$allowedSortingOptions;
+        $this->page['pages'] = $this->page['reports']->lastPage();
+        $this->page['page'] =$this->page['reports']->currentPage();
     }
 
     protected function prepareTypeCatching() {
-        $options = post('Filter', []);
-        $this->reports = $this->page['reports'] = PostReport::listFrontEnd($options);
-        $this->page['sortOptions'] = PostReport::$allowedSortingOptions;
-        
-        
+        $this->page['type_catching'] = TypeCatching::all();
     }
 
 
     public function onFilterTypeCatching() {
-        $this->prepareTypeCatching();
+        $this->prepareVars();
+       // $this->prepareTypeCatching();
     }
 
-    protected function listPosts()
+ /*   protected function listPosts()
     {
         $posts = PostReport::listFrontEnd([
             'page'    => $this->property('pageNumber'),
@@ -120,5 +127,5 @@ class ReportList extends ComponentBase
         ]);
 
         return $posts;
-    }
+    }*/
 }

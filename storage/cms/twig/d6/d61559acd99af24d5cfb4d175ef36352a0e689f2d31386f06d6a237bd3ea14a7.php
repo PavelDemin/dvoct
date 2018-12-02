@@ -24,10 +24,10 @@ class __TwigTemplate_b9825a37b307bc98018a1e5d68433e6e56a4f4635e86e61439d378b1080
 <div class=\"block\">
     ";
         // line 3
-        echo call_user_func_array($this->env->getFunction('form_ajax')->getCallable(), array("ajax", "onFilterTypeCatching", array("class" => "FilterTypeCatching", "update" => array("report/block_list" => "#blockList"))));
+        echo call_user_func_array($this->env->getFunction('form_ajax')->getCallable(), array("ajax", "onFilterTypeCatching", array("class" => "FilterTypeCatching", "update" => array("report/block_list" => "#blockList", "report/paginate" => "#main-pagination"))));
         echo "
     <label for=\"typeCatching\">Вид ловли:</label>
-    <select id=\"typeCatching\" name=\"Filter[type_catching][]\" >
+    <select id=\"typeCatching\" name=\"Filter[type_catching]\" >
     \t<option value=\"\">Все виды</option>
     \t";
         // line 7
@@ -73,9 +73,9 @@ class __TwigTemplate_b9825a37b307bc98018a1e5d68433e6e56a4f4635e86e61439d378b1080
     {
         return new Twig_Source("<h3 class=\"section-title\">Фильтровать</h3>
 <div class=\"block\">
-    {{ form_ajax('onFilterTypeCatching', { class: 'FilterTypeCatching', update: { 'report/block_list': '#blockList' } }) }}
+    {{ form_ajax('onFilterTypeCatching', { class: 'FilterTypeCatching', update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' } }) }}
     <label for=\"typeCatching\">Вид ловли:</label>
-    <select id=\"typeCatching\" name=\"Filter[type_catching][]\" >
+    <select id=\"typeCatching\" name=\"Filter[type_catching]\" >
     \t<option value=\"\">Все виды</option>
     \t{% for var in type_catching %}
         <option value=\"{{var.id}}\">{{var.name}}</option>

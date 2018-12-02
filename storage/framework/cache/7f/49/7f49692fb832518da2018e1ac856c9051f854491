@@ -1,4 +1,4 @@
-1543681375a:1:{s:20:"video/video-post.htm";a:13:{s:8:"fileName";s:20:"video/video-post.htm";s:7:"content";s:1215:"title = "Видео ролик"
+1543766434a:1:{s:20:"video/video-post.htm";a:13:{s:8:"fileName";s:20:"video/video-post.htm";s:7:"content";s:1215:"title = "Видео ролик"
 url = "/video/:slug|^[a-z0-9\-]+$"
 layout = "default"
 is_hidden = 0

@@ -1,4 +1,4 @@
-1543680762a:1:{s:17:"slider/slider.htm";a:6:{s:8:"fileName";s:17:"slider/slider.htm";s:7:"content";s:792:"description = "Отчеты в слайдере"
+1543766889a:1:{s:17:"slider/slider.htm";a:6:{s:8:"fileName";s:17:"slider/slider.htm";s:7:"content";s:792:"description = "Отчеты в слайдере"
 ==
 {% set reports = __SELF__.rs %}
 <div class="slider">
