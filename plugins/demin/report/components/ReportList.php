@@ -4,7 +4,6 @@ use Cms\Classes\ComponentBase;
 use Demin\Report\Models\PostReport;
 use Demin\Report\Models\TypeCatching;
 use Cms\Classes\Page;
-use Redirect;
 
 class ReportList extends ComponentBase
 {
@@ -13,6 +12,8 @@ class ReportList extends ComponentBase
     public $noPostsMessage;
     public $postPage;
     public $sortOrder;
+
+    protected $options = [];
 
     public function componentDetails()
     {
@@ -91,18 +92,20 @@ class ReportList extends ComponentBase
 
     protected function prepareVars()
     {
-      $this->page['pageParam'] = $this->paramName('pageNumber');
+     // $this->page['pageParam'] = $this->paramName('pageNumber');
       //$this->page['noPostsMessage'] = $this->property('noPostsMessage');
-      $this->page['postPage'] = $this->property('postPage');
+     // $this->page['postPage'] = $this->property('postPage');
        // $this->page['reports'] = $this->listPosts();
-        $params = [
+      /*  $params = [
             'page'    => $this->property('pageNumber'),
             'sort'    => $this->property('sortOrder'),
             'perPage' => $this->property('postsPerPage')
-        ];
+        ];*/
+
+
         //$postOptions = post('Filter', []);
-        $options = array_merge($params,post('Filter', []));
-        $this->page['reports'] = PostReport::listFrontEnd($options);
+        //$options = array_merge($params,post('Filter', []));
+        $this->page['reports'] = PostReport::listFrontEnd($this->prepareOptions());
         $this->page['sortOptions'] = PostReport::$allowedSortingOptions;
         $this->page['pages'] = $this->page['reports']->lastPage();
         $this->page['page'] =$this->page['reports']->currentPage();
@@ -116,6 +119,23 @@ class ReportList extends ComponentBase
     public function onFilterTypeCatching() {
         $this->prepareVars();
        // $this->prepareTypeCatching();
+    }
+
+    public function prepareOptions() {
+        if(post('page')) {
+            $this->options['page'] = post('page');
+        } else {
+            $this->options['page']  = $this->property('pageNumber');
+        }
+        if(post('type_catching')) {
+            $this->options['type_catching'] = post('type_catching');
+         }
+            //'page'    => $this->property('pageNumber'),
+            $this->options['sort']    = $this->property('sortOrder');
+            $this->options['perPage'] = $this->property('postsPerPage');
+
+        return $this->options = array_merge($this->options,post('Filter', []));
+
     }
 
  /*   protected function listPosts()

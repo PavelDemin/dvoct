@@ -38,39 +38,36 @@ $(document).ready(function(){
         });
     };
 
-     $('.FilterTypeCatching').on('change', 'input, select', function(){
-        var $form = $(this).closest('form');
-        $form.request();
-    });
-
-
-   
-
-     $('#main-pagination').on('click', '.pagination > li > a', function (event) {
-        
-       // reference the href attribute of the list item anchor tag
-        var page = $(this).attr('href');
-
-        event.preventDefault();
-        if ($(this).attr('href') != '#') {
-            $("html, body").animate({scrollTop: 0}, "slow");
-            $.request('onFilterTypeCatching', {
-                data: {page: page},
-
-                // here i separated the movie list and pagination partial
-                update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' }
-            });
-        }
-    });
-
-
-
     searchText();
     openMenuMobile();
     closeMenuMobile();
     //openMenuTablet();
     openSlideDesc();
 
+
+
+
+    $('.FilterTypeCatching').on('change', 'input, select', function(){
+        var $form = $(this).closest('form');
+        $form.request();
+    });
+
+
+
+    $('#main-pagination').on('click', '.pagination > li > a', function (event) {
+
+    // reference the href attribute of the list item anchor tag
+    var page = $(this).attr('href').slice(5);
+    var type_catching = $("#typeCatching option:selected").val();
+    event.preventDefault();
+    if ($(this).attr('href') != '#') {
+        $("html, body").delay(1000).animate({scrollTop: $('#main').offset().top}, "slow");
+        $.request('onFilterTypeCatching', {
+            data: {page: page, type_catching: type_catching},
+            update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' }
+        });
+    }
+    });
 
 });
 

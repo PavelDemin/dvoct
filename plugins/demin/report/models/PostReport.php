@@ -2,7 +2,7 @@
 
 use Model;
 use October\Rain\Support\Facades\Flash;
-use ValidationException;
+use Illuminate\Validation\Validator;
 use Demin\Vkapi\Models\Vkpost;
 use DB;
 

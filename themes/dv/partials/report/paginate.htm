@@ -1,19 +1,25 @@
  {% if reports.lastPage > 1 %}
     <ul class="pagination">
         {% if reports.currentPage > 1 %}
-            <a href="{{reports.currentPage-1}}">Назад</a>
+            <li>
+                <a href="#page{{reports.currentPage-1}}">Назад</a>
+            </li>
             <li>...</li>
         {% endif %}
         {% for page in 1..reports.lastPage %}
             {% if reports.currentPage == page %}
-                <li class="pagination-active">{{ page }}</li>
+               <li class="pagination-active">{{ page }}</li>
             {% else %}
-                <a href="{{ reports.currentPage }}">{{ page }}</a>
+               <li>
+                   <a href="#page{{ page }}">{{ page }}</a>
+               </li>
             {% endif %}
         {% endfor %}
         {% if reports.lastPage > reports.currentPage %}
             <li>...</li>
-            <a href="{{reports.currentPage+1}}">Далее</a>
+            <li>
+                <a href="#page{{reports.currentPage+1}}">Далее</a>
+            </li>
         {% endif %}
     </ul>
     {% endif %}
