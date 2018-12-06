@@ -1,4 +1,4 @@
-1543766436a:1:{s:23:"header_menu/default.htm";a:6:{s:8:"fileName";s:23:"header_menu/default.htm";s:7:"content";s:400:"==
+1544047121a:1:{s:23:"header_menu/default.htm";a:6:{s:8:"fileName";s:23:"header_menu/default.htm";s:7:"content";s:400:"==
 {% set categories = __SELF__.categories %}
 {% set currentCategorySlug = __SELF__.currentCategorySlug %}
 <ul class="menu__list menu__list-dropdown">
@@ -8,7 +8,7 @@
     <a class="menu__link" href="{{ category.url }}">{{ category.name }}</a>
     </li>
     {% endfor %}
-</ul>";s:5:"mtime";i:1543644870;s:6:"markup";s:396:"{% set categories = __SELF__.categories %}
+</ul>";s:5:"mtime";i:1543948553;s:6:"markup";s:396:"{% set categories = __SELF__.categories %}
 {% set currentCategorySlug = __SELF__.currentCategorySlug %}
 <ul class="menu__list menu__list-dropdown">
     {% for category in categories %}

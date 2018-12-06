@@ -17,7 +17,7 @@
         "require": {
             "php": ">=5.0.0"
         },
-        "time": "2013-03-15 13:16:35",
+        "time": "2013-03-15T13:16:35+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -76,7 +76,7 @@
         "require": {
             "php": ">=5.3.2"
         },
-        "time": "2014-09-09 13:34:57",
+        "time": "2014-09-09T13:34:57+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -139,7 +139,7 @@
             "phpunit/phpunit": "3.7.*",
             "squizlabs/php_codesniffer": "1.*"
         },
-        "time": "2014-04-08 15:00:19",
+        "time": "2014-04-08T15:00:19+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -180,7 +180,7 @@
         "require-dev": {
             "phpunit/phpunit": "@stable"
         },
-        "time": "2014-10-24 07:27:01",
+        "time": "2014-10-24T07:27:01+00:00",
         "type": "project",
         "installation-source": "dist",
         "autoload": {
@@ -220,7 +220,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~1.5"
         },
-        "time": "2015-04-20 18:58:01",
+        "time": "2015-04-20T18:58:01+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -258,7 +258,7 @@
         "require": {
             "erusev/parsedown": "~1.4"
         },
-        "time": "2015-11-01 10:19:22",
+        "time": "2015-11-01T10:19:22+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -304,7 +304,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-10-10 12:19:37",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -379,7 +379,7 @@
             "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
             "twig/twig": "Assetic provides the integration with the Twig templating engine"
         },
-        "time": "2016-11-11 18:43:20",
+        "time": "2016-11-11T18:43:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -435,7 +435,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.8.24"
         },
-        "time": "2017-03-28 22:19:25",
+        "time": "2017-03-28T22:19:25+00:00",
         "bin": [
             "bin/lessc"
         ],
@@ -526,7 +526,7 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
-        "time": "2017-06-19 01:22:40",
+        "time": "2017-06-19T01:22:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -576,7 +576,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2017-02-14 16:28:37",
+        "time": "2017-02-14T16:28:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -631,7 +631,7 @@
             "doctrine/coding-standard": "~0.1@dev",
             "phpunit/phpunit": "^5.7"
         },
-        "time": "2017-01-03 10:49:41",
+        "time": "2017-01-03T10:49:41+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -704,7 +704,7 @@
             "predis/predis": "~1.0",
             "satooshi/php-coveralls": "~0.6"
         },
-        "time": "2017-07-22 12:49:21",
+        "time": "2017-07-22T12:49:21+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -773,7 +773,7 @@
             "doctrine/cache": "1.*",
             "phpunit/phpunit": "^5.7"
         },
-        "time": "2017-02-24 16:22:25",
+        "time": "2017-02-24T16:22:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -846,7 +846,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.4.6"
         },
-        "time": "2017-07-22 08:35:12",
+        "time": "2017-07-22T08:35:12+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -921,7 +921,7 @@
         "suggest": {
             "symfony/console": "For helpful console commands such as SQL execution and import of files."
         },
-        "time": "2017-07-22 20:44:48",
+        "time": "2017-07-22T20:44:48+00:00",
         "bin": [
             "bin/doctrine-dbal"
         ],
@@ -989,7 +989,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.2"
         },
-        "time": "2017-07-22 12:18:28",
+        "time": "2017-07-22T12:18:28+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1058,7 +1058,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0|~5.0"
         },
-        "time": "2017-01-23 04:29:33",
+        "time": "2017-01-23T04:29:33+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1109,7 +1109,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "^4.8.36"
         },
-        "time": "2017-12-29 09:13:20",
+        "time": "2017-12-29T09:13:20+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "Composer\\Installers\\Plugin",
@@ -1206,57 +1206,6 @@
         ]
     },
     {
-        "name": "wikimedia/composer-merge-plugin",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/wikimedia/composer-merge-plugin.git",
-            "reference": "73e4ed4fa66167823cb9bfc65fdd5fd6019722b6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/73e4ed4fa66167823cb9bfc65fdd5fd6019722b6",
-            "reference": "73e4ed4fa66167823cb9bfc65fdd5fd6019722b6",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "^1.0",
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "composer/composer": "~1.0.0",
-            "jakub-onderka/php-parallel-lint": "~0.8",
-            "phpunit/phpunit": "~4.8|~5.0",
-            "squizlabs/php_codesniffer": "~2.1.0"
-        },
-        "time": "2018-01-10 05:07:51",
-        "type": "composer-plugin",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.3.x-dev"
-            },
-            "class": "Wikimedia\\Composer\\MergePlugin"
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Wikimedia\\Composer\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Bryan Davis",
-                "email": "bd808@wikimedia.org"
-            }
-        ],
-        "description": "Composer plugin to merge multiple composer.json files"
-    },
-    {
         "name": "tijsverkoyen/css-to-inline-styles",
         "version": "2.2.1",
         "version_normalized": "2.2.1.0",
@@ -1278,7 +1227,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
         },
-        "time": "2017-11-27 11:13:29",
+        "time": "2017-11-27T11:13:29+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1328,7 +1277,7 @@
             "friendsofphp/php-cs-fixer": "^1.9",
             "phpunit/phpunit": "^4.0"
         },
-        "time": "2018-02-06 08:27:03",
+        "time": "2018-02-06T08:27:03+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1382,7 +1331,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2017-10-23 01:57:42",
+        "time": "2017-10-23T01:57:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1436,7 +1385,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8.35"
         },
-        "time": "2018-03-08 01:11:30",
+        "time": "2018-03-08T01:11:30+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1491,7 +1440,7 @@
         "suggest": {
             "illuminate/database": "The Illuminate Database package (~5.1)."
         },
-        "time": "2018-05-17 13:42:07",
+        "time": "2018-05-17T13:42:07+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1551,7 +1500,7 @@
             "phpunit/phpunit": "^5.0|^6.0|^7.0",
             "satooshi/php-coveralls": "^2.0"
         },
-        "time": "2018-05-16 11:53:55",
+        "time": "2018-05-16T11:53:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1619,7 +1568,7 @@
             "symfony/debug": "^2.7",
             "symfony/phpunit-bridge": "^3.3"
         },
-        "time": "2018-07-13 07:18:09",
+        "time": "2018-07-13T07:18:09+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1685,7 +1634,7 @@
             "phpunit/phpunit": "~4.6",
             "squizlabs/php_codesniffer": "~2.5"
         },
-        "time": "2018-07-22 01:22:08",
+        "time": "2018-07-22T01:22:08+00:00",
         "bin": [
             "bin/pscss"
         ],
@@ -1739,7 +1688,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.5 || ^7.0"
         },
-        "time": "2018-07-15 17:25:16",
+        "time": "2018-07-15T17:25:16+00:00",
         "bin": [
             "bin/php-parse"
         ],
@@ -1791,7 +1740,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8.35 || ^5.0"
         },
-        "time": "2018-07-29 20:33:41",
+        "time": "2018-07-29T20:33:41+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1847,7 +1796,7 @@
         "suggest": {
             "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
-        "time": "2018-07-02 15:55:56",
+        "time": "2018-07-02T15:55:56+00:00",
         "type": "library",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -1896,7 +1845,7 @@
             "ext-intl": "Needed to support internationalized email addresses",
             "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
         },
-        "time": "2018-07-13 07:04:35",
+        "time": "2018-07-13T07:04:35+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1974,7 +1923,7 @@
             "ramsey/uuid-console": "A console application for generating UUIDs with ramsey/uuid",
             "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
         },
-        "time": "2018-07-19 23:38:55",
+        "time": "2018-07-19T23:38:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2035,7 +1984,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2018-08-06 14:22:27",
+        "time": "2018-08-06T14:22:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2096,7 +2045,7 @@
         "suggest": {
             "ext-ctype": "For best performance"
         },
-        "time": "2018-08-06 14:22:27",
+        "time": "2018-08-06T14:22:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2172,7 +2121,7 @@
             "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
             "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
         },
-        "time": "2018-08-11 15:54:43",
+        "time": "2018-08-11T15:54:43+00:00",
         "bin": [
             "bin/psysh"
         ],
@@ -2234,7 +2183,7 @@
             "friendsofphp/php-cs-fixer": "~2",
             "phpunit/phpunit": "^4.8.35 || ^5.7"
         },
-        "time": "2018-08-07 08:39:47",
+        "time": "2018-08-07T08:39:47+00:00",
         "type": "library",
         "extra": {
             "laravel": {
@@ -2370,7 +2319,7 @@
             "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.3).",
             "symfony/psr-http-message-bridge": "Required to psr7 bridging features (~1.0)."
         },
-        "time": "2018-08-08 18:22:44",
+        "time": "2018-08-08T18:22:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2428,7 +2377,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2017-07-23 12:43:26",
+        "time": "2017-07-23T12:43:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2491,7 +2440,7 @@
             "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
             "ext-symfony_debug": ""
         },
-        "time": "2017-07-28 06:06:09",
+        "time": "2017-07-28T06:06:09+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2556,7 +2505,7 @@
         "require-dev": {
             "symfony/http-kernel": "~2.8|~3.0"
         },
-        "time": "2017-07-28 15:27:31",
+        "time": "2017-07-28T15:27:31+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2627,7 +2576,7 @@
             "symfony/filesystem": "",
             "symfony/process": ""
         },
-        "time": "2017-07-29 21:27:59",
+        "time": "2017-07-29T21:27:59+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2678,7 +2627,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-05-01 15:01:29",
+        "time": "2017-05-01T15:01:29+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2756,7 +2705,7 @@
             "symfony/http-foundation": "For using a Symfony Request object",
             "symfony/yaml": "For using the YAML loader"
         },
-        "time": "2017-07-21 17:43:13",
+        "time": "2017-07-21T17:43:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2813,7 +2762,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-07-13 13:05:09",
+        "time": "2017-07-13T13:05:09+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2878,7 +2827,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2017-06-09 14:53:08",
+        "time": "2017-06-09T14:53:08+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2933,7 +2882,7 @@
         "require-dev": {
             "symfony/expression-language": "~2.8|~3.0"
         },
-        "time": "2017-07-21 11:04:46",
+        "time": "2017-07-21T11:04:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3021,7 +2970,7 @@
             "symfony/finder": "",
             "symfony/var-dumper": ""
         },
-        "time": "2017-08-01 10:25:59",
+        "time": "2017-08-01T10:25:59+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3072,7 +3021,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-06-01 21:01:25",
+        "time": "2017-06-01T21:01:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3139,7 +3088,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2017-06-24 16:45:30",
+        "time": "2017-06-24T16:45:30+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3199,7 +3148,7 @@
         "suggest": {
             "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
         },
-        "time": "2018-08-16 20:49:45",
+        "time": "2018-08-16T20:49:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3292,7 +3241,7 @@
             "symfony/css-selector": "~3.1",
             "symfony/dom-crawler": "~3.1"
         },
-        "time": "2018-08-18 15:30:48",
+        "time": "2018-08-18T15:30:48+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3373,7 +3322,7 @@
             "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
             "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
         },
-        "time": "2018-08-22 07:45:22",
+        "time": "2018-08-22T07:45:22+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3437,7 +3386,7 @@
             "october/rain": "~1.0",
             "php": ">=7.0"
         },
-        "time": "2018-08-21 03:24:59",
+        "time": "2018-08-21T03:24:59+00:00",
         "type": "october-module",
         "extra": {
             "branch-alias": {
@@ -3498,7 +3447,7 @@
             "october/rain": "~1.0",
             "php": ">=7.0"
         },
-        "time": "2018-08-21 03:24:59",
+        "time": "2018-08-21T03:24:59+00:00",
         "type": "october-module",
         "extra": {
             "branch-alias": {
@@ -3559,7 +3508,7 @@
             "october/rain": "~1.0",
             "php": ">=7.0"
         },
-        "time": "2018-08-21 03:28:12",
+        "time": "2018-08-21T03:28:12+00:00",
         "type": "october-module",
         "extra": {
             "branch-alias": {
@@ -3598,6 +3547,51 @@
             "cms",
             "october",
             "october cms"
+        ]
+    },
+    {
+        "name": "tohtamysh/laravel-phpbb-bridge",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tohtamysh/laravel-phpbb-bridge.git",
+            "reference": "c7eb36d528d9b124cbd0884039aa45688c7686eb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tohtamysh/laravel-phpbb-bridge/zipball/c7eb36d528d9b124cbd0884039aa45688c7686eb",
+            "reference": "c7eb36d528d9b124cbd0884039aa45688c7686eb",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "5.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-06-08T06:35:59+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Tohtamysh\\LaravelPhpbbBridge\\": "src/LaravelPhpbbBridge"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tohtamysh",
+                "email": "tohtamysh@gmail.com"
+            }
+        ],
+        "description": "Authentication module for Laravel 5.4 and phpBB 3.2",
+        "keywords": [
+            "laravel",
+            "laravel5",
+            "phpbb",
+            "phpbb3"
         ]
     }
 ]

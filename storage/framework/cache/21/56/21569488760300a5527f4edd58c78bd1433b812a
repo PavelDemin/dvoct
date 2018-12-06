@@ -1,4 +1,4 @@
-1543766425a:1:{s:26:"articles/articles-list.htm";a:14:{s:8:"fileName";s:26:"articles/articles-list.htm";s:7:"content";s:941:"title = "Статьи"
+1544046993a:1:{s:26:"articles/articles-list.htm";a:14:{s:8:"fileName";s:26:"articles/articles-list.htm";s:7:"content";s:941:"title = "Статьи"
 url = "/articles/:page?"
 layout = "default"
 is_hidden = 0
@@ -37,7 +37,7 @@ function onEnd(){
     <h3 class="section-title">Последние статьи</h3>
     {% component "article" %}
 </div>
-";s:5:"mtime";i:1543644870;s:6:"markup";s:234:"<div class="col-md-3">
+";s:5:"mtime";i:1543948553;s:6:"markup";s:234:"<div class="col-md-3">
     {% component 'category_menu' %}
     {% component 'popularPosts' %}
 </div>

@@ -1,4 +1,4 @@
-1543766888a:1:{s:31:"article/last_articles_block.htm";a:6:{s:8:"fileName";s:31:"article/last_articles_block.htm";s:7:"content";s:1080:"description = "Вывод на главной последних статей"
+1544047116a:1:{s:31:"article/last_articles_block.htm";a:6:{s:8:"fileName";s:31:"article/last_articles_block.htm";s:7:"content";s:1080:"description = "Вывод на главной последних статей"
 ==
 {% set posts = __SELF__.posts %}
 <h3 class="section-title">Последние статьи</h3>
@@ -18,7 +18,7 @@
         </div>
     </footer>
 </article>
-{% endfor %}";s:5:"mtime";i:1543644870;s:6:"markup";s:996:"{% set posts = __SELF__.posts %}
+{% endfor %}";s:5:"mtime";i:1543948553;s:6:"markup";s:996:"{% set posts = __SELF__.posts %}
 <h3 class="section-title">Последние статьи</h3>
 {% for post in posts %}
 <article class="block">

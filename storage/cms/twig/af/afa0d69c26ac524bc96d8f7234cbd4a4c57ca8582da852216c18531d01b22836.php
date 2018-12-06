@@ -56,7 +56,7 @@ class __TwigTemplate_978237dfa49b645e3bdfbd2e11b81af3ea9ecb6f73f0edb2d26f5747943
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
         // line 20
-        echo "<main class=\"container\">
+        echo "<main class=\"container\" id=\"main\">
     <div class=\"row\">
         ";
         // line 22
@@ -134,7 +134,7 @@ class __TwigTemplate_978237dfa49b645e3bdfbd2e11b81af3ea9ecb6f73f0edb2d26f5747943
 <body>
 {% component 'session' %}
 {% partial \"header\" %}
-<main class=\"container\">
+<main class=\"container\" id=\"main\">
     <div class=\"row\">
         {% page %}
     </div>

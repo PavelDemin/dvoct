@@ -395,7 +395,8 @@ $lang = array_merge($lang, array(
 	'NUMBER_USERS'		=> 'Пользователей',
 	'NUMBER_ORPHAN'		=> 'Потерянных вложений',
 
- 	'PHP_VERSION_OLD'	=> 'Версия PHP на данном сервере устарела и не будет поддерживаться будущими версиями phpBB. %sПодробнее%s',
+	'PHP_VERSION'		=> 'Версия PHP',
+ 	'PHP_VERSION_OLD'	=> 'Версия PHP на данном сервере (%1$s) устарела и не будет поддерживаться будущими версиями phpBB. Минимально необходимой версией будет PHP %2$s. %3$sПодробнее%4$s',
 
 	'POSTS_PER_DAY'		=> 'Сообщений в день',
 
@@ -439,16 +440,19 @@ $lang = array_merge($lang, array(
 	'UPLOAD_DIR_SIZE'	=> 'Размер всех вложений',
 	'USERS_PER_DAY'		=> 'Пользователей в день',
 
-	'VALUE'						=> 'Значение',
-	'VERSIONCHECK_FAIL'			=> 'Не удалось получить сведения о последней версии.',
-	'VERSIONCHECK_FORCE_UPDATE'	=> 'Повторно проверить версию',
+	'VALUE'							=> 'Значение',
+	'VERSIONCHECK_FAIL'				=> 'Не удалось получить сведения о последней версии.',
+	'VERSIONCHECK_FORCE_UPDATE'		=> 'Повторно проверить версию',
 	'VERSION_CHECK'					=> 'Проверка версии',
 	'VERSION_CHECK_EXPLAIN'			=> 'Проверяет, что текущая версия phpBB самая последняя.',
+	'VERSIONCHECK_INVALID_ENTRY'	=> 'Сведения о последней версии содержат неподдерживаемую запись.',
+	'VERSIONCHECK_INVALID_URL'		=> 'Сведения о последней версии содержат неправильную ссылку.',
+	'VERSIONCHECK_INVALID_VERSION'	=> 'Сведения о последней версии содержат неправильное значение версии.',
 	'VERSION_NOT_UP_TO_DATE_ACP'	=> 'Ваша версия phpBB не самая последняя.<br />Ниже вы найдёте ссылку на объявление о выпуске последней версии, которое содержит дополнительную информацию, а также инструкции по обновлению phpBB.',
 	'VERSION_NOT_UP_TO_DATE_TITLE'	=> 'Ваша версия phpBB не самая последняя.',
 	'VERSION_UP_TO_DATE_ACP'		=> 'Ваша версия phpBB самая последняя. На данный момент для неё нет обновлений.',
-	'VIEW_ADMIN_LOG'			=> 'Лог администраторов',
-	'VIEW_INACTIVE_USERS'		=> 'Неактивированные пользователи',
+	'VIEW_ADMIN_LOG'				=> 'Лог администраторов',
+	'VIEW_INACTIVE_USERS'			=> 'Неактивированные пользователи',
 
 	'WELCOME_PHPBB'			=> 'Добро пожаловать в phpBB',
 	'WRITABLE_CONFIG'		=> 'Файл config.php в настоящее время доступен для записи. Настоятельно рекомендуется изменить право доступа к этому файлу на 640 или по крайней мере на 644 (например: <a href="http://ru.wikipedia.org/wiki/Chmod" rel="external">chmod</a> 640 config.php).',
@@ -548,6 +552,7 @@ $lang = array_merge($lang, array(
 	'LOG_BBCODE_ADD'		=> '<strong>Добавлен новый BBCode</strong><br />» %s',
 	'LOG_BBCODE_EDIT'		=> '<strong>Изменён BBCode</strong><br />» %s',
 	'LOG_BBCODE_DELETE'		=> '<strong>Удалён BBCode</strong><br />» %s',
+	'LOG_BBCODE_CONFIGURATION_ERROR'	=> '<strong>Ошибка при настройке BBCode</strong>: %1$s<br />» %2$s',
 
 	'LOG_BOT_ADDED'		=> '<strong>Добавлен новый бот</strong><br />» %s',
 	'LOG_BOT_DELETE'	=> '<strong>Удалён бот</strong><br />» %s',

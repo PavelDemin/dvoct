@@ -1,4 +1,4 @@
-1543766889a:1:{s:13:"tag/cloud.htm";a:6:{s:8:"fileName";s:13:"tag/cloud.htm";s:7:"content";s:233:"description = "Облако тегов"
+1544047118a:1:{s:13:"tag/cloud.htm";a:6:{s:8:"fileName";s:13:"tag/cloud.htm";s:7:"content";s:233:"description = "Облако тегов"
 ==
 {% set tags = __SELF__.tags %}
 {% for tag in tags %}
@@ -6,7 +6,7 @@
 {% endfor %}
 
 
-";s:5:"mtime";i:1543644870;s:6:"markup";s:182:"{% set tags = __SELF__.tags %}
+";s:5:"mtime";i:1543948553;s:6:"markup";s:182:"{% set tags = __SELF__.tags %}
 {% for tag in tags %}
 <li class="block-tag__item"><a class="block-tag__link" href="/articles/tags/{{tag.slug}}">{{ tag.name }}</a></li>
 {% endfor %}";s:4:"code";N;s:11:"description";s:23:"Облако тегов";}}

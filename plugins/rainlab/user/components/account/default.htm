@@ -14,6 +14,7 @@
     </div>
 
 {% else %}
+<a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
 
     {% partial __SELF__ ~ '::activation_check' %}
 

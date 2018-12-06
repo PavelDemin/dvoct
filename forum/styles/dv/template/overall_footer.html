@@ -1,0 +1,150 @@
+		<!-- EVENT overall_footer_content_after -->
+	</div>
+
+<!-- EVENT overall_footer_page_body_after -->
+
+<div id="page-footer" class="page-footer" role="contentinfo">
+	<!-- INCLUDE navbar_footer.html -->
+
+	<div class="copyright">
+		<!-- EVENT overall_footer_copyright_prepend -->
+		<!-- IF DEBUG_OUTPUT -->
+		<p class="footer-row">
+			<span class="footer-info">{{ DEBUG_OUTPUT }}</span>
+		</p>
+		<!-- ENDIF -->
+		<!-- IF U_ACP -->
+		<p class="footer-row">
+			<a class="footer-link text-strong" href="{{ U_ACP }}">{{ lang('ACP') }}</a>
+		</p>
+		<!-- ENDIF -->
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="{L_AJAX_ERROR_TITLE}" data-ajax-error-text="{L_AJAX_ERROR_TEXT}" data-ajax-error-text-abort="{L_AJAX_ERROR_TEXT_ABORT}" data-ajax-error-text-timeout="{L_AJAX_ERROR_TEXT_TIMEOUT}" data-ajax-error-text-parsererror="{L_AJAX_ERROR_TEXT_PARSERERROR}">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="{L_ERROR}" data-l-timeout-processing-req="{L_TIMEOUT_PROCESSING_REQ}">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+</div>
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-12 footer-composition">
+          <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-5 col-sm-7">
+                  <nav class="menu-footer">
+                    <ul class="menu-footer__list">
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Главная</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Форум</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Статьи</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Главная</a></li>
+                    </ul>
+                    <ul class="menu-footer__list">
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Главная</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Форум</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Статьи</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Главная</a></li>
+                    </ul>
+                    <ul class="menu-footer__list">
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Реклама на портале</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Форум</a></li>
+                      <li class="menu-footer__item"><a class="menu-footer__link" href="#">Статьи</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="col-md-4 offset-md-3 col-sm-5">
+                  <div class="footer-right-block">
+                    <div class="social">
+                      <div class="social__item"><a class="social__link" href="#"><i class="ficon-vkontakte"></i></a></div>
+                      <div class="social__item"><a class="social__link" href="#"><i class="ficon-whatsapp"></i></a></div>
+                    </div>
+                    <div class="stat"><img src="../assets/image/hit.gif"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <div class="footer-copy"><span>© 2009 - 2018 DV-FISHING.RU &nbsp;</span><span class="footer-copy__hide">Копирование и публикация материалов без активной ссылки на первоисточник запрещены.                                     </span></div>
+        </div>
+      </div>
+    </div>
+<script src="{T_JQUERY_LINK}"></script>
+<!-- IF S_ALLOW_CDN --><script>window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script><!-- ENDIF -->
+<script src="{T_THEME_PATH}/assets/libs/slick/slick.min.js?assets_version={T_ASSETS_VERSION}"></script>
+<script src="{T_THEME_PATH}/assets/js/main.js?assets_version={T_ASSETS_VERSION}"></script>
+<script src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
+<!-- INCLUDEJS forum_fn.js -->
+<!-- INCLUDEJS ajax.js -->
+<!-- IF S_ALLOW_CDN -->
+	<script>
+		(function($){
+			var $fa_cdn = $('head').find('link[rel="stylesheet"]').first(),
+				$span = $('<span class="fa" style="display:none"></span>').appendTo('body');
+			if ($span.css('fontFamily') !== 'FontAwesome' ) {
+				$fa_cdn.after('<link href="{T_ASSETS_PATH}/css/font-awesome.min.css" rel="stylesheet">');
+				$fa_cdn.remove();
+			}
+			$span.remove();
+		})(jQuery);
+	</script>
+<!-- ENDIF -->
+
+<!-- IF S_COOKIE_NOTICE -->
+	<script src="{T_ASSETS_PATH}/cookieconsent/cookieconsent.min.js?assets_version={T_ASSETS_VERSION}"></script>
+	<script>
+		if (typeof window.cookieconsent === "object") {
+			window.addEventListener("load", function(){
+				window.cookieconsent.initialise({
+					"palette": {
+						"popup": {
+							"background": "#0F538A"
+						},
+						"button": {
+							"background": "#E5E5E5"
+						}
+					},
+					"theme": "classic",
+					"content": {
+						"message": "{LA_COOKIE_CONSENT_MSG}",
+						"dismiss": "{LA_COOKIE_CONSENT_OK}",
+						"link": "{LA_COOKIE_CONSENT_INFO}",
+						"href": "{UA_PRIVACY}"
+					}
+				});
+			});
+		}
+	</script>
+<!-- ENDIF -->
+
+<!-- EVENT overall_footer_after -->
+
+<!-- IF S_PLUPLOAD --><!-- INCLUDE plupload.html --><!-- ENDIF -->
+{$SCRIPTS}
+
+<!-- EVENT overall_footer_body_after -->
+
+</body>
+</html>

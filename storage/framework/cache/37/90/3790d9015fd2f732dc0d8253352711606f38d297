@@ -1,4 +1,4 @@
-1543766434a:1:{s:11:"profile.htm";a:11:{s:8:"fileName";s:11:"profile.htm";s:7:"content";s:1345:"title = "Мой профиль"
+1544046993a:1:{s:11:"profile.htm";a:11:{s:8:"fileName";s:11:"profile.htm";s:7:"content";s:1345:"title = "Мой профиль"
 url = "/profile"
 layout = "default"
 is_hidden = "1"
@@ -54,7 +54,7 @@ function onStart()
                    {% component 'resetPassword' %}
 
 					</div>
-				</div><!--.main-content-->";s:5:"mtime";i:1543671956;s:6:"markup";s:1084:"<div class="sidebar press--right">
+				</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:1084:"<div class="sidebar press--right">
 
 <div class="widget widget__forum">
 						<h3>Управление</h3>

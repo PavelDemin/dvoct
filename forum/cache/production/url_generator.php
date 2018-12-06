@@ -5,8 +5,6 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Psr\Log\LoggerInterface;
 
 /**
- * phpbb_url_generator
- *
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
@@ -14,9 +12,6 @@ class phpbb_url_generator extends Symfony\Component\Routing\Generator\UrlGenerat
 {
     private static $declaredRoutes;
 
-    /**
-     * Constructor.
-     */
     public function __construct(RequestContext $context, LoggerInterface $logger = null)
     {
         $this->context = $context;
@@ -36,10 +31,6 @@ class phpbb_url_generator extends Symfony\Component\Routing\Generator\UrlGenerat
         'phpbb_help_faq_controller' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'phpbb.help.controller.faq:handle',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/help/faq',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'phpbb_report_pm_controller' => array (  0 =>   array (    0 => 'id',  ),  1 =>   array (    '_controller' => 'phpbb.report.controller:handle',    'mode' => 'pm',  ),  2 =>   array (    'id' => '\\d+',    '_method' => 'GET|POST',  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/report',    ),    1 =>     array (      0 => 'variable',      1 => '/',      2 => '\\d+',      3 => 'id',    ),    2 =>     array (      0 => 'text',      1 => '/pm',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'phpbb_report_post_controller' => array (  0 =>   array (    0 => 'id',  ),  1 =>   array (    '_controller' => 'phpbb.report.controller:handle',    'mode' => 'post',  ),  2 =>   array (    'id' => '\\d+',    '_method' => 'GET|POST',  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/report',    ),    1 =>     array (      0 => 'variable',      1 => '/',      2 => '\\d+',      3 => 'id',    ),    2 =>     array (      0 => 'text',      1 => '/post',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
-        'gfksx_ThanksForPosts_thankslist_controller_user' => array (  0 =>   array (    0 => 'mode',    1 => 'author_id',    2 => 'give',    3 => 'tslash',  ),  1 =>   array (    '_controller' => 'gfksx.ThanksForPosts.controller.thankslist:main',    'top' => 0,    'start' => 0,    'sort_key' => 'a',    'sort_dir' => 'd',    'topic_id' => 0,    'return_chars' => 300,  ),  2 =>   array (    'mode' => '\\w+',    'author_id' => '\\d+',    'give' => 'true|false',    'tslash' => '/?',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '',      2 => '/?',      3 => 'tslash',    ),    1 =>     array (      0 => 'variable',      1 => '/',      2 => 'true|false',      3 => 'give',    ),    2 =>     array (      0 => 'variable',      1 => '/',      2 => '\\d+',      3 => 'author_id',    ),    3 =>     array (      0 => 'variable',      1 => '/',      2 => '\\w+',      3 => 'mode',    ),    4 =>     array (      0 => 'text',      1 => '/thankslist',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
-        'gfksx_ThanksForPosts_thankslist_controller' => array (  0 =>   array (    0 => 'tslash',  ),  1 =>   array (    '_controller' => 'gfksx.ThanksForPosts.controller.thankslist:main',    'mode' => '',    'author_id' => 1,    'give' => '',    'top' => 0,    'start' => 0,    'sort_key' => 'a',    'sort_dir' => 'd',    'topic_id' => 0,    'return_chars' => 300,  ),  2 =>   array (    'tslash' => '/?',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '',      2 => '/?',      3 => 'tslash',    ),    1 =>     array (      0 => 'text',      1 => '/thankslist',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
-        'gfksx_ThanksForPosts_toplist_controller' => array (  0 =>   array (    0 => 'tslash',  ),  1 =>   array (    '_controller' => 'gfksx.ThanksForPosts.controller.toplist:main',    'mode' => '',    'start' => 0,    'topic_id' => 0,    'return_chars' => 300,  ),  2 =>   array (    'tslash' => '/?',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '',      2 => '/?',      3 => 'tslash',    ),    1 =>     array (      0 => 'text',      1 => '/toplist',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
-        'sheer_postbookmark_controller' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'sheer.postbookmark.controller:main',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/postbookmark',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }
     }

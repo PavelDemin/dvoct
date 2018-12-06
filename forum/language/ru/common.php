@@ -48,7 +48,7 @@ $lang = array_merge($lang, array(
 	'USER_LANG'			=> 'ru',
 
 	// You can define different rules for the determination of plural forms here.
-	// See http://wiki.phpbb.com/Plural_Rules for more information
+	// See https://area51.phpbb.com/docs/dev/32x/language/plurals.html for more information
 	// or ask the translation manager for help.
 	// Rule #7 Families: Slavic (Bosnian, Croatian, Serbian, Russian, Ukrainian)
 	// 0 can be handled special case. If you add a key 0 to your array, that will be used 
@@ -68,7 +68,6 @@ $lang = array_merge($lang, array(
 
 	'ACCOUNT_ALREADY_ACTIVATED'		=> 'Ваша учётная запись уже была активирована.',
 	'ACCOUNT_DEACTIVATED'			=> 'Ваша учётная запись была отключена вручную и может быть вновь активирована только администратором конференции.',
-	'ACCOUNT_NOT_ACTIVATED'			=> 'Ваша учётная запись ещё не активирована.',
 	'ACP'							=> 'Администраторский раздел',
 	'ACP_SHORT'						=> 'Администрировать',
 	'ACTIVE'						=> 'активен',
@@ -145,8 +144,10 @@ $lang = array_merge($lang, array(
 		2	=> 'Сейчас этот форум просматривают: %2$s и %1$d гостя',
 		3	=> 'Сейчас этот форум просматривают: %2$s и %1$d гостей',
 	),
+	'BUTTON_DELETE'         => 'Удалить',
 	'BUTTON_EDIT'			=> 'Правка',
 	'BUTTON_FORUM_LOCKED'	=> 'Закрыто',
+	'BUTTON_INFORMATION'    => 'Информация',
 	'BUTTON_NEW_TOPIC'		=> 'Новая тема',
 	'BUTTON_PM'				=> 'ЛС',
 	'BUTTON_PM_FORWARD'		=> 'Переслать',
@@ -155,7 +156,9 @@ $lang = array_merge($lang, array(
 	'BUTTON_PM_REPLY_ALL'	=> 'Ответить всем',
 	'BUTTON_POST_REPLY'		=> 'Ответить',
 	'BUTTON_QUOTE'			=> 'Цитата',
+	'BUTTON_REPORT'         => 'Жалоба',
 	'BUTTON_TOPIC_LOCKED'	=> 'Закрыто',
+	'BUTTON_WARN'           => 'Предупредить',
 	'BYTES'					=> 'байт',
 	'BYTES_SHORT'			=> 'Б',
 
@@ -190,6 +193,7 @@ $lang = array_merge($lang, array(
 	'COOKIE_CONSENT_INFO'	=> 'Подробнее',
 	'COOKIE_CONSENT_MSG'	=> 'Этот сайт использует cookies для обеспечения своей корректной работы.',
 	'COOKIE_CONSENT_OK'		=> 'Согласен',
+	'COOKIE_CONSENT_HREF'	=> 'http://cookiesandyou.com',
 	'COOKIES_DELETED'		=> 'Все cookies, установленные конференцией, успешно удалены.',
 	'CURRENT_TIME'			=> 'Текущее время: %s',
 
@@ -197,7 +201,7 @@ $lang = array_merge($lang, array(
 	'DAYS'					=> 'дней',
 	'DELETE'				=> 'Удалить',
 	'DELETE_ALL'			=> 'Удалить все',
-	'DELETE_COOKIES'		=> 'Удалить cookies конференции',
+	'DELETE_COOKIES'		=> 'Удалить cookies',
 	'DELETE_MARKED'			=> 'Удалить отмеченные',
 	'DELETE_POST'			=> 'Удалить сообщение',
 	'DELIMITER'				=> 'Разделитель',
@@ -586,6 +590,7 @@ $lang = array_merge($lang, array(
 	),
 	'OPTIONS'					=> 'Настройки',
 
+	'PAGE_NOT_FOUND'		=> 'Запрошенная страница не найдена.',
 	'PAGE_OF'				=> 'Страница <strong>%1$d</strong> из <strong>%2$d</strong>',
 	'PAGE_TITLE_NUMBER'		=> 'Страница %s',
 	'PASSWORD'				=> 'Пароль',
@@ -634,6 +639,7 @@ $lang = array_merge($lang, array(
 	'PREVIOUS'				=> 'Пред.',		// Used in pagination
 	'PREVIOUS_STEP'			=> 'Назад',
 	'PRIVACY'				=> 'Соглашение о конфиденциальности',
+	'PRIVACY_LINK'			=> 'Конфиденциальность',
 	'PRIVATE_MESSAGE'		=> 'Личное сообщение',
 	'PRIVATE_MESSAGES'		=> 'Личные сообщения',
 	'PRIVATE_MESSAGING'		=> 'Личные сообщения',
@@ -760,6 +766,7 @@ $lang = array_merge($lang, array(
 	'SUBMIT'					=> 'Отправить',
 
 	'TB'				=> 'ТБ',
+	'TERMS_LINK'		=> 'Правила',
 	'TERMS_USE'			=> 'Общие правила',
 	'TEST_CONNECTION'	=> 'Проверить подключение',
 	'THE_TEAM'			=> 'Наша команда',

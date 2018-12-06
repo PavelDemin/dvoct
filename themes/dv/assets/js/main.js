@@ -44,46 +44,91 @@ $(document).ready(function(){
     //openMenuTablet();
     openSlideDesc();
 
+    $(document).on('ajaxSetup', function(event, context) {
+        // Enable AJAX handling of Flash messages on all AJAX requests
+        context.options.flash = true
 
+        // Enable the StripeLoadIndicator on all AJAX requests
+        context.options.loading = $.oc.stripeLoadIndicator
 
+        // Handle Error Messages by triggering a flashMsg of type error
+        context.options.handleErrorMessage = function(message) {
+            $.oc.flashMsg({ text: message, class: 'error' })
+        }
+
+        // Handle Flash Messages by triggering a flashMsg of the message type
+        context.options.handleFlashMessage = function(message, type) {
+            $.oc.flashMsg({ text: message, class: type })
+        }
+    });
 
     $('.FilterTypeCatching').on('change', 'input, select', function(){
         var $form = $(this).closest('form');
-        $form.request();
+        var sort = $('.content-sort__link').attr('id');
+        $form.request('onLoadReports', {
+            data: {sort: sort},
+            update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' }
+        });
     });
 
 
 
     $('#main-pagination').on('click', '.pagination > li > a', function (event) {
-
-    // reference the href attribute of the list item anchor tag
-    var page = $(this).attr('href').slice(5);
-    var type_catching = $("#typeCatching option:selected").val();
-    event.preventDefault();
-    if ($(this).attr('href') != '#') {
-        $("html, body").delay(1000).animate({scrollTop: $('#main').offset().top}, "slow");
-        $.request('onFilterTypeCatching', {
-            data: {page: page, type_catching: type_catching},
-            update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' }
-        });
-    }
+        var page = $(this).attr('id');
+        var sort = $('.content-sort__link').attr('id');
+        var type_catching = $("#typeCatching option:selected").val();
+        event.preventDefault();
+        if ($(this).attr('id') != '#') {
+            $("html, body").delay(1000).animate({scrollTop: $('#main').offset().top}, "slow");
+            $.request('onLoadReports', {
+                data: {page: page, type_catching: type_catching, sort: sort},
+                update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' }
+            });
+        }   
     });
 
+    $('.content-sort__item').on('click', '.content-sort__link', function (event) {
+        var type_catching = $("#typeCatching option:selected").val();
+        event.preventDefault();
+        if($(this).attr('id') == 'published_at desc') {
+            $(this).attr('id', 'published_at asc');            
+        } else {
+            $(this).attr('id', 'published_at desc');
+        }
+        if($('#sort-date-icon').hasClass('icon-down-big')) {
+            $('#sort-date-icon').removeClass('icon-down-big').addClass('icon-up-big');
+        } else {
+            $('#sort-date-icon').removeClass('icon-up-big').addClass('icon-down-big');
+        }
+
+        var sort = $(this).attr('id');
+        $("html, body").delay(1000).animate({scrollTop: $('#main').offset().top}, "slow");
+        $.request('onLoadReports', {
+            data: {sort: sort, type_catching: type_catching},
+            update: { 'report/block_list': '#blockList', 'report/paginate': '#main-pagination' }
+        }); 
+    });
+
+
+    $('.slider__list').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        //autoplay: true,
+        autoplaySpeed: 2000,
+       // dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: '.slider__nav-prev',
+        nextArrow: '.slider__nav-next',
+        customPaging: function(slider, i) {
+            return '<a class="slider__dot">';
+        }
+    }); 
+
 });
 
-$('.slider__list').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    //autoplay: true,
-    autoplaySpeed: 2000,
-   // dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear',
-    prevArrow: '.slider__nav-prev',
-    nextArrow: '.slider__nav-next',
-    customPaging: function(slider, i) {
-        return '<a class="slider__dot">';
-    }
-});
+
+
+

@@ -1,4 +1,4 @@
-1543766425a:1:{s:9:"about.htm";a:12:{s:8:"fileName";s:9:"about.htm";s:7:"content";s:2031:"title = "О сайте"
+1544046993a:1:{s:9:"about.htm";a:12:{s:8:"fileName";s:9:"about.htm";s:7:"content";s:2031:"title = "О сайте"
 url = "/about"
 layout = "default"
 is_hidden = 0
@@ -29,7 +29,7 @@ postPage = "blog/post"
                         из этого места. По старой традиции у нас есть замечательный <b>форум</b>, где вы можете поделится своими мыслями или подчерпнуть информацию от более опытных рыбаков, да и вообще уютно провести время в хорошей компании единомышленников!
                             Форум это не место, форум это люди.</p>
                     </div>
-				</div><!--.main-content-->";s:5:"mtime";i:1543671990;s:6:"markup";s:1810:"<div class="sidebar press--right">
+				</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:1810:"<div class="sidebar press--right">
 
 
 {% component 'popularPosts' %}

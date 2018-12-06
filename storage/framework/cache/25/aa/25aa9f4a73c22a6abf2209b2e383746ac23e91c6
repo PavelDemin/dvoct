@@ -1,4 +1,4 @@
-1543766436a:1:{s:10:"header.htm";a:7:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:4618:"description = "Шапка сайта"
+1544047121a:1:{s:10:"header.htm";a:7:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:4618:"description = "Шапка сайта"
 
 [blogCategories header_menu]
 slug = "{{ :slug }}"
@@ -69,7 +69,7 @@ categoryPage = "articles/articles-category"
             </div>
         </div>
     </div>
-</div>";s:5:"mtime";i:1543644870;s:6:"markup";s:4458:"<div class="container-fluid wrapper">
+</div>";s:5:"mtime";i:1543948553;s:6:"markup";s:4458:"<div class="container-fluid wrapper">
     <div class="row">
         <div class="col-12 header-composition">
             <header class="header">

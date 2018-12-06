@@ -1,0 +1,5 @@
+{
+    "require": {
+        "tohtamysh/laravel-phpbb-bridge": "^1.0"
+    }
+}

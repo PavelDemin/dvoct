@@ -1,4 +1,4 @@
-1543766889a:1:{s:17:"slider/slider.htm";a:6:{s:8:"fileName";s:17:"slider/slider.htm";s:7:"content";s:792:"description = "Отчеты в слайдере"
+1544047117a:1:{s:17:"slider/slider.htm";a:6:{s:8:"fileName";s:17:"slider/slider.htm";s:7:"content";s:792:"description = "Отчеты в слайдере"
 ==
 {% set reports = __SELF__.rs %}
 <div class="slider">
@@ -11,7 +11,7 @@
             <h2 class="slider-dropdown__title">{{ report.title }}</h2><span class="slider-dropdown__desc">{{ substr(report.content,220,'...') }}</span></a></li>
 {% endfor %}
     </ul>
-</div>";s:5:"mtime";i:1543644870;s:6:"markup";s:738:"{% set reports = __SELF__.rs %}
+</div>";s:5:"mtime";i:1543948553;s:6:"markup";s:738:"{% set reports = __SELF__.rs %}
 <div class="slider">
     <div class="slider__nav slider__nav-prev"><i class="icon-angle-circled-left"></i></div>
     <div class="slider__nav slider__nav-next"><i class="icon-angle-circled-right"></i></div>

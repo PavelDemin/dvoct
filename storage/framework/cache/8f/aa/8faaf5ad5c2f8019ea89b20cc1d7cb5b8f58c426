@@ -1,4 +1,4 @@
-1543766434a:1:{s:19:"rezultat-poiska.htm";a:12:{s:8:"fileName";s:19:"rezultat-poiska.htm";s:7:"content";s:597:"title = "Результат поиска"
+1544046994a:1:{s:19:"rezultat-poiska.htm";a:12:{s:8:"fileName";s:19:"rezultat-poiska.htm";s:7:"content";s:597:"title = "Результат поиска"
 url = "/search"
 layout = "default"
 is_hidden = 0
@@ -21,7 +21,7 @@ postPage = "blog/post"
     <div class="list-posts list-posts--alignment clearfix">
         
     </div>
-</div><!--.main-content-->";s:5:"mtime";i:1543671946;s:6:"markup";s:357:"<div class="sidebar press--right">
+</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:357:"<div class="sidebar press--right">
     {% component 'popularPosts' %}
     {% partial "widget_last_post_forum" %}
 

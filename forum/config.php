@@ -4,10 +4,10 @@
 $dbms = 'phpbb\\db\\driver\\mysqli';
 $dbhost = 'localhost';
 $dbport = '';
-$dbname = 'phpbb_test';
+$dbname = 'dv';
 $dbuser = 'root';
-$dbpasswd = 'mpasmwin32';
-$table_prefix = 'lol_';
+$dbpasswd = 'root';
+$table_prefix = 'phpbb_';
 $phpbb_adm_relative_path = 'adm/';
 $acm_type = 'phpbb\\cache\\driver\\file';
 

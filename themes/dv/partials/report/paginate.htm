@@ -2,7 +2,7 @@
     <ul class="pagination">
         {% if reports.currentPage > 1 %}
             <li>
-                <a href="#page{{reports.currentPage-1}}">Назад</a>
+                <a href="#" id="{{reports.currentPage-1}}">Назад</a>
             </li>
             <li>...</li>
         {% endif %}
@@ -11,14 +11,14 @@
                <li class="pagination-active">{{ page }}</li>
             {% else %}
                <li>
-                   <a href="#page{{ page }}">{{ page }}</a>
+                   <a href="#" id="{{ page }}">{{ page }}</a>
                </li>
             {% endif %}
         {% endfor %}
         {% if reports.lastPage > reports.currentPage %}
             <li>...</li>
             <li>
-                <a href="#page{{reports.currentPage+1}}">Далее</a>
+                <a href="#" id="{{reports.currentPage+1}}">Далее</a>
             </li>
         {% endif %}
     </ul>

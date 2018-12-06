@@ -6,4 +6,3 @@
  * by phpBB while loading the extensions.
  */
 
-require('./../ext/boardtools/upload/vendor/autoload.php');

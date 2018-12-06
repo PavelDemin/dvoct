@@ -1,4 +1,4 @@
-1543766434a:1:{s:12:"contacts.htm";a:14:{s:8:"fileName";s:12:"contacts.htm";s:7:"content";s:984:"title = "Контакты"
+1544046993a:1:{s:12:"contacts.htm";a:14:{s:8:"fileName";s:12:"contacts.htm";s:7:"content";s:984:"title = "Контакты"
 url = "/contacts"
 layout = "default"
 description = "Страница для связи с адинистрацией"
@@ -30,7 +30,7 @@ injectMainScript = 1
                         <h3>Воспользуйтесь формой ниже, для связи с администрацией сайта.</h3>
                         {% component 'contactForm' %}
                     </div>
-				</div><!--.main-content-->";s:5:"mtime";i:1543671984;s:6:"markup";s:597:"<div class="sidebar press--right">
+				</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:597:"<div class="sidebar press--right">
 
 {% component 'popularPosts' %}
 {% partial "widget_last_post_forum" %}

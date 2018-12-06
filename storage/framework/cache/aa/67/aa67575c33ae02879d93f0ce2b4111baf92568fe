@@ -1,4 +1,4 @@
-1543766889a:1:{s:26:"video/last_video_block.htm";a:6:{s:8:"fileName";s:26:"video/last_video_block.htm";s:7:"content";s:728:"description = "Список видео на главной"
+1544047117a:1:{s:26:"video/last_video_block.htm";a:6:{s:8:"fileName";s:26:"video/last_video_block.htm";s:7:"content";s:728:"description = "Список видео на главной"
 ==
 {% set videos = __SELF__.videos %}
 <h3><a class="section-title" href="#">Видео обзоры</a></h3>
@@ -11,7 +11,7 @@
         <h2 class="block__title"><a class="block__link" href="{{ 'video/video-post'|page({ slug: video.slug }) }}">{{video.title }}</a></h2>
     </header>
 </article>
-{% endfor %}";s:5:"mtime";i:1543644870;s:6:"markup";s:663:"{% set videos = __SELF__.videos %}
+{% endfor %}";s:5:"mtime";i:1543948553;s:6:"markup";s:663:"{% set videos = __SELF__.videos %}
 <h3><a class="section-title" href="#">Видео обзоры</a></h3>
 {% for video in videos %}
 <article class="block">

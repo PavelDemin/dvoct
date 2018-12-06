@@ -1,4 +1,4 @@
-1543766435a:1:{s:24:"popularposts/default.htm";a:6:{s:8:"fileName";s:24:"popularposts/default.htm";s:7:"content";s:1189:"description = "Виждет популярных статей"
+1544047141a:1:{s:24:"popularposts/default.htm";a:6:{s:8:"fileName";s:24:"popularposts/default.htm";s:7:"content";s:1189:"description = "Виждет популярных статей"
 ==
 {% set posts = __SELF__.posts %}
 <h3 class="section-title">Популярные статьи</h3>
@@ -18,7 +18,7 @@
         </div>
     </footer>
 </article>
-{% endfor %}";s:5:"mtime";i:1543674716;s:6:"markup";s:1121:"{% set posts = __SELF__.posts %}
+{% endfor %}";s:5:"mtime";i:1543948553;s:6:"markup";s:1121:"{% set posts = __SELF__.posts %}
 <h3 class="section-title">Популярные статьи</h3>
 {% for post in posts %}
 <article class="block">

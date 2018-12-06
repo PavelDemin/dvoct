@@ -2,22 +2,13 @@ description = "Список отчетов"
 ==
 
 <div class="content-sort">
-    <div class="content-sort__text">Сортировать по: </div>
-    <ul class="content-sort__list">
-        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
-        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
-    </ul>
+    {% partial "report/sort" %}
 </div>
 <div class="block-list" id="blockList">
 {% partial "report/block_list" reports=reports %}
 </div>
 <div class="content-sort">
-    <div class="content-sort__text">Сортировать по: </div>
-    <ul class="content-sort__list">
-        <li class="content-sort__item"><a class="content-sort__link" href="#">дате</a><i class="icon-down-big"></i></li>
-        <li class="content-sort__item"><a class="content-sort__link" href="#">просмотрам</a><i class="icon-up-big"></i></li>
-    </ul>
-</div>
+    {% partial "report/sort" %}</div>
 <div id="main-pagination">
 {% partial "report/paginate" reports=reports %}  
 </div>

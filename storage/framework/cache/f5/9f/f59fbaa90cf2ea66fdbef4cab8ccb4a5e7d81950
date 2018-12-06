@@ -1,4 +1,4 @@
-1543766434a:1:{s:23:"reports/report-post.htm";a:13:{s:8:"fileName";s:23:"reports/report-post.htm";s:7:"content";s:1122:"title = "Рыболовный отчет"
+1544046994a:1:{s:23:"reports/report-post.htm";a:13:{s:8:"fileName";s:23:"reports/report-post.htm";s:7:"content";s:1160:"title = "Рыболовный отчет"
 url = "/report/:slug|^[a-z0-9\-]+$"
 layout = "default"
 is_hidden = 0
@@ -36,7 +36,7 @@ function onEnd() {
 <div class="main-content press--left">
     {% component 'report::post' %}
     
-</div><!--.main-content-->";s:5:"mtime";i:1543672030;s:6:"markup";s:241:"<div class="sidebar press--right">
+</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:249:"<div class="sidebar press--right">
     {% component 'popularPosts' %}
     {% partial "widget_last_post_forum" %}
 
@@ -44,7 +44,8 @@ function onEnd() {
 <div class="main-content press--left">
     {% component 'report::post' %}
     
-</div><!--.main-content-->";s:4:"code";s:586:"function onStart() {
+</div><!--.main-content-->";s:4:"code";s:600:"
+function onStart() {
     $this->addJs('http://api-maps.yandex.ru/2.1/?lang=ru_RU&coordorder=longlat');
     $this->addJs('assets/js/report_map.js');
     $post = DB::table('demin_report_post_reports')->where('slug', $this->param('slug'))->first();
@@ -55,4 +56,4 @@ function onEnd() {
     // Overwrite for better SEO.
     $this->layout->components['SeoCmsPage']->seo_title = $this->components['report']->post->title;
     //$this->layout->components['SeoCmsPage']->seo_description = 'My dynamic description.';
-}";s:5:"title";s:31:"Рыболовный отчет";s:3:"url";s:27:"/report/:slug|^[a-z0-9\-]+$";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:17:"ReportPost report";a:1:{s:4:"slug";s:11:"{{ :slug }}";}s:12:"popularPosts";a:3:{s:10:"postsLimit";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:3:"404";}}}
+}";s:5:"title";s:31:"Рыболовный отчет";s:3:"url";s:27:"/report/:slug|^[a-z0-9\-]+$";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:17:"ReportPost report";a:1:{s:4:"slug";s:11:"{{ :slug }}";}s:12:"popularPosts";a:3:{s:10:"postsLimit";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:3:"404";}}}

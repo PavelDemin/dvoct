@@ -1,4 +1,4 @@
-1543766889a:1:{s:16:"report/index.htm";a:6:{s:8:"fileName";s:16:"report/index.htm";s:7:"content";s:1519:"description = "Список отчетов на главной странице"
+1544047117a:1:{s:16:"report/index.htm";a:6:{s:8:"fileName";s:16:"report/index.htm";s:7:"content";s:1519:"description = "Список отчетов на главной странице"
 ==
 {% set reports = __SELF__.posts %}
 <h3><a class="section-title" href="#">Последние отчеты</a></h3>
@@ -17,7 +17,7 @@
         <div class="block__text block__text-indent">{{ html_strip(substr(report.content,300,'...')) }}</div>
     </header><a class="block__link block__link-btn" href="{{ 'reports/report-post'|page({ slug: report.slug }) }}">Читать дальше...</a>
 </article>
-{% endfor %}";s:5:"mtime";i:1543644870;s:6:"markup";s:1433:"{% set reports = __SELF__.posts %}
+{% endfor %}";s:5:"mtime";i:1543948553;s:6:"markup";s:1433:"{% set reports = __SELF__.posts %}
 <h3><a class="section-title" href="#">Последние отчеты</a></h3>
 {% for report in reports %}
 <article class="block">

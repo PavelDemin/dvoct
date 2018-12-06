@@ -1,4 +1,4 @@
-1543766436a:1:{s:10:"footer.htm";a:6:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:3410:"description = "Подвал сайта"
+1544047121a:1:{s:10:"footer.htm";a:6:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:3410:"description = "Подвал сайта"
 ==
 <div class="container-fluid">
     <div class="row">
@@ -44,7 +44,7 @@
             <div class="footer-copy"><span>© 2009 - {{"now"|date("Y")}} DV-FISHING.RU &nbsp;</span><span class="footer-copy__hide">Копирование и публикация материалов без активной ссылки на первоисточник запрещены.                                     </span></div>
         </div>
     </div>
-</div>";s:5:"mtime";i:1543644870;s:6:"markup";s:3365:"<div class="container-fluid">
+</div>";s:5:"mtime";i:1543948553;s:6:"markup";s:3365:"<div class="container-fluid">
     <div class="row">
         <div class="col-12 footer-composition">
             <footer class="footer">

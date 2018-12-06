@@ -1,4 +1,4 @@
-1543766434a:1:{s:13:"gofishing.htm";a:14:{s:8:"fileName";s:13:"gofishing.htm";s:7:"content";s:636:"title = "На рыбалку"
+1544046993a:1:{s:13:"gofishing.htm";a:14:{s:8:"fileName";s:13:"gofishing.htm";s:7:"content";s:663:"title = "На рыбалку"
 url = "/gofishing"
 layout = "default"
 description = "На рыбалку!"
@@ -25,7 +25,7 @@ postPage = "articles/article-post"
 {% component 'eventsfishing::event' %}
 
         </div>
-</div><!--.main-content-->";s:5:"mtime";i:1543671978;s:6:"markup";s:337:"<div class="sidebar press--right">
+</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:349:"<div class="sidebar press--right">
     {% component 'popularPosts' %}
     {% partial "widget_last_post_forum" %}
 

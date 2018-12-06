@@ -64,11 +64,29 @@ acp_ext_details_end
 * Since: 3.1.11-RC1
 * Purpose: Add more detailed information on extension after the available information.
 
+acp_ext_details_notice
+===
+* Location: adm/style/acp_ext_details.html
+* Since: 3.1.11-RC1
+* Purpose: Add extension detail notices after version check information.
+
+acp_ext_list_disabled_name_after
+===
+* Location: adm/style/acp_ext_list.html
+* Since: 3.1.11-RC1
+* Purpose: Add content after the name of disabled extensions in the list
+
 acp_ext_list_disabled_title_after
 ===
 * Location: adm/style/acp_ext_list.html
 * Since: 3.1.11-RC1
 * Purpose: Add text after disabled extensions section title.
+
+acp_ext_list_enabled_name_after
+===
+* Location: adm/style/acp_ext_list.html
+* Since: 3.1.11-RC1
+* Purpose: Add content after the name of enabled extensions in the list
 
 acp_ext_list_enabled_title_after
 ===
@@ -387,6 +405,13 @@ acp_profile_contact_before
 * Since: 3.1.6-RC1
 * Purpose: Add extra options to custom profile field configuration in the ACP
 
+acp_profile_contact_last
+===
+* Locations:
+    + adm/style/acp_profile.html
+* Since: 3.1.11-RC1
+* Purpose: Add contact specific options to custom profile fields in the ACP
+
 acp_profile_step_one_lang_after
 ===
 * Locations:
@@ -407,6 +432,13 @@ acp_prune_forums_prepend
     + adm/style/acp_prune_forums.html
 * Since: 3.1.7-RC1
 * Purpose: Add content before the forum select form label
+
+acp_prune_forums_settings_append
+===
+* Locations:
+    + adm/style/acp_prune_forums.html
+* Since: 3.2.2-RC1
+* Purpose: Add content after the prune settings
 
 acp_prune_users_find_username_append
 ===
@@ -472,6 +504,13 @@ acp_styles_list_before
     + adm/style/acp_styles.html
 * Since: 3.1.7-RC1
 * Purpose: Add content before list of styles
+
+acp_users_mode_add
+===
+* Locations:
+    + adm/style/acp_users.html
+* Since: 3.2.2-RC1
+* Purpose: Add extra modes to the ACP user page
 
 acp_users_profile_before
 ===
@@ -613,6 +652,13 @@ attachment_file_prepend
 * Since: 3.1.6-RC1
 * Purpose: Add custom attachment types displaying to the top of attachment block.
 
+confirm_delete_body_delete_reason_before
+===
+* Locations:
+    + styles/prosilver/template/confirm_delete_body.html
+* Since: 3.2.4-RC1
+* Purpose: Add custom text to the confirmation of a post that is deleted.
+
 forumlist_body_category_header_after
 ===
 * Locations:
@@ -640,6 +686,34 @@ forumlist_body_category_header_row_prepend
     + styles/prosilver/template/forumlist_body.html
 * Since: 3.1.5-RC1
 * Purpose: Add content before the header row of the category on the forum list.
+
+forumlist_body_forum_image_after
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.2.2-RC1
+* Purpose: Add content after the forum image on the forum list.
+
+forumlist_body_forum_image_append
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.2.2-RC1
+* Purpose: Add content at the start of the forum image on the forum list.
+
+forumlist_body_forum_image_before
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.2.2-RC1
+* Purpose: Add content before the forum image on the forum list.
+
+forumlist_body_forum_image_prepend
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.2.2-RC1
+* Purpose: Add content at the end of the forum image on the forum list.
 
 forumlist_body_forum_row_after
 ===
@@ -676,6 +750,34 @@ forumlist_body_last_post_title_prepend
 * Since: 3.1.0-a1
 * Purpose: Add content before the post title of the latest post in a forum on the forum list.
 
+forumlist_body_last_poster_username_append
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to last poster username of member
+
+forumlist_body_last_poster_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to last poster username of member
+
+forumlist_body_subforum_link_append
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.1.11-RC1
+* Purpose: Add content at the end of subforum link item.
+
+forumlist_body_subforum_link_prepend
+===
+* Locations:
+    + styles/prosilver/template/forumlist_body.html
+* Since: 3.1.11-RC1
+* Purpose: Add content at the start of subforum link item.
+
 forumlist_body_subforums_after
 ===
 * Locations:
@@ -696,6 +798,13 @@ forumlist_body_last_row_after
     + styles/prosilver/template/forumlist_body.html
 * Since: 3.1.0-b2
 * Purpose: Add content after the very last row of the forum list.
+
+index_body_birthday_block_before
+===
+* Locations:
+    + styles/prosilver/template/index_body.html
+* Since: 3.1.11-RC1
+* Purpose: Add new statistic blocks before the Birthday block
 
 index_body_block_birthday_append
 ===
@@ -886,6 +995,20 @@ mcp_post_additional_options
 * Since: 3.1.5-RC1
 * Purpose: Add content within the list of post moderation actions
 
+mcp_post_report_buttons_top_after
+===
+* Locations:
+    + styles/prosilver/template/mcp_post.html
+* Since: 3.2.4-RC1
+* Purpose: Add content after report buttons
+
+mcp_post_report_buttons_top_before
+===
+* Locations:
+    + styles/prosilver/template/mcp_post.html
+* Since: 3.2.4-RC1
+* Purpose: Add content before report buttons
+
 mcp_topic_options_after
 ===
 * Locations:
@@ -900,6 +1023,27 @@ mcp_topic_options_before
 * Since: 3.1.6-RC1
 * Purpose: Add some options (field, checkbox, ...) before the subject field when split a subject
 
+mcp_topic_postrow_attachments_after
+===
+* Locations:
+    + styles/prosilver/template/mcp_topic.html
+* Since: 3.2.2-RC1
+* Purpose: Show additional content after attachments in mcp topic review
+
+mcp_topic_postrow_attachments_before
+===
+* Locations:
+    + styles/prosilver/template/mcp_topic.html
+* Since: 3.2.2-RC1
+* Purpose: Show additional content before attachments in mcp topic review
+
+mcp_topic_postrow_post_before
+===
+* Locations:
+    + styles/prosilver/template/mcp_topic.html
+* Since: 3.2.2-RC1
+* Purpose: Show additional content after postrow begins in mcp topic review
+
 mcp_topic_postrow_post_details_after
 ===
 * Locations:
@@ -913,6 +1057,20 @@ mcp_topic_postrow_post_details_before
     + styles/prosilver/template/mcp_topic.html
 * Since: 3.1.10-RC1
 * Purpose: Add content before post details in topic moderation
+
+mcp_topic_postrow_post_subject_after
+===
+* Locations:
+    + styles/prosilver/template/mcp_topic.html
+* Since: 3.1.11-RC1
+* Purpose: Add content after post subject in topic moderation
+
+mcp_topic_postrow_post_subject_before
+===
+* Locations:
+    + styles/prosilver/template/mcp_topic.html
+* Since: 3.1.11-RC1
+* Purpose: Add content before post subject in topic moderation
 
 mcp_topic_topic_title_after
 ===
@@ -1127,6 +1285,20 @@ memberlist_view_user_statistics_before
     + styles/prosilver/template/memberlist_view.html
 * Since: 3.1.0-a1
 * Purpose: Add entries before the user statistics part of any user profile
+
+memberlist_view_username_append
+===
+* Locations:
+    + styles/prosilver/template/memberlist_view.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to username of member
+
+memberlist_view_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/memberlist_view.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to username of member
 
 memberlist_view_zebra_after
 ===
@@ -1423,6 +1595,20 @@ overall_header_stylesheets_after
 * Purpose: Add asset calls after stylesheets within the `</head>` tag.
 Note that INCLUDECSS will not work with this event.
 
+posting_attach_body_attach_row_controls_append
+===
+* Locations:
+    + styles/prosilver/template/posting_attach_body.html
+* Since: 3.2.2-RC1
+* Purpose: Add content after attachment control elements 
+
+posting_attach_body_attach_row_controls_prepend
+===
+* Locations:
+    + styles/prosilver/template/posting_attach_body.html
+* Since: 3.2.2-RC1
+* Purpose: Add content before attachment control elements 
+
 posting_editor_add_panel_tab
 ===
 * Locations:
@@ -1570,12 +1756,26 @@ posting_poll_body_options_after
 * Since: 3.1.4-RC1
 * Purpose: Add content after the poll options on creating a poll
 
+posting_preview_content_after
+===
+* Locations:
+    + styles/prosilver/template/posting_preview.html
+* Since: 3.2.4-RC1
+* Purpose: Add content after the message content preview
+
 posting_preview_poll_after
 ===
 * Locations:
     + styles/prosilver/template/posting_preview.html
 * Since: 3.1.7-RC1
 * Purpose: Add content after the poll preview block
+
+posting_topic_review_row_content_after
+===
+* Locations:
+    + styles/prosilver/template/posting_topic_review.html
+* Since: 3.2.4-RC1
+* Purpose: Add content after the message content in topic review
 
 posting_topic_review_row_post_details_after
 ===
@@ -1738,6 +1938,13 @@ search_body_search_query_prepend
 * Since: 3.1.7-RC1
 * Purpose: Put content at the top of the search query fields set
 
+search_results_content_after
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.2.4-RC1
+* Purpose: Add content after the message content in search results
+
 search_results_header_after
 ===
 * Locations:
@@ -1752,12 +1959,40 @@ search_results_header_before
 * Since: 3.1.4-RC1
 * Purpose: Add content before the header of the search results.
 
+search_results_last_post_author_username_append
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to last post author username of member
+
+search_results_last_post_author_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to last post author username of member
+
 search_results_post_after
 ===
 * Locations:
     + styles/prosilver/template/search_results.html
 * Since: 3.1.0-b3
 * Purpose: Add data after search result posts
+
+search_results_post_author_username_append
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to post author username of member
+
+search_results_post_author_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to post author username of member
 
 search_results_post_before
 ===
@@ -1794,6 +2029,20 @@ search_results_topic_after
 * Since: 3.1.0-b4
 * Purpose: Add data after search result topics
 
+search_results_topic_author_username_append
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to topic author username of member
+
+search_results_topic_author_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to topic author username of member
+
 search_results_topic_before
 ===
 * Locations:
@@ -1801,11 +2050,25 @@ search_results_topic_before
 * Since: 3.1.0-b4
 * Purpose: Add data before search result topics
 
+search_results_topic_title_after
+===
+* Locations:
+    + styles/prosilver/template/search_results.html
+* Since: 3.1.11-RC1
+* Purpose: Add data after search results topic title
+
 simple_footer_after
 ===
 * Locations:
     + styles/prosilver/template/simple_footer.html
 * Since: 3.1.0-a1
+* Purpose: Add content prior to the scripts of the simple footer
+
+simple_footer_body_after
+===
+* Locations:
+    + styles/prosilver/template/simple_footer.html
+* Since: 3.2.4-RC1
 * Purpose: Add content directly prior to the `</body>` tag of the simple footer
 
 simple_header_body_before
@@ -2199,6 +2462,34 @@ ucp_friend_list_after
 * Since: 3.1.0-a4
 * Purpose: Add optional elements after list of friends in UCP
 
+viewforum_body_last_post_author_username_append
+===
+* Locations:
+    + styles/prosilver/template/viewforum_body.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to last post author username of member
+
+viewforum_body_last_post_author_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/viewforum_body.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to last post author username of member
+
+viewforum_body_topic_author_username_append
+===
+* Locations:
+    + styles/prosilver/template/viewforum_body.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to topic author username of member
+
+viewforum_body_topic_author_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/viewforum_body.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to topic author username of member
+
 viewforum_body_topic_row_after
 ===
 * Locations:
@@ -2331,6 +2622,20 @@ viewforum_forum_title_before
     + styles/prosilver/template/viewforum_body.html
 * Since: 3.1.5-RC1
 * Purpose: Add content directly before the forum title on the View forum screen
+
+viewonline_body_username_append
+===
+* Locations:
+    + styles/prosilver/template/viewonline_body.html
+* Since: 3.2.4-RC1
+* Purpose: Append information to username of member
+
+viewonline_body_username_prepend
+===
+* Locations:
+    + styles/prosilver/template/viewonline_body.html
+* Since: 3.2.4-RC1
+* Purpose: Prepend information to username of member
 
 viewtopic_print_head_append
 ===
@@ -2509,6 +2814,13 @@ viewtopic_body_postrow_back2top_prepend
 * Since: 3.1.8-RC1
 * Purpose: Add content to the post's bottom directly before the back to top link 
 
+viewtopic_body_postrow_content_after
+===
+* Locations:
+    + styles/prosilver/template/viewtopic_body.html
+* Since: 3.2.4-RC1
+* Purpose: Add content after the message content in topics views
+
 viewtopic_body_postrow_custom_fields_after
 ===
 * Locations:
@@ -2603,6 +2915,13 @@ viewtopic_topic_title_after
     + styles/prosilver/template/viewtopic_body.html
 * Since: 3.1.7-RC1
 * Purpose: Add content directly after the topic title link on the View topic screen (outside of the h2 HTML tag)
+
+viewtopic_topic_title_before
+===
+* Locations:
+    + styles/prosilver/template/viewtopic_body.html
+* Since: 3.2.2-RC1
+* Purpose: Add content directly before the topic title link on the View topic screen (outside of the h2 HTML tag)
 
 viewtopic_topic_title_append
 ===

@@ -9,8 +9,6 @@ use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
 
 /**
- * phpbb_cache_container.
- *
  * This class has been auto-generated
  * by the Symfony Dependency Injection Component.
  */
@@ -19,9 +17,6 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     private $parameters;
     private $targetDirs = array();
 
-    /**
-     * Constructor.
-     */
     public function __construct()
     {
         $this->parameters = $this->getDefaultParameters();
@@ -39,6 +34,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'attachment.upload' => 'getAttachment_UploadService',
             'auth' => 'getAuthService',
             'auth.provider.apache' => 'getAuth_Provider_ApacheService',
+            'auth.provider.bridgebb' => 'getAuth_Provider_BridgebbService',
             'auth.provider.db' => 'getAuth_Provider_DbService',
             'auth.provider.ldap' => 'getAuth_Provider_LdapService',
             'auth.provider.oauth' => 'getAuth_Provider_OauthService',
@@ -54,7 +50,6 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'avatar.driver.upload' => 'getAvatar_Driver_UploadService',
             'avatar.driver_collection' => 'getAvatar_DriverCollectionService',
             'avatar.manager' => 'getAvatar_ManagerService',
-            'boardtools.upload.listener' => 'getBoardtools_Upload_ListenerService',
             'cache' => 'getCacheService',
             'cache.driver' => 'getCache_DriverService',
             'captcha.factory' => 'getCaptcha_FactoryService',
@@ -80,7 +75,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'console.command.extension.enable' => 'getConsole_Command_Extension_EnableService',
             'console.command.extension.purge' => 'getConsole_Command_Extension_PurgeService',
             'console.command.extension.show' => 'getConsole_Command_Extension_ShowService',
+            'console.command.fixup.fix_left_right_ids' => 'getConsole_Command_Fixup_FixLeftRightIdsService',
             'console.command.fixup.recalculate_email_hash' => 'getConsole_Command_Fixup_RecalculateEmailHashService',
+            'console.command.fixup.update_hashes' => 'getConsole_Command_Fixup_UpdateHashesService',
             'console.command.reparser.list' => 'getConsole_Command_Reparser_ListService',
             'console.command.reparser.reparse' => 'getConsole_Command_Reparser_ReparseService',
             'console.command.thumbnail.delete' => 'getConsole_Command_Thumbnail_DeleteService',
@@ -114,6 +111,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'cron.task.core.tidy_search' => 'getCron_Task_Core_TidySearchService',
             'cron.task.core.tidy_sessions' => 'getCron_Task_Core_TidySessionsService',
             'cron.task.core.tidy_warnings' => 'getCron_Task_Core_TidyWarningsService',
+            'cron.task.core.update_hashes' => 'getCron_Task_Core_UpdateHashesService',
             'cron.task.text_reparser.pm_text' => 'getCron_Task_TextReparser_PmTextService',
             'cron.task.text_reparser.poll_option' => 'getCron_Task_TextReparser_PollOptionService',
             'cron.task.text_reparser.poll_title' => 'getCron_Task_TextReparser_PollTitleService',
@@ -138,6 +136,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'feed.helper' => 'getFeed_HelperService',
             'feed.news' => 'getFeed_NewsService',
             'feed.overall' => 'getFeed_OverallService',
+            'feed.quote_helper' => 'getFeed_QuoteHelperService',
             'feed.topic' => 'getFeed_TopicService',
             'feed.topics' => 'getFeed_TopicsService',
             'feed.topics_active' => 'getFeed_TopicsActiveService',
@@ -150,12 +149,6 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'files.types.remote' => 'getFiles_Types_RemoteService',
             'files.upload' => 'getFiles_UploadService',
             'filesystem' => 'getFilesystemService',
-            'gfksx.thanksforposts.controller.thankslist' => 'getGfksx_Thanksforposts_Controller_ThankslistService',
-            'gfksx.thanksforposts.controller.toplist' => 'getGfksx_Thanksforposts_Controller_ToplistService',
-            'gfksx.thanksforposts.helper' => 'getGfksx_Thanksforposts_HelperService',
-            'gfksx.thanksforposts.listener' => 'getGfksx_Thanksforposts_ListenerService',
-            'gfksx.thanksforposts.notification.type.thanks' => 'getGfksx_Thanksforposts_Notification_Type_ThanksService',
-            'gfksx.thanksforposts.notification.type.thanks_remove' => 'getGfksx_Thanksforposts_Notification_Type_ThanksRemoveService',
             'group_helper' => 'getGroupHelperService',
             'groupposition.legend' => 'getGroupposition_LegendService',
             'groupposition.teampage' => 'getGroupposition_TeampageService',
@@ -225,6 +218,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'passwords.driver_helper' => 'getPasswords_DriverHelperService',
             'passwords.helper' => 'getPasswords_HelperService',
             'passwords.manager' => 'getPasswords_ManagerService',
+            'passwords.update.lock' => 'getPasswords_Update_LockService',
             'path_helper' => 'getPathHelperService',
             'php_ini' => 'getPhpIniService',
             'phpbb.feed.controller' => 'getPhpbb_Feed_ControllerService',
@@ -264,10 +258,6 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'routing.resolver' => 'getRouting_ResolverService',
             'routing.resources_locator.collection' => 'getRouting_ResourcesLocator_CollectionService',
             'routing.resources_locator.default' => 'getRouting_ResourcesLocator_DefaultService',
-            'senky.removesubjectfromreplies.listener' => 'getSenky_Removesubjectfromreplies_ListenerService',
-            'sheer.postbookmark.controller' => 'getSheer_Postbookmark_ControllerService',
-            'sheer.postbookmark.helper' => 'getSheer_Postbookmark_HelperService',
-            'sheer.postbookmark.listener' => 'getSheer_Postbookmark_ListenerService',
             'symfony_request' => 'getSymfonyRequestService',
             'symfony_response_listener' => 'getSymfonyResponseListenerService',
             'template' => 'getTemplateService',
@@ -280,6 +270,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'template.twig.loader' => 'getTemplate_Twig_LoaderService',
             'template_context' => 'getTemplateContextService',
             'text_formatter.data_access' => 'getTextFormatter_DataAccessService',
+            'text_formatter.s9e.bbcode_merger' => 'getTextFormatter_S9e_BbcodeMergerService',
             'text_formatter.s9e.factory' => 'getTextFormatter_S9e_FactoryService',
             'text_formatter.s9e.link_helper' => 'getTextFormatter_S9e_LinkHelperService',
             'text_formatter.s9e.parser' => 'getTextFormatter_S9e_ParserService',
@@ -303,10 +294,6 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'user_loader' => 'getUserLoaderService',
             'version_helper' => 'getVersionHelperService',
             'viewonline_helper' => 'getViewonlineHelperService',
-            'vse.similartopics.fulltext_support' => 'getVse_Similartopics_FulltextSupportService',
-            'vse.similartopics.listener' => 'getVse_Similartopics_ListenerService',
-            'vse.similartopics.manager' => 'getVse_Similartopics_ManagerService',
-            'vse.similartopics.ucp_listener' => 'getVse_Similartopics_UcpListenerService',
         );
         $this->aliases = array(
             'text_formatter.cache' => 'text_formatter.s9e.factory',
@@ -333,12 +320,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'acl.permissions' service.
+     * Gets the public 'acl.permissions' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\permissions A phpbb\permissions instance
+     * @return \phpbb\permissions
      */
     protected function getAcl_PermissionsService()
     {
@@ -346,9 +330,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'attachment.delete' service.
+     * Gets the public 'attachment.delete' service.
      *
-     * @return \phpbb\attachment\delete A phpbb\attachment\delete instance
+     * @return \phpbb\attachment\delete
      */
     protected function getAttachment_DeleteService()
     {
@@ -358,9 +342,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'attachment.manager' service.
+     * Gets the public 'attachment.manager' service.
      *
-     * @return \phpbb\attachment\manager A phpbb\attachment\manager instance
+     * @return \phpbb\attachment\manager
      */
     protected function getAttachment_ManagerService()
     {
@@ -372,9 +356,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'attachment.resync' service.
+     * Gets the public 'attachment.resync' service.
      *
-     * @return \phpbb\attachment\resync A phpbb\attachment\resync instance
+     * @return \phpbb\attachment\resync
      */
     protected function getAttachment_ResyncService()
     {
@@ -382,9 +366,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'attachment.upload' service.
+     * Gets the public 'attachment.upload' service.
      *
-     * @return \phpbb\attachment\upload A phpbb\attachment\upload instance
+     * @return \phpbb\attachment\upload
      */
     protected function getAttachment_UploadService()
     {
@@ -394,12 +378,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth' service.
+     * Gets the public 'auth' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\auth A phpbb\auth\auth instance
+     * @return \phpbb\auth\auth
      */
     protected function getAuthService()
     {
@@ -407,12 +388,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.apache' service.
+     * Gets the public 'auth.provider.apache' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider\apache A phpbb\auth\provider\apache instance
+     * @return \phpbb\auth\provider\apache
      */
     protected function getAuth_Provider_ApacheService()
     {
@@ -420,12 +398,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.db' service.
+     * Gets the public 'auth.provider.bridgebb' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * @return \laravel\bridgebb\auth\provider\bridgebb
+     */
+    protected function getAuth_Provider_BridgebbService()
+    {
+        return $this->services['auth.provider.bridgebb'] = new \laravel\bridgebb\auth\provider\bridgebb($this->get('dbal.conn'));
+    }
+
+    /**
+     * Gets the public 'auth.provider.db' shared service.
      *
-     * @return \phpbb\auth\provider\db A phpbb\auth\provider\db instance
+     * @return \phpbb\auth\provider\db
      */
     protected function getAuth_Provider_DbService()
     {
@@ -433,12 +418,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.ldap' service.
+     * Gets the public 'auth.provider.ldap' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider\ldap A phpbb\auth\provider\ldap instance
+     * @return \phpbb\auth\provider\ldap
      */
     protected function getAuth_Provider_LdapService()
     {
@@ -446,25 +428,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.oauth' service.
+     * Gets the public 'auth.provider.oauth' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider\oauth\oauth A phpbb\auth\provider\oauth\oauth instance
+     * @return \phpbb\auth\provider\oauth\oauth
      */
     protected function getAuth_Provider_OauthService()
     {
-        return $this->services['auth.provider.oauth'] = new \phpbb\auth\provider\oauth\oauth($this->get('dbal.conn'), $this->get('config'), $this->get('passwords.manager'), $this->get('request'), $this->get('user'), 'lol_oauth_tokens', 'lol_oauth_states', 'lol_oauth_accounts', $this->get('auth.provider.oauth.service_collection'), 'lol_users', $this, $this->get('dispatcher'), './', 'php');
+        return $this->services['auth.provider.oauth'] = new \phpbb\auth\provider\oauth\oauth($this->get('dbal.conn'), $this->get('config'), $this->get('passwords.manager'), $this->get('request'), $this->get('user'), 'phpbb_oauth_tokens', 'phpbb_oauth_states', 'phpbb_oauth_accounts', $this->get('auth.provider.oauth.service_collection'), 'phpbb_users', $this, $this->get('dispatcher'), './', 'php');
     }
 
     /**
-     * Gets the 'auth.provider.oauth.service.bitly' service.
+     * Gets the public 'auth.provider.oauth.service.bitly' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider\oauth\service\bitly A phpbb\auth\provider\oauth\service\bitly instance
+     * @return \phpbb\auth\provider\oauth\service\bitly
      */
     protected function getAuth_Provider_Oauth_Service_BitlyService()
     {
@@ -472,12 +448,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.oauth.service.facebook' service.
+     * Gets the public 'auth.provider.oauth.service.facebook' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider\oauth\service\facebook A phpbb\auth\provider\oauth\service\facebook instance
+     * @return \phpbb\auth\provider\oauth\service\facebook
      */
     protected function getAuth_Provider_Oauth_Service_FacebookService()
     {
@@ -485,12 +458,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.oauth.service.google' service.
+     * Gets the public 'auth.provider.oauth.service.google' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider\oauth\service\google A phpbb\auth\provider\oauth\service\google instance
+     * @return \phpbb\auth\provider\oauth\service\google
      */
     protected function getAuth_Provider_Oauth_Service_GoogleService()
     {
@@ -498,12 +468,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.oauth.service.twitter' service.
+     * Gets the public 'auth.provider.oauth.service.twitter' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider\oauth\service\twitter A phpbb\auth\provider\oauth\service\twitter instance
+     * @return \phpbb\auth\provider\oauth\service\twitter
      */
     protected function getAuth_Provider_Oauth_Service_TwitterService()
     {
@@ -511,12 +478,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider.oauth.service_collection' service.
+     * Gets the public 'auth.provider.oauth.service_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getAuth_Provider_Oauth_ServiceCollectionService()
     {
@@ -531,12 +495,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'auth.provider_collection' service.
+     * Gets the public 'auth.provider_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\auth\provider_collection A phpbb\auth\provider_collection instance
+     * @return \phpbb\auth\provider_collection
      */
     protected function getAuth_ProviderCollectionService()
     {
@@ -546,17 +507,15 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
         $instance->add('auth.provider.apache');
         $instance->add('auth.provider.ldap');
         $instance->add('auth.provider.oauth');
+        $instance->add('auth.provider.bridgebb');
 
         return $instance;
     }
 
     /**
-     * Gets the 'avatar.driver.gravatar' service.
+     * Gets the public 'avatar.driver.gravatar' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\avatar\driver\gravatar A phpbb\avatar\driver\gravatar instance
+     * @return \phpbb\avatar\driver\gravatar
      */
     protected function getAvatar_Driver_GravatarService()
     {
@@ -568,12 +527,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'avatar.driver.local' service.
+     * Gets the public 'avatar.driver.local' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\avatar\driver\local A phpbb\avatar\driver\local instance
+     * @return \phpbb\avatar\driver\local
      */
     protected function getAvatar_Driver_LocalService()
     {
@@ -585,12 +541,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'avatar.driver.remote' service.
+     * Gets the public 'avatar.driver.remote' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\avatar\driver\remote A phpbb\avatar\driver\remote instance
+     * @return \phpbb\avatar\driver\remote
      */
     protected function getAvatar_Driver_RemoteService()
     {
@@ -602,12 +555,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'avatar.driver.upload' service.
+     * Gets the public 'avatar.driver.upload' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\avatar\driver\upload A phpbb\avatar\driver\upload instance
+     * @return \phpbb\avatar\driver\upload
      */
     protected function getAvatar_Driver_UploadService()
     {
@@ -619,12 +569,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'avatar.driver_collection' service.
+     * Gets the public 'avatar.driver_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getAvatar_DriverCollectionService()
     {
@@ -639,38 +586,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'avatar.manager' service.
+     * Gets the public 'avatar.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\avatar\manager A phpbb\avatar\manager instance
+     * @return \phpbb\avatar\manager
      */
     protected function getAvatar_ManagerService()
     {
-        return $this->services['avatar.manager'] = new \phpbb\avatar\manager($this->get('config'), $this->get('avatar.driver_collection'));
+        return $this->services['avatar.manager'] = new \phpbb\avatar\manager($this->get('config'), $this->get('dispatcher'), $this->get('avatar.driver_collection'));
     }
 
     /**
-     * Gets the 'boardtools.upload.listener' service.
+     * Gets the public 'cache' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \boardtools\upload\event\listener A boardtools\upload\event\listener instance
-     */
-    protected function getBoardtools_Upload_ListenerService()
-    {
-        return $this->services['boardtools.upload.listener'] = new \boardtools\upload\event\listener($this->get('user'));
-    }
-
-    /**
-     * Gets the 'cache' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cache\service A phpbb\cache\service instance
+     * @return \phpbb\cache\service
      */
     protected function getCacheService()
     {
@@ -678,12 +606,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cache.driver' service.
+     * Gets the public 'cache.driver' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cache\driver\file A phpbb\cache\driver\file instance
+     * @return \phpbb\cache\driver\file
      */
     protected function getCache_DriverService()
     {
@@ -691,12 +616,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'captcha.factory' service.
+     * Gets the public 'captcha.factory' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\captcha\factory A phpbb\captcha\factory instance
+     * @return \phpbb\captcha\factory
      */
     protected function getCaptcha_FactoryService()
     {
@@ -704,12 +626,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'captcha.plugins.service_collection' service.
+     * Gets the public 'captcha.plugins.service_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getCaptcha_Plugins_ServiceCollectionService()
     {
@@ -725,12 +644,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'class_loader' service.
+     * Gets the public 'class_loader' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\class_loader A phpbb\class_loader instance
+     * @return \phpbb\class_loader
      */
     protected function getClassLoaderService()
     {
@@ -743,12 +659,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'class_loader.ext' service.
+     * Gets the public 'class_loader.ext' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\class_loader A phpbb\class_loader instance
+     * @return \phpbb\class_loader
      */
     protected function getClassLoader_ExtService()
     {
@@ -761,23 +674,17 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'config' service.
+     * Gets the public 'config' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\config\db A phpbb\config\db instance
+     * @return \phpbb\config\db
      */
     protected function getConfigService()
     {
-        return $this->services['config'] = new \phpbb\config\db($this->get('dbal.conn'), $this->get('cache.driver'), 'lol_config');
+        return $this->services['config'] = new \phpbb\config\db($this->get('dbal.conn'), $this->get('cache.driver'), 'phpbb_config');
     }
 
     /**
-     * Gets the 'config.php' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * Gets the public 'config.php' shared service.
      *
      * @throws RuntimeException always since this service is expected to be injected dynamically
      */
@@ -787,25 +694,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'config_text' service.
+     * Gets the public 'config_text' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\config\db_text A phpbb\config\db_text instance
+     * @return \phpbb\config\db_text
      */
     protected function getConfigTextService()
     {
-        return $this->services['config_text'] = new \phpbb\config\db_text($this->get('dbal.conn'), 'lol_config_text');
+        return $this->services['config_text'] = new \phpbb\config\db_text($this->get('dbal.conn'), 'phpbb_config_text');
     }
 
     /**
-     * Gets the 'console.command.cache.purge' service.
+     * Gets the public 'console.command.cache.purge' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\cache\purge A phpbb\console\command\cache\purge instance
+     * @return \phpbb\console\command\cache\purge
      */
     protected function getConsole_Command_Cache_PurgeService()
     {
@@ -813,12 +714,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.config.delete' service.
+     * Gets the public 'console.command.config.delete' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\config\delete A phpbb\console\command\config\delete instance
+     * @return \phpbb\console\command\config\delete
      */
     protected function getConsole_Command_Config_DeleteService()
     {
@@ -826,12 +724,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.config.get' service.
+     * Gets the public 'console.command.config.get' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\config\get A phpbb\console\command\config\get instance
+     * @return \phpbb\console\command\config\get
      */
     protected function getConsole_Command_Config_GetService()
     {
@@ -839,12 +734,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.config.increment' service.
+     * Gets the public 'console.command.config.increment' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\config\increment A phpbb\console\command\config\increment instance
+     * @return \phpbb\console\command\config\increment
      */
     protected function getConsole_Command_Config_IncrementService()
     {
@@ -852,12 +744,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.config.set' service.
+     * Gets the public 'console.command.config.set' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\config\set A phpbb\console\command\config\set instance
+     * @return \phpbb\console\command\config\set
      */
     protected function getConsole_Command_Config_SetService()
     {
@@ -865,12 +754,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.config.set_atomic' service.
+     * Gets the public 'console.command.config.set_atomic' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\config\set_atomic A phpbb\console\command\config\set_atomic instance
+     * @return \phpbb\console\command\config\set_atomic
      */
     protected function getConsole_Command_Config_SetAtomicService()
     {
@@ -878,12 +764,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.cron.list' service.
+     * Gets the public 'console.command.cron.list' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\cron\cron_list A phpbb\console\command\cron\cron_list instance
+     * @return \phpbb\console\command\cron\cron_list
      */
     protected function getConsole_Command_Cron_ListService()
     {
@@ -891,12 +774,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.cron.run' service.
+     * Gets the public 'console.command.cron.run' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\cron\run A phpbb\console\command\cron\run instance
+     * @return \phpbb\console\command\cron\run
      */
     protected function getConsole_Command_Cron_RunService()
     {
@@ -904,12 +784,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.db.list' service.
+     * Gets the public 'console.command.db.list' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\db\list_command A phpbb\console\command\db\list_command instance
+     * @return \phpbb\console\command\db\list_command
      */
     protected function getConsole_Command_Db_ListService()
     {
@@ -917,12 +794,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.db.migrate' service.
+     * Gets the public 'console.command.db.migrate' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\db\migrate A phpbb\console\command\db\migrate instance
+     * @return \phpbb\console\command\db\migrate
      */
     protected function getConsole_Command_Db_MigrateService()
     {
@@ -930,12 +804,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.db.revert' service.
+     * Gets the public 'console.command.db.revert' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\db\revert A phpbb\console\command\db\revert instance
+     * @return \phpbb\console\command\db\revert
      */
     protected function getConsole_Command_Db_RevertService()
     {
@@ -943,12 +814,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.dev.migration_tips' service.
+     * Gets the public 'console.command.dev.migration_tips' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\dev\migration_tips A phpbb\console\command\dev\migration_tips instance
+     * @return \phpbb\console\command\dev\migration_tips
      */
     protected function getConsole_Command_Dev_MigrationTipsService()
     {
@@ -956,12 +824,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.extension.disable' service.
+     * Gets the public 'console.command.extension.disable' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\extension\disable A phpbb\console\command\extension\disable instance
+     * @return \phpbb\console\command\extension\disable
      */
     protected function getConsole_Command_Extension_DisableService()
     {
@@ -969,12 +834,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.extension.enable' service.
+     * Gets the public 'console.command.extension.enable' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\extension\enable A phpbb\console\command\extension\enable instance
+     * @return \phpbb\console\command\extension\enable
      */
     protected function getConsole_Command_Extension_EnableService()
     {
@@ -982,12 +844,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.extension.purge' service.
+     * Gets the public 'console.command.extension.purge' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\extension\purge A phpbb\console\command\extension\purge instance
+     * @return \phpbb\console\command\extension\purge
      */
     protected function getConsole_Command_Extension_PurgeService()
     {
@@ -995,12 +854,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.extension.show' service.
+     * Gets the public 'console.command.extension.show' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\extension\show A phpbb\console\command\extension\show instance
+     * @return \phpbb\console\command\extension\show
      */
     protected function getConsole_Command_Extension_ShowService()
     {
@@ -1008,12 +864,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.fixup.recalculate_email_hash' service.
+     * Gets the public 'console.command.fixup.fix_left_right_ids' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * @return \phpbb\console\command\fixup\fix_left_right_ids
+     */
+    protected function getConsole_Command_Fixup_FixLeftRightIdsService()
+    {
+        return $this->services['console.command.fixup.fix_left_right_ids'] = new \phpbb\console\command\fixup\fix_left_right_ids($this->get('user'), $this->get('dbal.conn'), $this->get('cache.driver'));
+    }
+
+    /**
+     * Gets the public 'console.command.fixup.recalculate_email_hash' shared service.
      *
-     * @return \phpbb\console\command\fixup\recalculate_email_hash A phpbb\console\command\fixup\recalculate_email_hash instance
+     * @return \phpbb\console\command\fixup\recalculate_email_hash
      */
     protected function getConsole_Command_Fixup_RecalculateEmailHashService()
     {
@@ -1021,12 +884,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.reparser.list' service.
+     * Gets the public 'console.command.fixup.update_hashes' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * @return \phpbb\console\command\fixup\update_hashes
+     */
+    protected function getConsole_Command_Fixup_UpdateHashesService()
+    {
+        return $this->services['console.command.fixup.update_hashes'] = new \phpbb\console\command\fixup\update_hashes($this->get('config'), $this->get('user'), $this->get('dbal.conn'), $this->get('passwords.manager'), $this->get('passwords.driver_collection'), array(0 => 'passwords.driver.bcrypt_2y', 1 => 'passwords.driver.bcrypt', 2 => 'passwords.driver.salted_md5', 3 => 'passwords.driver.phpass'));
+    }
+
+    /**
+     * Gets the public 'console.command.reparser.list' shared service.
      *
-     * @return \phpbb\console\command\reparser\list_all A phpbb\console\command\reparser\list_all instance
+     * @return \phpbb\console\command\reparser\list_all
      */
     protected function getConsole_Command_Reparser_ListService()
     {
@@ -1034,12 +904,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.reparser.reparse' service.
+     * Gets the public 'console.command.reparser.reparse' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\reparser\reparse A phpbb\console\command\reparser\reparse instance
+     * @return \phpbb\console\command\reparser\reparse
      */
     protected function getConsole_Command_Reparser_ReparseService()
     {
@@ -1047,12 +914,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.thumbnail.delete' service.
+     * Gets the public 'console.command.thumbnail.delete' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\thumbnail\delete A phpbb\console\command\thumbnail\delete instance
+     * @return \phpbb\console\command\thumbnail\delete
      */
     protected function getConsole_Command_Thumbnail_DeleteService()
     {
@@ -1060,12 +924,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.thumbnail.generate' service.
+     * Gets the public 'console.command.thumbnail.generate' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\thumbnail\generate A phpbb\console\command\thumbnail\generate instance
+     * @return \phpbb\console\command\thumbnail\generate
      */
     protected function getConsole_Command_Thumbnail_GenerateService()
     {
@@ -1073,12 +934,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.thumbnail.recreate' service.
+     * Gets the public 'console.command.thumbnail.recreate' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\thumbnail\recreate A phpbb\console\command\thumbnail\recreate instance
+     * @return \phpbb\console\command\thumbnail\recreate
      */
     protected function getConsole_Command_Thumbnail_RecreateService()
     {
@@ -1086,12 +944,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.update.check' service.
+     * Gets the public 'console.command.update.check' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\update\check A phpbb\console\command\update\check instance
+     * @return \phpbb\console\command\update\check
      */
     protected function getConsole_Command_Update_CheckService()
     {
@@ -1099,12 +954,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.user.activate' service.
+     * Gets the public 'console.command.user.activate' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\user\activate A phpbb\console\command\user\activate instance
+     * @return \phpbb\console\command\user\activate
      */
     protected function getConsole_Command_User_ActivateService()
     {
@@ -1112,12 +964,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.user.add' service.
+     * Gets the public 'console.command.user.add' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\user\add A phpbb\console\command\user\add instance
+     * @return \phpbb\console\command\user\add
      */
     protected function getConsole_Command_User_AddService()
     {
@@ -1125,12 +974,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.user.delete' service.
+     * Gets the public 'console.command.user.delete' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\user\delete A phpbb\console\command\user\delete instance
+     * @return \phpbb\console\command\user\delete
      */
     protected function getConsole_Command_User_DeleteService()
     {
@@ -1138,12 +984,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command.user.reclean' service.
+     * Gets the public 'console.command.user.reclean' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\command\user\reclean A phpbb\console\command\user\reclean instance
+     * @return \phpbb\console\command\user\reclean
      */
     protected function getConsole_Command_User_RecleanService()
     {
@@ -1151,12 +994,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.command_collection' service.
+     * Gets the public 'console.command_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getConsole_CommandCollectionService()
     {
@@ -1179,6 +1019,8 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
         $instance->add('console.command.extension.purge');
         $instance->add('console.command.extension.show');
         $instance->add('console.command.fixup.recalculate_email_hash');
+        $instance->add('console.command.fixup.update_hashes');
+        $instance->add('console.command.fixup.fix_left_right_ids');
         $instance->add('console.command.reparser.list');
         $instance->add('console.command.reparser.reparse');
         $instance->add('console.command.thumbnail.delete');
@@ -1194,38 +1036,29 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'console.exception_subscriber' service.
+     * Gets the public 'console.exception_subscriber' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\console\exception_subscriber A phpbb\console\exception_subscriber instance
+     * @return \phpbb\console\exception_subscriber
      */
     protected function getConsole_ExceptionSubscriberService()
     {
-        return $this->services['console.exception_subscriber'] = new \phpbb\console\exception_subscriber($this->get('language'), false);
+        return $this->services['console.exception_subscriber'] = new \phpbb\console\exception_subscriber($this->get('language'));
     }
 
     /**
-     * Gets the 'content.visibility' service.
+     * Gets the public 'content.visibility' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\content_visibility A phpbb\content_visibility instance
+     * @return \phpbb\content_visibility
      */
     protected function getContent_VisibilityService()
     {
-        return $this->services['content.visibility'] = new \phpbb\content_visibility($this->get('auth'), $this->get('config'), $this->get('dispatcher'), $this->get('dbal.conn'), $this->get('user'), './', 'php', 'lol_forums', 'lol_posts', 'lol_topics', 'lol_users');
+        return $this->services['content.visibility'] = new \phpbb\content_visibility($this->get('auth'), $this->get('config'), $this->get('dispatcher'), $this->get('dbal.conn'), $this->get('user'), './', 'php', 'phpbb_forums', 'phpbb_posts', 'phpbb_topics', 'phpbb_users');
     }
 
     /**
-     * Gets the 'controller.helper' service.
+     * Gets the public 'controller.helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\controller\helper A phpbb\controller\helper instance
+     * @return \phpbb\controller\helper
      */
     protected function getController_HelperService()
     {
@@ -1233,12 +1066,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'controller.resolver' service.
+     * Gets the public 'controller.resolver' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\controller\resolver A phpbb\controller\resolver instance
+     * @return \phpbb\controller\resolver
      */
     protected function getController_ResolverService()
     {
@@ -1246,9 +1076,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'core.captcha.plugins.gd' service.
+     * Gets the public 'core.captcha.plugins.gd' service.
      *
-     * @return \phpbb\captcha\plugins\gd A phpbb\captcha\plugins\gd instance
+     * @return \phpbb\captcha\plugins\gd
      */
     protected function getCore_Captcha_Plugins_GdService()
     {
@@ -1260,9 +1090,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'core.captcha.plugins.gd_wave' service.
+     * Gets the public 'core.captcha.plugins.gd_wave' service.
      *
-     * @return \phpbb\captcha\plugins\gd_wave A phpbb\captcha\plugins\gd_wave instance
+     * @return \phpbb\captcha\plugins\gd_wave
      */
     protected function getCore_Captcha_Plugins_GdWaveService()
     {
@@ -1274,9 +1104,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'core.captcha.plugins.nogd' service.
+     * Gets the public 'core.captcha.plugins.nogd' service.
      *
-     * @return \phpbb\captcha\plugins\nogd A phpbb\captcha\plugins\nogd instance
+     * @return \phpbb\captcha\plugins\nogd
      */
     protected function getCore_Captcha_Plugins_NogdService()
     {
@@ -1288,13 +1118,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'core.captcha.plugins.qa' service.
+     * Gets the public 'core.captcha.plugins.qa' service.
      *
-     * @return \phpbb\captcha\plugins\qa A phpbb\captcha\plugins\qa instance
+     * @return \phpbb\captcha\plugins\qa
      */
     protected function getCore_Captcha_Plugins_QaService()
     {
-        $instance = new \phpbb\captcha\plugins\qa('lol_captcha_questions', 'lol_captcha_answers', 'lol_qa_confirm');
+        $instance = new \phpbb\captcha\plugins\qa('phpbb_captcha_questions', 'phpbb_captcha_answers', 'phpbb_qa_confirm');
 
         $instance->set_name('core.captcha.plugins.qa');
 
@@ -1302,9 +1132,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'core.captcha.plugins.recaptcha' service.
+     * Gets the public 'core.captcha.plugins.recaptcha' service.
      *
-     * @return \phpbb\captcha\plugins\recaptcha A phpbb\captcha\plugins\recaptcha instance
+     * @return \phpbb\captcha\plugins\recaptcha
      */
     protected function getCore_Captcha_Plugins_RecaptchaService()
     {
@@ -1316,12 +1146,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.lock_db' service.
+     * Gets the public 'cron.lock_db' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\lock\db A phpbb\lock\db instance
+     * @return \phpbb\lock\db
      */
     protected function getCron_LockDbService()
     {
@@ -1329,12 +1156,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.manager' service.
+     * Gets the public 'cron.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\manager A phpbb\cron\manager instance
+     * @return \phpbb\cron\manager
      */
     protected function getCron_ManagerService()
     {
@@ -1342,12 +1166,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.prune_all_forums' service.
+     * Gets the public 'cron.task.core.prune_all_forums' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\prune_all_forums A phpbb\cron\task\core\prune_all_forums instance
+     * @return \phpbb\cron\task\core\prune_all_forums
      */
     protected function getCron_Task_Core_PruneAllForumsService()
     {
@@ -1359,12 +1180,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.prune_forum' service.
+     * Gets the public 'cron.task.core.prune_forum' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\prune_forum A phpbb\cron\task\core\prune_forum instance
+     * @return \phpbb\cron\task\core\prune_forum
      */
     protected function getCron_Task_Core_PruneForumService()
     {
@@ -1376,12 +1194,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.prune_notifications' service.
+     * Gets the public 'cron.task.core.prune_notifications' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\prune_notifications A phpbb\cron\task\core\prune_notifications instance
+     * @return \phpbb\cron\task\core\prune_notifications
      */
     protected function getCron_Task_Core_PruneNotificationsService()
     {
@@ -1393,12 +1208,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.prune_shadow_topics' service.
+     * Gets the public 'cron.task.core.prune_shadow_topics' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\prune_shadow_topics A phpbb\cron\task\core\prune_shadow_topics instance
+     * @return \phpbb\cron\task\core\prune_shadow_topics
      */
     protected function getCron_Task_Core_PruneShadowTopicsService()
     {
@@ -1410,12 +1222,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.queue' service.
+     * Gets the public 'cron.task.core.queue' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\queue A phpbb\cron\task\core\queue instance
+     * @return \phpbb\cron\task\core\queue
      */
     protected function getCron_Task_Core_QueueService()
     {
@@ -1427,12 +1236,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.tidy_cache' service.
+     * Gets the public 'cron.task.core.tidy_cache' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\tidy_cache A phpbb\cron\task\core\tidy_cache instance
+     * @return \phpbb\cron\task\core\tidy_cache
      */
     protected function getCron_Task_Core_TidyCacheService()
     {
@@ -1444,12 +1250,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.tidy_database' service.
+     * Gets the public 'cron.task.core.tidy_database' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\tidy_database A phpbb\cron\task\core\tidy_database instance
+     * @return \phpbb\cron\task\core\tidy_database
      */
     protected function getCron_Task_Core_TidyDatabaseService()
     {
@@ -1461,12 +1264,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.tidy_plupload' service.
+     * Gets the public 'cron.task.core.tidy_plupload' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\tidy_plupload A phpbb\cron\task\core\tidy_plupload instance
+     * @return \phpbb\cron\task\core\tidy_plupload
      */
     protected function getCron_Task_Core_TidyPluploadService()
     {
@@ -1478,12 +1278,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.tidy_search' service.
+     * Gets the public 'cron.task.core.tidy_search' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\tidy_search A phpbb\cron\task\core\tidy_search instance
+     * @return \phpbb\cron\task\core\tidy_search
      */
     protected function getCron_Task_Core_TidySearchService()
     {
@@ -1495,12 +1292,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.tidy_sessions' service.
+     * Gets the public 'cron.task.core.tidy_sessions' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\tidy_sessions A phpbb\cron\task\core\tidy_sessions instance
+     * @return \phpbb\cron\task\core\tidy_sessions
      */
     protected function getCron_Task_Core_TidySessionsService()
     {
@@ -1512,12 +1306,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.core.tidy_warnings' service.
+     * Gets the public 'cron.task.core.tidy_warnings' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\core\tidy_warnings A phpbb\cron\task\core\tidy_warnings instance
+     * @return \phpbb\cron\task\core\tidy_warnings
      */
     protected function getCron_Task_Core_TidyWarningsService()
     {
@@ -1529,12 +1320,23 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.text_reparser.pm_text' service.
+     * Gets the public 'cron.task.core.update_hashes' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * @return \phpbb\cron\task\core\update_hashes
+     */
+    protected function getCron_Task_Core_UpdateHashesService()
+    {
+        $this->services['cron.task.core.update_hashes'] = $instance = new \phpbb\cron\task\core\update_hashes($this->get('config'), $this->get('dbal.conn'), $this->get('passwords.update.lock'), $this->get('passwords.manager'), $this->get('passwords.driver_collection'), array(0 => 'passwords.driver.bcrypt_2y', 1 => 'passwords.driver.bcrypt', 2 => 'passwords.driver.salted_md5', 3 => 'passwords.driver.phpass'));
+
+        $instance->set_name('cron.task.core.update_hashes');
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'cron.task.text_reparser.pm_text' shared service.
      *
-     * @return \phpbb\cron\task\text_reparser\reparser A phpbb\cron\task\text_reparser\reparser instance
+     * @return \phpbb\cron\task\text_reparser\reparser
      */
     protected function getCron_Task_TextReparser_PmTextService()
     {
@@ -1547,12 +1349,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.text_reparser.poll_option' service.
+     * Gets the public 'cron.task.text_reparser.poll_option' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\text_reparser\reparser A phpbb\cron\task\text_reparser\reparser instance
+     * @return \phpbb\cron\task\text_reparser\reparser
      */
     protected function getCron_Task_TextReparser_PollOptionService()
     {
@@ -1565,12 +1364,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.text_reparser.poll_title' service.
+     * Gets the public 'cron.task.text_reparser.poll_title' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\text_reparser\reparser A phpbb\cron\task\text_reparser\reparser instance
+     * @return \phpbb\cron\task\text_reparser\reparser
      */
     protected function getCron_Task_TextReparser_PollTitleService()
     {
@@ -1583,12 +1379,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.text_reparser.post_text' service.
+     * Gets the public 'cron.task.text_reparser.post_text' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\text_reparser\reparser A phpbb\cron\task\text_reparser\reparser instance
+     * @return \phpbb\cron\task\text_reparser\reparser
      */
     protected function getCron_Task_TextReparser_PostTextService()
     {
@@ -1601,12 +1394,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task.text_reparser.user_signature' service.
+     * Gets the public 'cron.task.text_reparser.user_signature' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\cron\task\text_reparser\reparser A phpbb\cron\task\text_reparser\reparser instance
+     * @return \phpbb\cron\task\text_reparser\reparser
      */
     protected function getCron_Task_TextReparser_UserSignatureService()
     {
@@ -1619,12 +1409,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'cron.task_collection' service.
+     * Gets the public 'cron.task_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getCron_TaskCollectionService()
     {
@@ -1646,18 +1433,16 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
         $instance->add('cron.task.text_reparser.poll_title');
         $instance->add('cron.task.text_reparser.post_text');
         $instance->add('cron.task.text_reparser.user_signature');
+        $instance->add('cron.task.core.update_hashes');
         $instance->add('phpbb.viglink.cron.task.viglink');
 
         return $instance;
     }
 
     /**
-     * Gets the 'dbal.conn' service.
+     * Gets the public 'dbal.conn' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\driver\factory A phpbb\db\driver\factory instance
+     * @return \phpbb\db\driver\factory
      */
     protected function getDbal_ConnService()
     {
@@ -1665,10 +1450,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.conn.driver' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * Gets the public 'dbal.conn.driver' shared service.
      *
      * @throws RuntimeException always since this service is expected to be injected dynamically
      */
@@ -1678,12 +1460,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.extractor' service.
+     * Gets the public 'dbal.extractor' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\extractor\extractor_interface A phpbb\db\extractor\extractor_interface instance
+     * @return \phpbb\db\extractor\extractor_interface
      */
     protected function getDbal_ExtractorService()
     {
@@ -1691,9 +1470,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.extractor.extractors.mssql_extractor' service.
+     * Gets the public 'dbal.extractor.extractors.mssql_extractor' service.
      *
-     * @return \phpbb\db\extractor\mssql_extractor A phpbb\db\extractor\mssql_extractor instance
+     * @return \phpbb\db\extractor\mssql_extractor
      */
     protected function getDbal_Extractor_Extractors_MssqlExtractorService()
     {
@@ -1701,9 +1480,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.extractor.extractors.mysql_extractor' service.
+     * Gets the public 'dbal.extractor.extractors.mysql_extractor' service.
      *
-     * @return \phpbb\db\extractor\mysql_extractor A phpbb\db\extractor\mysql_extractor instance
+     * @return \phpbb\db\extractor\mysql_extractor
      */
     protected function getDbal_Extractor_Extractors_MysqlExtractorService()
     {
@@ -1711,9 +1490,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.extractor.extractors.oracle_extractor' service.
+     * Gets the public 'dbal.extractor.extractors.oracle_extractor' service.
      *
-     * @return \phpbb\db\extractor\oracle_extractor A phpbb\db\extractor\oracle_extractor instance
+     * @return \phpbb\db\extractor\oracle_extractor
      */
     protected function getDbal_Extractor_Extractors_OracleExtractorService()
     {
@@ -1721,9 +1500,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.extractor.extractors.postgres_extractor' service.
+     * Gets the public 'dbal.extractor.extractors.postgres_extractor' service.
      *
-     * @return \phpbb\db\extractor\postgres_extractor A phpbb\db\extractor\postgres_extractor instance
+     * @return \phpbb\db\extractor\postgres_extractor
      */
     protected function getDbal_Extractor_Extractors_PostgresExtractorService()
     {
@@ -1731,9 +1510,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.extractor.extractors.sqlite3_extractor' service.
+     * Gets the public 'dbal.extractor.extractors.sqlite3_extractor' service.
      *
-     * @return \phpbb\db\extractor\sqlite3_extractor A phpbb\db\extractor\sqlite3_extractor instance
+     * @return \phpbb\db\extractor\sqlite3_extractor
      */
     protected function getDbal_Extractor_Extractors_Sqlite3ExtractorService()
     {
@@ -1741,12 +1520,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.extractor.factory' service.
+     * Gets the public 'dbal.extractor.factory' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\extractor\factory A phpbb\db\extractor\factory instance
+     * @return \phpbb\db\extractor\factory
      */
     protected function getDbal_Extractor_FactoryService()
     {
@@ -1754,12 +1530,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.tools' service.
+     * Gets the public 'dbal.tools' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\tools\tools_interface A phpbb\db\tools\tools_interface instance
+     * @return \phpbb\db\tools\tools_interface
      */
     protected function getDbal_ToolsService()
     {
@@ -1767,12 +1540,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dbal.tools.factory' service.
+     * Gets the public 'dbal.tools.factory' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\tools\factory A phpbb\db\tools\factory instance
+     * @return \phpbb\db\tools\factory
      */
     protected function getDbal_Tools_FactoryService()
     {
@@ -1780,25 +1550,16 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'dispatcher' service.
+     * Gets the public 'dispatcher' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\event\dispatcher A phpbb\event\dispatcher instance
+     * @return \phpbb\event\dispatcher
      */
     protected function getDispatcherService()
     {
         $this->services['dispatcher'] = $instance = new \phpbb\event\dispatcher($this);
 
-        $instance->addSubscriberService('boardtools.upload.listener', 'boardtools\\upload\\event\\listener');
-        $instance->addSubscriberService('gfksx.thanksforposts.listener', 'gfksx\\ThanksForPosts\\event\\listener');
         $instance->addSubscriberService('phpbb.viglink.listener', 'phpbb\\viglink\\event\\listener');
         $instance->addSubscriberService('phpbb.viglink.acp_listener', 'phpbb\\viglink\\event\\acp_listener');
-        $instance->addSubscriberService('senky.removesubjectfromreplies.listener', 'senky\\removesubjectfromreplies\\event\\listener');
-        $instance->addSubscriberService('sheer.postbookmark.listener', 'sheer\\postbookmark\\event\\listener');
-        $instance->addSubscriberService('vse.similartopics.listener', 'vse\\similartopics\\event\\listener');
-        $instance->addSubscriberService('vse.similartopics.ucp_listener', 'vse\\similartopics\\event\\ucp_listener');
         $instance->addSubscriberService('console.exception_subscriber', 'phpbb\\console\\exception_subscriber');
         $instance->addSubscriberService('kernel_exception_subscriber', 'phpbb\\event\\kernel_exception_subscriber');
         $instance->addSubscriberService('kernel_terminate_subscriber', 'phpbb\\event\\kernel_terminate_subscriber');
@@ -1809,22 +1570,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'ext.manager' service.
+     * Gets the public 'ext.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\extension\manager A phpbb\extension\manager instance
+     * @return \phpbb\extension\manager
      */
     protected function getExt_ManagerService()
     {
-        return $this->services['ext.manager'] = new \phpbb\extension\manager($this, $this->get('dbal.conn'), $this->get('config'), $this->get('filesystem'), 'lol_ext', './', 'php', $this->get('cache'));
+        return $this->services['ext.manager'] = new \phpbb\extension\manager($this, $this->get('dbal.conn'), $this->get('config'), $this->get('filesystem'), 'phpbb_ext', './', 'php', $this->get('cache'));
     }
 
     /**
-     * Gets the 'feed.forum' service.
+     * Gets the public 'feed.forum' service.
      *
-     * @return \phpbb\feed\forum A phpbb\feed\forum instance
+     * @return \phpbb\feed\forum
      */
     protected function getFeed_ForumService()
     {
@@ -1832,9 +1590,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'feed.forums' service.
+     * Gets the public 'feed.forums' service.
      *
-     * @return \phpbb\feed\forums A phpbb\feed\forums instance
+     * @return \phpbb\feed\forums
      */
     protected function getFeed_ForumsService()
     {
@@ -1842,22 +1600,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'feed.helper' service.
+     * Gets the public 'feed.helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\feed\helper A phpbb\feed\helper instance
+     * @return \phpbb\feed\helper
      */
     protected function getFeed_HelperService()
     {
-        return $this->services['feed.helper'] = new \phpbb\feed\helper($this->get('config'), $this->get('user'), './', 'php');
+        return $this->services['feed.helper'] = new \phpbb\feed\helper($this->get('config'), $this, $this->get('path_helper'), $this->get('text_formatter.s9e.renderer'), $this->get('user'));
     }
 
     /**
-     * Gets the 'feed.news' service.
+     * Gets the public 'feed.news' service.
      *
-     * @return \phpbb\feed\news A phpbb\feed\news instance
+     * @return \phpbb\feed\news
      */
     protected function getFeed_NewsService()
     {
@@ -1865,9 +1620,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'feed.overall' service.
+     * Gets the public 'feed.overall' service.
      *
-     * @return \phpbb\feed\overall A phpbb\feed\overall instance
+     * @return \phpbb\feed\overall
      */
     protected function getFeed_OverallService()
     {
@@ -1875,9 +1630,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'feed.topic' service.
+     * Gets the public 'feed.quote_helper' shared service.
      *
-     * @return \phpbb\feed\topic A phpbb\feed\topic instance
+     * @return \phpbb\feed\quote_helper
+     */
+    protected function getFeed_QuoteHelperService()
+    {
+        return $this->services['feed.quote_helper'] = new \phpbb\feed\quote_helper($this->get('user'), './', 'php');
+    }
+
+    /**
+     * Gets the public 'feed.topic' service.
+     *
+     * @return \phpbb\feed\topic
      */
     protected function getFeed_TopicService()
     {
@@ -1885,9 +1650,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'feed.topics' service.
+     * Gets the public 'feed.topics' service.
      *
-     * @return \phpbb\feed\topics A phpbb\feed\topics instance
+     * @return \phpbb\feed\topics
      */
     protected function getFeed_TopicsService()
     {
@@ -1895,9 +1660,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'feed.topics_active' service.
+     * Gets the public 'feed.topics_active' service.
      *
-     * @return \phpbb\feed\topics_active A phpbb\feed\topics_active instance
+     * @return \phpbb\feed\topics_active
      */
     protected function getFeed_TopicsActiveService()
     {
@@ -1905,12 +1670,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'file_downloader' service.
+     * Gets the public 'file_downloader' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\file_downloader A phpbb\file_downloader instance
+     * @return \phpbb\file_downloader
      */
     protected function getFileDownloaderService()
     {
@@ -1918,12 +1680,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'file_locator' service.
+     * Gets the public 'file_locator' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\routing\file_locator A phpbb\routing\file_locator instance
+     * @return \phpbb\routing\file_locator
      */
     protected function getFileLocatorService()
     {
@@ -1931,12 +1690,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'files.factory' service.
+     * Gets the public 'files.factory' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\files\factory A phpbb\files\factory instance
+     * @return \phpbb\files\factory
      */
     protected function getFiles_FactoryService()
     {
@@ -1944,9 +1700,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'files.filespec' service.
+     * Gets the public 'files.filespec' service.
      *
-     * @return \phpbb\files\filespec A phpbb\files\filespec instance
+     * @return \phpbb\files\filespec
      */
     protected function getFiles_FilespecService()
     {
@@ -1954,9 +1710,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'files.types.form' service.
+     * Gets the public 'files.types.form' service.
      *
-     * @return \phpbb\files\types\form A phpbb\files\types\form instance
+     * @return \phpbb\files\types\form
      */
     protected function getFiles_Types_FormService()
     {
@@ -1964,9 +1720,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'files.types.local' service.
+     * Gets the public 'files.types.local' service.
      *
-     * @return \phpbb\files\types\local A phpbb\files\types\local instance
+     * @return \phpbb\files\types\local
      */
     protected function getFiles_Types_LocalService()
     {
@@ -1974,9 +1730,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'files.types.remote' service.
+     * Gets the public 'files.types.remote' service.
      *
-     * @return \phpbb\files\types\remote A phpbb\files\types\remote instance
+     * @return \phpbb\files\types\remote
      */
     protected function getFiles_Types_RemoteService()
     {
@@ -1984,9 +1740,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'files.upload' service.
+     * Gets the public 'files.upload' service.
      *
-     * @return \phpbb\files\upload A phpbb\files\upload instance
+     * @return \phpbb\files\upload
      */
     protected function getFiles_UploadService()
     {
@@ -1994,12 +1750,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'filesystem' service.
+     * Gets the public 'filesystem' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\filesystem\filesystem A phpbb\filesystem\filesystem instance
+     * @return \phpbb\filesystem\filesystem
      */
     protected function getFilesystemService()
     {
@@ -2007,94 +1760,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'gfksx.thanksforposts.controller.thankslist' service.
+     * Gets the public 'group_helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \gfksx\ThanksForPosts\controller\thankslist A gfksx\ThanksForPosts\controller\thankslist instance
-     */
-    protected function getGfksx_Thanksforposts_Controller_ThankslistService()
-    {
-        return $this->services['gfksx.thanksforposts.controller.thankslist'] = new \gfksx\ThanksForPosts\controller\thankslist($this->get('config'), $this->get('dbal.conn'), $this->get('auth'), $this->get('template'), $this->get('user'), $this->get('cache.driver'), $this->get('pagination'), $this->get('profilefields.manager'), $this->get('request'), $this->get('controller.helper'), 'lol_thanks', 'lol_users', './', 'php');
-    }
-
-    /**
-     * Gets the 'gfksx.thanksforposts.controller.toplist' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \gfksx\ThanksForPosts\controller\toplist A gfksx\ThanksForPosts\controller\toplist instance
-     */
-    protected function getGfksx_Thanksforposts_Controller_ToplistService()
-    {
-        return $this->services['gfksx.thanksforposts.controller.toplist'] = new \gfksx\ThanksForPosts\controller\toplist($this->get('config'), $this->get('dbal.conn'), $this->get('auth'), $this->get('template'), $this->get('user'), $this->get('cache.driver'), './', 'php', $this->get('pagination'), $this->get('gfksx.thanksforposts.helper'), $this->get('request'), $this->get('controller.helper'), 'lol_thanks', 'lol_users', 'lol_posts');
-    }
-
-    /**
-     * Gets the 'gfksx.thanksforposts.helper' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \gfksx\ThanksForPosts\core\helper A gfksx\ThanksForPosts\core\helper instance
-     */
-    protected function getGfksx_Thanksforposts_HelperService()
-    {
-        return $this->services['gfksx.thanksforposts.helper'] = new \gfksx\ThanksForPosts\core\helper($this->get('config'), $this->get('dbal.conn'), $this->get('auth'), $this->get('template'), $this->get('user'), $this->get('cache.driver'), $this->get('request'), $this->get('notification_manager'), $this->get('controller.helper'), $this->get('dispatcher'), './', 'php', 'lol_', 'lol_thanks', 'lol_users', 'lol_posts', 'lol_notifications');
-    }
-
-    /**
-     * Gets the 'gfksx.thanksforposts.listener' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \gfksx\ThanksForPosts\event\listener A gfksx\ThanksForPosts\event\listener instance
-     */
-    protected function getGfksx_Thanksforposts_ListenerService()
-    {
-        return $this->services['gfksx.thanksforposts.listener'] = new \gfksx\ThanksForPosts\event\listener($this->get('config'), $this->get('dbal.conn'), $this->get('auth'), $this->get('template'), $this->get('user'), $this->get('cache.driver'), $this->get('request'), $this->get('controller.helper'), './', 'php', $this->get('gfksx.thanksforposts.helper'));
-    }
-
-    /**
-     * Gets the 'gfksx.thanksforposts.notification.type.thanks' service.
-     *
-     * @return \gfksx\ThanksForPosts\notification\thanks A gfksx\ThanksForPosts\notification\thanks instance
-     */
-    protected function getGfksx_Thanksforposts_Notification_Type_ThanksService()
-    {
-        $instance = new \gfksx\ThanksForPosts\notification\thanks($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
-
-        $instance->set_user_loader($this->get('user_loader'));
-        $instance->set_notifications_table('lol_notifications');
-
-        return $instance;
-    }
-
-    /**
-     * Gets the 'gfksx.thanksforposts.notification.type.thanks_remove' service.
-     *
-     * @return \gfksx\ThanksForPosts\notification\thanks_remove A gfksx\ThanksForPosts\notification\thanks_remove instance
-     */
-    protected function getGfksx_Thanksforposts_Notification_Type_ThanksRemoveService()
-    {
-        $instance = new \gfksx\ThanksForPosts\notification\thanks_remove($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
-
-        $instance->set_user_loader($this->get('user_loader'));
-        $instance->set_notifications_table('lol_notifications');
-
-        return $instance;
-    }
-
-    /**
-     * Gets the 'group_helper' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\group\helper A phpbb\group\helper instance
+     * @return \phpbb\group\helper
      */
     protected function getGroupHelperService()
     {
@@ -2102,12 +1770,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'groupposition.legend' service.
+     * Gets the public 'groupposition.legend' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\groupposition\legend A phpbb\groupposition\legend instance
+     * @return \phpbb\groupposition\legend
      */
     protected function getGroupposition_LegendService()
     {
@@ -2115,12 +1780,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'groupposition.teampage' service.
+     * Gets the public 'groupposition.teampage' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\groupposition\teampage A phpbb\groupposition\teampage instance
+     * @return \phpbb\groupposition\teampage
      */
     protected function getGroupposition_TeampageService()
     {
@@ -2128,12 +1790,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'hook_finder' service.
+     * Gets the public 'hook_finder' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\hook\finder A phpbb\hook\finder instance
+     * @return \phpbb\hook\finder
      */
     protected function getHookFinderService()
     {
@@ -2141,12 +1800,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'http_kernel' service.
+     * Gets the public 'http_kernel' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\HttpKernel\HttpKernel A Symfony\Component\HttpKernel\HttpKernel instance
+     * @return \Symfony\Component\HttpKernel\HttpKernel
      */
     protected function getHttpKernelService()
     {
@@ -2154,25 +1810,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'kernel_exception_subscriber' service.
+     * Gets the public 'kernel_exception_subscriber' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\event\kernel_exception_subscriber A phpbb\event\kernel_exception_subscriber instance
+     * @return \phpbb\event\kernel_exception_subscriber
      */
     protected function getKernelExceptionSubscriberService()
     {
-        return $this->services['kernel_exception_subscriber'] = new \phpbb\event\kernel_exception_subscriber($this->get('template'), $this->get('language'));
+        return $this->services['kernel_exception_subscriber'] = new \phpbb\event\kernel_exception_subscriber($this->get('template'), $this->get('language'), false);
     }
 
     /**
-     * Gets the 'kernel_terminate_subscriber' service.
+     * Gets the public 'kernel_terminate_subscriber' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\event\kernel_terminate_subscriber A phpbb\event\kernel_terminate_subscriber instance
+     * @return \phpbb\event\kernel_terminate_subscriber
      */
     protected function getKernelTerminateSubscriberService()
     {
@@ -2180,12 +1830,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'language' service.
+     * Gets the public 'language' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\language\language A phpbb\language\language instance
+     * @return \phpbb\language\language
      */
     protected function getLanguageService()
     {
@@ -2193,12 +1840,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'language.helper.language_file' service.
+     * Gets the public 'language.helper.language_file' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\language\language_file_helper A phpbb\language\language_file_helper instance
+     * @return \phpbb\language\language_file_helper
      */
     protected function getLanguage_Helper_LanguageFileService()
     {
@@ -2206,12 +1850,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'language.loader' service.
+     * Gets the public 'language.loader' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\language\language_file_loader A phpbb\language\language_file_loader instance
+     * @return \phpbb\language\language_file_loader
      */
     protected function getLanguage_LoaderService()
     {
@@ -2223,25 +1864,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'log' service.
+     * Gets the public 'log' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\log\log A phpbb\log\log instance
+     * @return \phpbb\log\log
      */
     protected function getLogService()
     {
-        return $this->services['log'] = new \phpbb\log\log($this->get('dbal.conn'), $this->get('user'), $this->get('auth'), $this->get('dispatcher'), './', 'adm/', 'php', 'lol_log');
+        return $this->services['log'] = new \phpbb\log\log($this->get('dbal.conn'), $this->get('user'), $this->get('auth'), $this->get('dispatcher'), './', 'adm/', 'php', 'phpbb_log');
     }
 
     /**
-     * Gets the 'message.form.admin' service.
+     * Gets the public 'message.form.admin' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\message\admin_form A phpbb\message\admin_form instance
+     * @return \phpbb\message\admin_form
      */
     protected function getMessage_Form_AdminService()
     {
@@ -2249,12 +1884,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'message.form.topic' service.
+     * Gets the public 'message.form.topic' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\message\topic_form A phpbb\message\topic_form instance
+     * @return \phpbb\message\topic_form
      */
     protected function getMessage_Form_TopicService()
     {
@@ -2262,12 +1894,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'message.form.user' service.
+     * Gets the public 'message.form.user' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\message\user_form A phpbb\message\user_form instance
+     * @return \phpbb\message\user_form
      */
     protected function getMessage_Form_UserService()
     {
@@ -2275,25 +1904,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'migrator' service.
+     * Gets the public 'migrator' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\migrator A phpbb\db\migrator instance
+     * @return \phpbb\db\migrator
      */
     protected function getMigratorService()
     {
-        return $this->services['migrator'] = new \phpbb\db\migrator($this, $this->get('config'), $this->get('dbal.conn'), $this->get('dbal.tools'), 'lol_migrations', './', 'php', 'lol_', $this->get('migrator.tool_collection'), $this->get('migrator.helper'));
+        return $this->services['migrator'] = new \phpbb\db\migrator($this, $this->get('config'), $this->get('dbal.conn'), $this->get('dbal.tools'), 'phpbb_migrations', './', 'php', 'phpbb_', $this->get('migrator.tool_collection'), $this->get('migrator.helper'));
     }
 
     /**
-     * Gets the 'migrator.helper' service.
+     * Gets the public 'migrator.helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\migration\helper A phpbb\db\migration\helper instance
+     * @return \phpbb\db\migration\helper
      */
     protected function getMigrator_HelperService()
     {
@@ -2301,12 +1924,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'migrator.tool.config' service.
+     * Gets the public 'migrator.tool.config' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\migration\tool\config A phpbb\db\migration\tool\config instance
+     * @return \phpbb\db\migration\tool\config
      */
     protected function getMigrator_Tool_ConfigService()
     {
@@ -2314,12 +1934,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'migrator.tool.config_text' service.
+     * Gets the public 'migrator.tool.config_text' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\migration\tool\config_text A phpbb\db\migration\tool\config_text instance
+     * @return \phpbb\db\migration\tool\config_text
      */
     protected function getMigrator_Tool_ConfigTextService()
     {
@@ -2327,25 +1944,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'migrator.tool.module' service.
+     * Gets the public 'migrator.tool.module' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\migration\tool\module A phpbb\db\migration\tool\module instance
+     * @return \phpbb\db\migration\tool\module
      */
     protected function getMigrator_Tool_ModuleService()
     {
-        return $this->services['migrator.tool.module'] = new \phpbb\db\migration\tool\module($this->get('dbal.conn'), $this->get('cache'), $this->get('user'), $this->get('module.manager'), './', 'php', 'lol_modules');
+        return $this->services['migrator.tool.module'] = new \phpbb\db\migration\tool\module($this->get('dbal.conn'), $this->get('cache'), $this->get('user'), $this->get('module.manager'), './', 'php', 'phpbb_modules');
     }
 
     /**
-     * Gets the 'migrator.tool.permission' service.
+     * Gets the public 'migrator.tool.permission' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\db\migration\tool\permission A phpbb\db\migration\tool\permission instance
+     * @return \phpbb\db\migration\tool\permission
      */
     protected function getMigrator_Tool_PermissionService()
     {
@@ -2353,12 +1964,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'migrator.tool_collection' service.
+     * Gets the public 'migrator.tool_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getMigrator_ToolCollectionService()
     {
@@ -2373,12 +1981,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'mimetype.content_guesser' service.
+     * Gets the public 'mimetype.content_guesser' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\mimetype\content_guesser A phpbb\mimetype\content_guesser instance
+     * @return \phpbb\mimetype\content_guesser
      */
     protected function getMimetype_ContentGuesserService()
     {
@@ -2390,12 +1995,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'mimetype.extension_guesser' service.
+     * Gets the public 'mimetype.extension_guesser' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\mimetype\extension_guesser A phpbb\mimetype\extension_guesser instance
+     * @return \phpbb\mimetype\extension_guesser
      */
     protected function getMimetype_ExtensionGuesserService()
     {
@@ -2407,12 +2009,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'mimetype.filebinary_mimetype_guesser' service.
+     * Gets the public 'mimetype.filebinary_mimetype_guesser' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\HttpFoundation\File\MimeType\FileBinaryMimeTypeGuesser A Symfony\Component\HttpFoundation\File\MimeType\FileBinaryMimeTypeGuesser instance
+     * @return \Symfony\Component\HttpFoundation\File\MimeType\FileBinaryMimeTypeGuesser
      */
     protected function getMimetype_FilebinaryMimetypeGuesserService()
     {
@@ -2420,12 +2019,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'mimetype.fileinfo_mimetype_guesser' service.
+     * Gets the public 'mimetype.fileinfo_mimetype_guesser' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\HttpFoundation\File\MimeType\FileinfoMimeTypeGuesser A Symfony\Component\HttpFoundation\File\MimeType\FileinfoMimeTypeGuesser instance
+     * @return \Symfony\Component\HttpFoundation\File\MimeType\FileinfoMimeTypeGuesser
      */
     protected function getMimetype_FileinfoMimetypeGuesserService()
     {
@@ -2433,12 +2029,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'mimetype.guesser' service.
+     * Gets the public 'mimetype.guesser' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\mimetype\guesser A phpbb\mimetype\guesser instance
+     * @return \phpbb\mimetype\guesser
      */
     protected function getMimetype_GuesserService()
     {
@@ -2446,12 +2039,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'mimetype.guesser_collection' service.
+     * Gets the public 'mimetype.guesser_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getMimetype_GuesserCollectionService()
     {
@@ -2466,32 +2056,29 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'module.manager' service.
+     * Gets the public 'module.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\module\module_manager A phpbb\module\module_manager instance
+     * @return \phpbb\module\module_manager
      */
     protected function getModule_ManagerService()
     {
-        return $this->services['module.manager'] = new \phpbb\module\module_manager($this->get('cache.driver'), $this->get('dbal.conn'), $this->get('ext.manager'), 'lol_modules', './', 'php');
+        return $this->services['module.manager'] = new \phpbb\module\module_manager($this->get('cache.driver'), $this->get('dbal.conn'), $this->get('ext.manager'), 'phpbb_modules', './', 'php');
     }
 
     /**
-     * Gets the 'notification.method.board' service.
+     * Gets the public 'notification.method.board' service.
      *
-     * @return \phpbb\notification\method\board A phpbb\notification\method\board instance
+     * @return \phpbb\notification\method\board
      */
     protected function getNotification_Method_BoardService()
     {
-        return new \phpbb\notification\method\board($this->get('user_loader'), $this->get('dbal.conn'), $this->get('cache.driver'), $this->get('user'), $this->get('config'), 'lol_notification_types', 'lol_notifications');
+        return new \phpbb\notification\method\board($this->get('user_loader'), $this->get('dbal.conn'), $this->get('cache.driver'), $this->get('user'), $this->get('config'), 'phpbb_notification_types', 'phpbb_notifications');
     }
 
     /**
-     * Gets the 'notification.method.email' service.
+     * Gets the public 'notification.method.email' service.
      *
-     * @return \phpbb\notification\method\email A phpbb\notification\method\email instance
+     * @return \phpbb\notification\method\email
      */
     protected function getNotification_Method_EmailService()
     {
@@ -2499,9 +2086,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.method.jabber' service.
+     * Gets the public 'notification.method.jabber' service.
      *
-     * @return \phpbb\notification\method\jabber A phpbb\notification\method\jabber instance
+     * @return \phpbb\notification\method\jabber
      */
     protected function getNotification_Method_JabberService()
     {
@@ -2509,12 +2096,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.method_collection' service.
+     * Gets the public 'notification.method_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getNotification_MethodCollectionService()
     {
@@ -2528,13 +2112,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.admin_activate_user' service.
+     * Gets the public 'notification.type.admin_activate_user' service.
      *
-     * @return \phpbb\notification\type\admin_activate_user A phpbb\notification\type\admin_activate_user instance
+     * @return \phpbb\notification\type\admin_activate_user
      */
     protected function getNotification_Type_AdminActivateUserService()
     {
-        $instance = new \phpbb\notification\type\admin_activate_user($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\admin_activate_user($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2543,13 +2127,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.approve_post' service.
+     * Gets the public 'notification.type.approve_post' service.
      *
-     * @return \phpbb\notification\type\approve_post A phpbb\notification\type\approve_post instance
+     * @return \phpbb\notification\type\approve_post
      */
     protected function getNotification_Type_ApprovePostService()
     {
-        $instance = new \phpbb\notification\type\approve_post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\approve_post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2558,13 +2142,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.approve_topic' service.
+     * Gets the public 'notification.type.approve_topic' service.
      *
-     * @return \phpbb\notification\type\approve_topic A phpbb\notification\type\approve_topic instance
+     * @return \phpbb\notification\type\approve_topic
      */
     protected function getNotification_Type_ApproveTopicService()
     {
-        $instance = new \phpbb\notification\type\approve_topic($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\approve_topic($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2573,13 +2157,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.bookmark' service.
+     * Gets the public 'notification.type.bookmark' service.
      *
-     * @return \phpbb\notification\type\bookmark A phpbb\notification\type\bookmark instance
+     * @return \phpbb\notification\type\bookmark
      */
     protected function getNotification_Type_BookmarkService()
     {
-        $instance = new \phpbb\notification\type\bookmark($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\bookmark($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2588,13 +2172,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.disapprove_post' service.
+     * Gets the public 'notification.type.disapprove_post' service.
      *
-     * @return \phpbb\notification\type\disapprove_post A phpbb\notification\type\disapprove_post instance
+     * @return \phpbb\notification\type\disapprove_post
      */
     protected function getNotification_Type_DisapprovePostService()
     {
-        $instance = new \phpbb\notification\type\disapprove_post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\disapprove_post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2603,13 +2187,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.disapprove_topic' service.
+     * Gets the public 'notification.type.disapprove_topic' service.
      *
-     * @return \phpbb\notification\type\disapprove_topic A phpbb\notification\type\disapprove_topic instance
+     * @return \phpbb\notification\type\disapprove_topic
      */
     protected function getNotification_Type_DisapproveTopicService()
     {
-        $instance = new \phpbb\notification\type\disapprove_topic($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\disapprove_topic($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2618,13 +2202,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.group_request' service.
+     * Gets the public 'notification.type.group_request' service.
      *
-     * @return \phpbb\notification\type\group_request A phpbb\notification\type\group_request instance
+     * @return \phpbb\notification\type\group_request
      */
     protected function getNotification_Type_GroupRequestService()
     {
-        $instance = new \phpbb\notification\type\group_request($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\group_request($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
 
@@ -2632,23 +2216,23 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.group_request_approved' service.
+     * Gets the public 'notification.type.group_request_approved' service.
      *
-     * @return \phpbb\notification\type\group_request_approved A phpbb\notification\type\group_request_approved instance
+     * @return \phpbb\notification\type\group_request_approved
      */
     protected function getNotification_Type_GroupRequestApprovedService()
     {
-        return new \phpbb\notification\type\group_request_approved($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        return new \phpbb\notification\type\group_request_approved($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
     }
 
     /**
-     * Gets the 'notification.type.pm' service.
+     * Gets the public 'notification.type.pm' service.
      *
-     * @return \phpbb\notification\type\pm A phpbb\notification\type\pm instance
+     * @return \phpbb\notification\type\pm
      */
     protected function getNotification_Type_PmService()
     {
-        $instance = new \phpbb\notification\type\pm($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\pm($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2657,13 +2241,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.post' service.
+     * Gets the public 'notification.type.post' service.
      *
-     * @return \phpbb\notification\type\post A phpbb\notification\type\post instance
+     * @return \phpbb\notification\type\post
      */
     protected function getNotification_Type_PostService()
     {
-        $instance = new \phpbb\notification\type\post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2672,13 +2256,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.post_in_queue' service.
+     * Gets the public 'notification.type.post_in_queue' service.
      *
-     * @return \phpbb\notification\type\post_in_queue A phpbb\notification\type\post_in_queue instance
+     * @return \phpbb\notification\type\post_in_queue
      */
     protected function getNotification_Type_PostInQueueService()
     {
-        $instance = new \phpbb\notification\type\post_in_queue($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\post_in_queue($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2687,13 +2271,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.quote' service.
+     * Gets the public 'notification.type.quote' service.
      *
-     * @return \phpbb\notification\type\quote A phpbb\notification\type\quote instance
+     * @return \phpbb\notification\type\quote
      */
     protected function getNotification_Type_QuoteService()
     {
-        $instance = new \phpbb\notification\type\quote($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\quote($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2703,13 +2287,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.report_pm' service.
+     * Gets the public 'notification.type.report_pm' service.
      *
-     * @return \phpbb\notification\type\report_pm A phpbb\notification\type\report_pm instance
+     * @return \phpbb\notification\type\report_pm
      */
     protected function getNotification_Type_ReportPmService()
     {
-        $instance = new \phpbb\notification\type\report_pm($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\report_pm($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2718,13 +2302,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.report_pm_closed' service.
+     * Gets the public 'notification.type.report_pm_closed' service.
      *
-     * @return \phpbb\notification\type\report_pm_closed A phpbb\notification\type\report_pm_closed instance
+     * @return \phpbb\notification\type\report_pm_closed
      */
     protected function getNotification_Type_ReportPmClosedService()
     {
-        $instance = new \phpbb\notification\type\report_pm_closed($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\report_pm_closed($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2733,13 +2317,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.report_post' service.
+     * Gets the public 'notification.type.report_post' service.
      *
-     * @return \phpbb\notification\type\report_post A phpbb\notification\type\report_post instance
+     * @return \phpbb\notification\type\report_post
      */
     protected function getNotification_Type_ReportPostService()
     {
-        $instance = new \phpbb\notification\type\report_post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\report_post($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2748,13 +2332,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.report_post_closed' service.
+     * Gets the public 'notification.type.report_post_closed' service.
      *
-     * @return \phpbb\notification\type\report_post_closed A phpbb\notification\type\report_post_closed instance
+     * @return \phpbb\notification\type\report_post_closed
      */
     protected function getNotification_Type_ReportPostClosedService()
     {
-        $instance = new \phpbb\notification\type\report_post_closed($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\report_post_closed($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2763,13 +2347,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.topic' service.
+     * Gets the public 'notification.type.topic' service.
      *
-     * @return \phpbb\notification\type\topic A phpbb\notification\type\topic instance
+     * @return \phpbb\notification\type\topic
      */
     protected function getNotification_Type_TopicService()
     {
-        $instance = new \phpbb\notification\type\topic($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\topic($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2778,13 +2362,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type.topic_in_queue' service.
+     * Gets the public 'notification.type.topic_in_queue' service.
      *
-     * @return \phpbb\notification\type\topic_in_queue A phpbb\notification\type\topic_in_queue instance
+     * @return \phpbb\notification\type\topic_in_queue
      */
     protected function getNotification_Type_TopicInQueueService()
     {
-        $instance = new \phpbb\notification\type\topic_in_queue($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'lol_user_notifications');
+        $instance = new \phpbb\notification\type\topic_in_queue($this->get('dbal.conn'), $this->get('language'), $this->get('user'), $this->get('auth'), './', 'php', 'phpbb_user_notifications');
 
         $instance->set_user_loader($this->get('user_loader'));
         $instance->set_config($this->get('config'));
@@ -2793,12 +2377,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'notification.type_collection' service.
+     * Gets the public 'notification.type_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getNotification_TypeCollectionService()
     {
@@ -2822,32 +2403,24 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
         $instance->add('notification.type.report_post_closed');
         $instance->add('notification.type.topic');
         $instance->add('notification.type.topic_in_queue');
-        $instance->add('gfksx.thanksforposts.notification.type.thanks');
-        $instance->add('gfksx.thanksforposts.notification.type.thanks_remove');
 
         return $instance;
     }
 
     /**
-     * Gets the 'notification_manager' service.
+     * Gets the public 'notification_manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\notification\manager A phpbb\notification\manager instance
+     * @return \phpbb\notification\manager
      */
     protected function getNotificationManagerService()
     {
-        return $this->services['notification_manager'] = new \phpbb\notification\manager($this->get('notification.type_collection'), $this->get('notification.method_collection'), $this, $this->get('user_loader'), $this->get('dispatcher'), $this->get('dbal.conn'), $this->get('cache'), $this->get('language'), $this->get('user'), 'lol_notification_types', 'lol_user_notifications');
+        return $this->services['notification_manager'] = new \phpbb\notification\manager($this->get('notification.type_collection'), $this->get('notification.method_collection'), $this, $this->get('user_loader'), $this->get('dispatcher'), $this->get('dbal.conn'), $this->get('cache'), $this->get('language'), $this->get('user'), 'phpbb_notification_types', 'phpbb_user_notifications');
     }
 
     /**
-     * Gets the 'pagination' service.
+     * Gets the public 'pagination' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\pagination A phpbb\pagination instance
+     * @return \phpbb\pagination
      */
     protected function getPaginationService()
     {
@@ -2855,12 +2428,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.bcrypt' service.
+     * Gets the public 'passwords.driver.bcrypt' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\bcrypt A phpbb\passwords\driver\bcrypt instance
+     * @return \phpbb\passwords\driver\bcrypt
      */
     protected function getPasswords_Driver_BcryptService()
     {
@@ -2868,12 +2438,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.bcrypt_2y' service.
+     * Gets the public 'passwords.driver.bcrypt_2y' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\bcrypt_2y A phpbb\passwords\driver\bcrypt_2y instance
+     * @return \phpbb\passwords\driver\bcrypt_2y
      */
     protected function getPasswords_Driver_Bcrypt2yService()
     {
@@ -2881,12 +2448,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.bcrypt_wcf2' service.
+     * Gets the public 'passwords.driver.bcrypt_wcf2' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\bcrypt_wcf2 A phpbb\passwords\driver\bcrypt_wcf2 instance
+     * @return \phpbb\passwords\driver\bcrypt_wcf2
      */
     protected function getPasswords_Driver_BcryptWcf2Service()
     {
@@ -2894,12 +2458,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.convert_password' service.
+     * Gets the public 'passwords.driver.convert_password' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\convert_password A phpbb\passwords\driver\convert_password instance
+     * @return \phpbb\passwords\driver\convert_password
      */
     protected function getPasswords_Driver_ConvertPasswordService()
     {
@@ -2907,12 +2468,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.md5_mybb' service.
+     * Gets the public 'passwords.driver.md5_mybb' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\md5_mybb A phpbb\passwords\driver\md5_mybb instance
+     * @return \phpbb\passwords\driver\md5_mybb
      */
     protected function getPasswords_Driver_Md5MybbService()
     {
@@ -2920,12 +2478,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.md5_phpbb2' service.
+     * Gets the public 'passwords.driver.md5_phpbb2' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\md5_phpbb2 A phpbb\passwords\driver\md5_phpbb2 instance
+     * @return \phpbb\passwords\driver\md5_phpbb2
      */
     protected function getPasswords_Driver_Md5Phpbb2Service()
     {
@@ -2933,12 +2488,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.md5_vb' service.
+     * Gets the public 'passwords.driver.md5_vb' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\md5_vb A phpbb\passwords\driver\md5_vb instance
+     * @return \phpbb\passwords\driver\md5_vb
      */
     protected function getPasswords_Driver_Md5VbService()
     {
@@ -2946,12 +2498,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.phpass' service.
+     * Gets the public 'passwords.driver.phpass' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\phpass A phpbb\passwords\driver\phpass instance
+     * @return \phpbb\passwords\driver\phpass
      */
     protected function getPasswords_Driver_PhpassService()
     {
@@ -2959,12 +2508,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.salted_md5' service.
+     * Gets the public 'passwords.driver.salted_md5' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\salted_md5 A phpbb\passwords\driver\salted_md5 instance
+     * @return \phpbb\passwords\driver\salted_md5
      */
     protected function getPasswords_Driver_SaltedMd5Service()
     {
@@ -2972,12 +2518,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.sha1' service.
+     * Gets the public 'passwords.driver.sha1' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\sha1 A phpbb\passwords\driver\sha1 instance
+     * @return \phpbb\passwords\driver\sha1
      */
     protected function getPasswords_Driver_Sha1Service()
     {
@@ -2985,12 +2528,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.sha1_smf' service.
+     * Gets the public 'passwords.driver.sha1_smf' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\sha1_smf A phpbb\passwords\driver\sha1_smf instance
+     * @return \phpbb\passwords\driver\sha1_smf
      */
     protected function getPasswords_Driver_Sha1SmfService()
     {
@@ -2998,12 +2538,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver.sha1_wcf1' service.
+     * Gets the public 'passwords.driver.sha1_wcf1' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\sha1_wcf1 A phpbb\passwords\driver\sha1_wcf1 instance
+     * @return \phpbb\passwords\driver\sha1_wcf1
      */
     protected function getPasswords_Driver_Sha1Wcf1Service()
     {
@@ -3011,12 +2548,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver_collection' service.
+     * Gets the public 'passwords.driver_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getPasswords_DriverCollectionService()
     {
@@ -3039,12 +2573,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.driver_helper' service.
+     * Gets the public 'passwords.driver_helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\driver\helper A phpbb\passwords\driver\helper instance
+     * @return \phpbb\passwords\driver\helper
      */
     protected function getPasswords_DriverHelperService()
     {
@@ -3052,12 +2583,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.helper' service.
+     * Gets the public 'passwords.helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\helper A phpbb\passwords\helper instance
+     * @return \phpbb\passwords\helper
      */
     protected function getPasswords_HelperService()
     {
@@ -3065,12 +2593,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'passwords.manager' service.
+     * Gets the public 'passwords.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\passwords\manager A phpbb\passwords\manager instance
+     * @return \phpbb\passwords\manager
      */
     protected function getPasswords_ManagerService()
     {
@@ -3078,12 +2603,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'path_helper' service.
+     * Gets the public 'passwords.update.lock' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * @return \phpbb\lock\db
+     */
+    protected function getPasswords_Update_LockService()
+    {
+        return $this->services['passwords.update.lock'] = new \phpbb\lock\db('update_hashes_lock', $this->get('config'), $this->get('dbal.conn'));
+    }
+
+    /**
+     * Gets the public 'path_helper' shared service.
      *
-     * @return \phpbb\path_helper A phpbb\path_helper instance
+     * @return \phpbb\path_helper
      */
     protected function getPathHelperService()
     {
@@ -3091,12 +2623,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'php_ini' service.
+     * Gets the public 'php_ini' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \bantu\IniGetWrapper\IniGetWrapper A bantu\IniGetWrapper\IniGetWrapper instance
+     * @return \bantu\IniGetWrapper\IniGetWrapper
      */
     protected function getPhpIniService()
     {
@@ -3104,12 +2633,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.feed.controller' service.
+     * Gets the public 'phpbb.feed.controller' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\feed\controller\feed A phpbb\feed\controller\feed instance
+     * @return \phpbb\feed\controller\feed
      */
     protected function getPhpbb_Feed_ControllerService()
     {
@@ -3117,12 +2643,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.help.controller.bbcode' service.
+     * Gets the public 'phpbb.help.controller.bbcode' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\help\controller\bbcode A phpbb\help\controller\bbcode instance
+     * @return \phpbb\help\controller\bbcode
      */
     protected function getPhpbb_Help_Controller_BbcodeService()
     {
@@ -3130,12 +2653,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.help.controller.faq' service.
+     * Gets the public 'phpbb.help.controller.faq' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\help\controller\faq A phpbb\help\controller\faq instance
+     * @return \phpbb\help\controller\faq
      */
     protected function getPhpbb_Help_Controller_FaqService()
     {
@@ -3143,12 +2663,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.help.manager' service.
+     * Gets the public 'phpbb.help.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\help\manager A phpbb\help\manager instance
+     * @return \phpbb\help\manager
      */
     protected function getPhpbb_Help_ManagerService()
     {
@@ -3156,12 +2673,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.report.controller' service.
+     * Gets the public 'phpbb.report.controller' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\report\controller\report A phpbb\report\controller\report instance
+     * @return \phpbb\report\controller\report
      */
     protected function getPhpbb_Report_ControllerService()
     {
@@ -3169,12 +2683,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.report.handler_factory' service.
+     * Gets the public 'phpbb.report.handler_factory' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\report\handler_factory A phpbb\report\handler_factory instance
+     * @return \phpbb\report\handler_factory
      */
     protected function getPhpbb_Report_HandlerFactoryService()
     {
@@ -3182,9 +2693,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.report.handlers.report_handler_pm' service.
+     * Gets the public 'phpbb.report.handlers.report_handler_pm' service.
      *
-     * @return \phpbb\report\report_handler_pm A phpbb\report\report_handler_pm instance
+     * @return \phpbb\report\report_handler_pm
      */
     protected function getPhpbb_Report_Handlers_ReportHandlerPmService()
     {
@@ -3192,9 +2703,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.report.handlers.report_handler_post' service.
+     * Gets the public 'phpbb.report.handlers.report_handler_post' service.
      *
-     * @return \phpbb\report\report_handler_post A phpbb\report\report_handler_post instance
+     * @return \phpbb\report\report_handler_post
      */
     protected function getPhpbb_Report_Handlers_ReportHandlerPostService()
     {
@@ -3202,12 +2713,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.report.report_reason_list_provider' service.
+     * Gets the public 'phpbb.report.report_reason_list_provider' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\report\report_reason_list_provider A phpbb\report\report_reason_list_provider instance
+     * @return \phpbb\report\report_reason_list_provider
      */
     protected function getPhpbb_Report_ReportReasonListProviderService()
     {
@@ -3215,12 +2723,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.viglink.acp_listener' service.
+     * Gets the public 'phpbb.viglink.acp_listener' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\viglink\event\acp_listener A phpbb\viglink\event\acp_listener instance
+     * @return \phpbb\viglink\event\acp_listener
      */
     protected function getPhpbb_Viglink_AcpListenerService()
     {
@@ -3228,12 +2733,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.viglink.cron.task.viglink' service.
+     * Gets the public 'phpbb.viglink.cron.task.viglink' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\viglink\cron\viglink A phpbb\viglink\cron\viglink instance
+     * @return \phpbb\viglink\cron\viglink
      */
     protected function getPhpbb_Viglink_Cron_Task_ViglinkService()
     {
@@ -3245,25 +2747,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'phpbb.viglink.helper' service.
+     * Gets the public 'phpbb.viglink.helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\viglink\acp\viglink_helper A phpbb\viglink\acp\viglink_helper instance
+     * @return \phpbb\viglink\acp\viglink_helper
      */
     protected function getPhpbb_Viglink_HelperService()
     {
-        return $this->services['phpbb.viglink.helper'] = new \phpbb\viglink\acp\viglink_helper($this->get('cache'), $this->get('config'), $this->get('file_downloader'), $this->get('language'), $this->get('log'), $this->get('user'));
+        return $this->services['phpbb.viglink.helper'] = new \phpbb\viglink\acp\viglink_helper($this->get('cache.driver'), $this->get('config'), $this->get('file_downloader'), $this->get('language'), $this->get('log'), $this->get('user'));
     }
 
     /**
-     * Gets the 'phpbb.viglink.listener' service.
+     * Gets the public 'phpbb.viglink.listener' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\viglink\event\listener A phpbb\viglink\event\listener instance
+     * @return \phpbb\viglink\event\listener
      */
     protected function getPhpbb_Viglink_ListenerService()
     {
@@ -3271,12 +2767,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'plupload' service.
+     * Gets the public 'plupload' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\plupload\plupload A phpbb\plupload\plupload instance
+     * @return \phpbb\plupload\plupload
      */
     protected function getPluploadService()
     {
@@ -3284,38 +2777,29 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.lang_helper' service.
+     * Gets the public 'profilefields.lang_helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\lang_helper A phpbb\profilefields\lang_helper instance
+     * @return \phpbb\profilefields\lang_helper
      */
     protected function getProfilefields_LangHelperService()
     {
-        return $this->services['profilefields.lang_helper'] = new \phpbb\profilefields\lang_helper($this->get('dbal.conn'), 'lol_profile_fields_lang');
+        return $this->services['profilefields.lang_helper'] = new \phpbb\profilefields\lang_helper($this->get('dbal.conn'), 'phpbb_profile_fields_lang');
     }
 
     /**
-     * Gets the 'profilefields.manager' service.
+     * Gets the public 'profilefields.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\manager A phpbb\profilefields\manager instance
+     * @return \phpbb\profilefields\manager
      */
     protected function getProfilefields_ManagerService()
     {
-        return $this->services['profilefields.manager'] = new \phpbb\profilefields\manager($this->get('auth'), $this->get('dbal.conn'), $this->get('dispatcher'), $this->get('request'), $this->get('template'), $this->get('profilefields.type_collection'), $this->get('user'), 'lol_profile_fields', 'lol_profile_lang', 'lol_profile_fields_data');
+        return $this->services['profilefields.manager'] = new \phpbb\profilefields\manager($this->get('auth'), $this->get('dbal.conn'), $this->get('dispatcher'), $this->get('request'), $this->get('template'), $this->get('profilefields.type_collection'), $this->get('user'), 'phpbb_profile_fields', 'phpbb_profile_lang', 'phpbb_profile_fields_data');
     }
 
     /**
-     * Gets the 'profilefields.type.bool' service.
+     * Gets the public 'profilefields.type.bool' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_bool A phpbb\profilefields\type\type_bool instance
+     * @return \phpbb\profilefields\type\type_bool
      */
     protected function getProfilefields_Type_BoolService()
     {
@@ -3323,12 +2807,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type.date' service.
+     * Gets the public 'profilefields.type.date' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_date A phpbb\profilefields\type\type_date instance
+     * @return \phpbb\profilefields\type\type_date
      */
     protected function getProfilefields_Type_DateService()
     {
@@ -3336,12 +2817,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type.dropdown' service.
+     * Gets the public 'profilefields.type.dropdown' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_dropdown A phpbb\profilefields\type\type_dropdown instance
+     * @return \phpbb\profilefields\type\type_dropdown
      */
     protected function getProfilefields_Type_DropdownService()
     {
@@ -3349,12 +2827,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type.googleplus' service.
+     * Gets the public 'profilefields.type.googleplus' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_googleplus A phpbb\profilefields\type\type_googleplus instance
+     * @return \phpbb\profilefields\type\type_googleplus
      */
     protected function getProfilefields_Type_GoogleplusService()
     {
@@ -3362,12 +2837,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type.int' service.
+     * Gets the public 'profilefields.type.int' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_int A phpbb\profilefields\type\type_int instance
+     * @return \phpbb\profilefields\type\type_int
      */
     protected function getProfilefields_Type_IntService()
     {
@@ -3375,12 +2847,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type.string' service.
+     * Gets the public 'profilefields.type.string' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_string A phpbb\profilefields\type\type_string instance
+     * @return \phpbb\profilefields\type\type_string
      */
     protected function getProfilefields_Type_StringService()
     {
@@ -3388,12 +2857,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type.text' service.
+     * Gets the public 'profilefields.type.text' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_text A phpbb\profilefields\type\type_text instance
+     * @return \phpbb\profilefields\type\type_text
      */
     protected function getProfilefields_Type_TextService()
     {
@@ -3401,12 +2867,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type.url' service.
+     * Gets the public 'profilefields.type.url' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\profilefields\type\type_url A phpbb\profilefields\type\type_url instance
+     * @return \phpbb\profilefields\type\type_url
      */
     protected function getProfilefields_Type_UrlService()
     {
@@ -3414,12 +2877,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'profilefields.type_collection' service.
+     * Gets the public 'profilefields.type_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getProfilefields_TypeCollectionService()
     {
@@ -3438,12 +2898,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'request' service.
+     * Gets the public 'request' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\request\request A phpbb\request\request instance
+     * @return \phpbb\request\request
      */
     protected function getRequestService()
     {
@@ -3451,12 +2908,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'request_stack' service.
+     * Gets the public 'request_stack' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\HttpFoundation\RequestStack A Symfony\Component\HttpFoundation\RequestStack instance
+     * @return \Symfony\Component\HttpFoundation\RequestStack
      */
     protected function getRequestStackService()
     {
@@ -3464,12 +2918,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'router' service.
+     * Gets the public 'router' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\routing\router A phpbb\routing\router instance
+     * @return \phpbb\routing\router
      */
     protected function getRouterService()
     {
@@ -3477,12 +2928,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'router.listener' service.
+     * Gets the public 'router.listener' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\HttpKernel\EventListener\RouterListener A Symfony\Component\HttpKernel\EventListener\RouterListener instance
+     * @return \Symfony\Component\HttpKernel\EventListener\RouterListener
      */
     protected function getRouter_ListenerService()
     {
@@ -3490,12 +2938,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.chained_resources_locator' service.
+     * Gets the public 'routing.chained_resources_locator' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\routing\resources_locator\chained_resources_locator A phpbb\routing\resources_locator\chained_resources_locator instance
+     * @return \phpbb\routing\resources_locator\chained_resources_locator
      */
     protected function getRouting_ChainedResourcesLocatorService()
     {
@@ -3503,12 +2948,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.delegated_loader' service.
+     * Gets the public 'routing.delegated_loader' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\Config\Loader\DelegatingLoader A Symfony\Component\Config\Loader\DelegatingLoader instance
+     * @return \Symfony\Component\Config\Loader\DelegatingLoader
      */
     protected function getRouting_DelegatedLoaderService()
     {
@@ -3516,12 +2958,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.helper' service.
+     * Gets the public 'routing.helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\routing\helper A phpbb\routing\helper instance
+     * @return \phpbb\routing\helper
      */
     protected function getRouting_HelperService()
     {
@@ -3529,12 +2968,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.loader.collection' service.
+     * Gets the public 'routing.loader.collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getRouting_Loader_CollectionService()
     {
@@ -3546,12 +2982,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.loader.yaml' service.
+     * Gets the public 'routing.loader.yaml' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\Routing\Loader\YamlFileLoader A Symfony\Component\Routing\Loader\YamlFileLoader instance
+     * @return \Symfony\Component\Routing\Loader\YamlFileLoader
      */
     protected function getRouting_Loader_YamlService()
     {
@@ -3559,12 +2992,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.resolver' service.
+     * Gets the public 'routing.resolver' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\routing\loader_resolver A phpbb\routing\loader_resolver instance
+     * @return \phpbb\routing\loader_resolver
      */
     protected function getRouting_ResolverService()
     {
@@ -3572,12 +3002,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.resources_locator.collection' service.
+     * Gets the public 'routing.resources_locator.collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getRouting_ResourcesLocator_CollectionService()
     {
@@ -3589,12 +3016,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'routing.resources_locator.default' service.
+     * Gets the public 'routing.resources_locator.default' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\routing\resources_locator\default_resources_locator A phpbb\routing\resources_locator\default_resources_locator instance
+     * @return \phpbb\routing\resources_locator\default_resources_locator
      */
     protected function getRouting_ResourcesLocator_DefaultService()
     {
@@ -3602,64 +3026,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'senky.removesubjectfromreplies.listener' service.
+     * Gets the public 'symfony_request' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \senky\removesubjectfromreplies\event\listener A senky\removesubjectfromreplies\event\listener instance
-     */
-    protected function getSenky_Removesubjectfromreplies_ListenerService()
-    {
-        return $this->services['senky.removesubjectfromreplies.listener'] = new \senky\removesubjectfromreplies\event\listener($this->get('user'), 'lol_topics');
-    }
-
-    /**
-     * Gets the 'sheer.postbookmark.controller' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \sheer\postbookmark\controller\postbookmark A sheer\postbookmark\controller\postbookmark instance
-     */
-    protected function getSheer_Postbookmark_ControllerService()
-    {
-        return $this->services['sheer.postbookmark.controller'] = new \sheer\postbookmark\controller\postbookmark($this->get('template'), $this->get('request'), $this->get('dbal.conn'), $this->get('user'), './', 'php', 'lol_posts_bookmarks', $this->get('sheer.postbookmark.helper'));
-    }
-
-    /**
-     * Gets the 'sheer.postbookmark.helper' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \sheer\postbookmark\core\helper A sheer\postbookmark\core\helper instance
-     */
-    protected function getSheer_Postbookmark_HelperService()
-    {
-        return $this->services['sheer.postbookmark.helper'] = new \sheer\postbookmark\core\helper($this->get('config'), $this->get('dbal.conn'), $this->get('template'), $this->get('user'), $this->get('request'), $this->get('pagination'), './', 'php', 'lol_');
-    }
-
-    /**
-     * Gets the 'sheer.postbookmark.listener' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \sheer\postbookmark\event\listener A sheer\postbookmark\event\listener instance
-     */
-    protected function getSheer_Postbookmark_ListenerService()
-    {
-        return $this->services['sheer.postbookmark.listener'] = new \sheer\postbookmark\event\listener('./', 'php', $this->get('template'), $this->get('dbal.conn'), $this->get('user'), $this->get('config'), $this->get('ext.manager'), 'lol_posts_bookmarks');
-    }
-
-    /**
-     * Gets the 'symfony_request' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\symfony_request A phpbb\symfony_request instance
+     * @return \phpbb\symfony_request
      */
     protected function getSymfonyRequestService()
     {
@@ -3667,12 +3036,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'symfony_response_listener' service.
+     * Gets the public 'symfony_response_listener' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Symfony\Component\HttpKernel\EventListener\ResponseListener A Symfony\Component\HttpKernel\EventListener\ResponseListener instance
+     * @return \Symfony\Component\HttpKernel\EventListener\ResponseListener
      */
     protected function getSymfonyResponseListenerService()
     {
@@ -3680,12 +3046,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template' service.
+     * Gets the public 'template' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\template\twig\twig A phpbb\template\twig\twig instance
+     * @return \phpbb\template\twig\twig
      */
     protected function getTemplateService()
     {
@@ -3693,16 +3056,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template.twig.environment' service.
+     * Gets the public 'template.twig.environment' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\template\twig\environment A phpbb\template\twig\environment instance
+     * @return \phpbb\template\twig\environment
      */
     protected function getTemplate_Twig_EnvironmentService()
     {
-        $this->services['template.twig.environment'] = $instance = new \phpbb\template\twig\environment($this->get('config'), $this->get('filesystem'), $this->get('path_helper'), './cache/production/twig/', $this->get('ext.manager'), $this->get('template.twig.loader'), array());
+        $this->services['template.twig.environment'] = $instance = new \phpbb\template\twig\environment($this->get('config'), $this->get('filesystem'), $this->get('path_helper'), './cache/production/twig/', $this->get('ext.manager'), $this->get('template.twig.loader'), $this->get('dispatcher'), array());
 
         $instance->setLexer($this->get('template.twig.lexer'));
 
@@ -3710,12 +3070,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template.twig.extensions.collection' service.
+     * Gets the public 'template.twig.extensions.collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getTemplate_Twig_Extensions_CollectionService()
     {
@@ -3728,12 +3085,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template.twig.extensions.debug' service.
+     * Gets the public 'template.twig.extensions.debug' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Twig_Extension_Debug A Twig_Extension_Debug instance
+     * @return \Twig_Extension_Debug
      */
     protected function getTemplate_Twig_Extensions_DebugService()
     {
@@ -3741,12 +3095,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template.twig.extensions.phpbb' service.
+     * Gets the public 'template.twig.extensions.phpbb' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\template\twig\extension A phpbb\template\twig\extension instance
+     * @return \phpbb\template\twig\extension
      */
     protected function getTemplate_Twig_Extensions_PhpbbService()
     {
@@ -3754,12 +3105,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template.twig.extensions.routing' service.
+     * Gets the public 'template.twig.extensions.routing' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\template\twig\extension\routing A phpbb\template\twig\extension\routing instance
+     * @return \phpbb\template\twig\extension\routing
      */
     protected function getTemplate_Twig_Extensions_RoutingService()
     {
@@ -3767,21 +3115,16 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template.twig.lexer' service.
+     * Gets the public 'template.twig.lexer' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @param bool    $lazyLoad whether to try lazy-loading the service with a proxy
-     *
-     * @return \phpbb\template\twig\lexer A phpbb\template\twig\lexer instance
+     * @return \phpbb\template\twig\lexer
      */
     public function getTemplate_Twig_LexerService($lazyLoad = true)
     {
         if ($lazyLoad) {
             $container = $this;
 
-            return $this->services['template.twig.lexer'] = new phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96(
+            return $this->services['template.twig.lexer'] = new phpbbtemplatetwiglexer_0000000005b8317f000000004271bc17(
                 function (&$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface $proxy) use ($container) {
                     $wrappedInstance = $container->getTemplate_Twig_LexerService(false);
 
@@ -3796,12 +3139,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template.twig.loader' service.
+     * Gets the public 'template.twig.loader' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\template\twig\loader A phpbb\template\twig\loader instance
+     * @return \phpbb\template\twig\loader
      */
     protected function getTemplate_Twig_LoaderService()
     {
@@ -3809,12 +3149,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'template_context' service.
+     * Gets the public 'template_context' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\template\context A phpbb\template\context instance
+     * @return \phpbb\template\context
      */
     protected function getTemplateContextService()
     {
@@ -3822,38 +3159,39 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_formatter.data_access' service.
+     * Gets the public 'text_formatter.data_access' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textformatter\data_access A phpbb\textformatter\data_access instance
+     * @return \phpbb\textformatter\data_access
      */
     protected function getTextFormatter_DataAccessService()
     {
-        return $this->services['text_formatter.data_access'] = new \phpbb\textformatter\data_access($this->get('dbal.conn'), 'lol_bbcodes', 'lol_smilies', 'lol_styles', 'lol_words', './styles/');
+        return $this->services['text_formatter.data_access'] = new \phpbb\textformatter\data_access($this->get('dbal.conn'), 'phpbb_bbcodes', 'phpbb_smilies', 'phpbb_styles', 'phpbb_words', './styles/');
     }
 
     /**
-     * Gets the 'text_formatter.s9e.factory' service.
+     * Gets the public 'text_formatter.s9e.bbcode_merger' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
+     * @return \phpbb\textformatter\s9e\bbcode_merger
+     */
+    protected function getTextFormatter_S9e_BbcodeMergerService()
+    {
+        return $this->services['text_formatter.s9e.bbcode_merger'] = new \phpbb\textformatter\s9e\bbcode_merger($this->get('text_formatter.s9e.factory'));
+    }
+
+    /**
+     * Gets the public 'text_formatter.s9e.factory' shared service.
      *
-     * @return \phpbb\textformatter\s9e\factory A phpbb\textformatter\s9e\factory instance
+     * @return \phpbb\textformatter\s9e\factory
      */
     protected function getTextFormatter_S9e_FactoryService()
     {
-        return $this->services['text_formatter.s9e.factory'] = new \phpbb\textformatter\s9e\factory($this->get('text_formatter.data_access'), $this->get('cache.driver'), $this->get('dispatcher'), $this->get('config'), $this->get('text_formatter.s9e.link_helper'), './cache/production/', '_text_formatter_parser', '_text_formatter_renderer');
+        return $this->services['text_formatter.s9e.factory'] = new \phpbb\textformatter\s9e\factory($this->get('text_formatter.data_access'), $this->get('cache.driver'), $this->get('dispatcher'), $this->get('config'), $this->get('text_formatter.s9e.link_helper'), $this->get('log'), './cache/production/', '_text_formatter_parser', '_text_formatter_renderer');
     }
 
     /**
-     * Gets the 'text_formatter.s9e.link_helper' service.
+     * Gets the public 'text_formatter.s9e.link_helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textformatter\s9e\link_helper A phpbb\textformatter\s9e\link_helper instance
+     * @return \phpbb\textformatter\s9e\link_helper
      */
     protected function getTextFormatter_S9e_LinkHelperService()
     {
@@ -3861,12 +3199,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_formatter.s9e.parser' service.
+     * Gets the public 'text_formatter.s9e.parser' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textformatter\s9e\parser A phpbb\textformatter\s9e\parser instance
+     * @return \phpbb\textformatter\s9e\parser
      */
     protected function getTextFormatter_S9e_ParserService()
     {
@@ -3874,12 +3209,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_formatter.s9e.quote_helper' service.
+     * Gets the public 'text_formatter.s9e.quote_helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textformatter\s9e\quote_helper A phpbb\textformatter\s9e\quote_helper instance
+     * @return \phpbb\textformatter\s9e\quote_helper
      */
     protected function getTextFormatter_S9e_QuoteHelperService()
     {
@@ -3887,12 +3219,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_formatter.s9e.renderer' service.
+     * Gets the public 'text_formatter.s9e.renderer' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textformatter\s9e\renderer A phpbb\textformatter\s9e\renderer instance
+     * @return \phpbb\textformatter\s9e\renderer
      */
     protected function getTextFormatter_S9e_RendererService()
     {
@@ -3908,12 +3237,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_formatter.s9e.utils' service.
+     * Gets the public 'text_formatter.s9e.utils' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textformatter\s9e\utils A phpbb\textformatter\s9e\utils instance
+     * @return \phpbb\textformatter\s9e\utils
      */
     protected function getTextFormatter_S9e_UtilsService()
     {
@@ -3921,12 +3247,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.contact_admin_info' service.
+     * Gets the public 'text_reparser.contact_admin_info' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\contact_admin_info A phpbb\textreparser\plugins\contact_admin_info instance
+     * @return \phpbb\textreparser\plugins\contact_admin_info
      */
     protected function getTextReparser_ContactAdminInfoService()
     {
@@ -3938,16 +3261,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.forum_description' service.
+     * Gets the public 'text_reparser.forum_description' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\forum_description A phpbb\textreparser\plugins\forum_description instance
+     * @return \phpbb\textreparser\plugins\forum_description
      */
     protected function getTextReparser_ForumDescriptionService()
     {
-        $this->services['text_reparser.forum_description'] = $instance = new \phpbb\textreparser\plugins\forum_description($this->get('dbal.conn'), 'lol_forums');
+        $this->services['text_reparser.forum_description'] = $instance = new \phpbb\textreparser\plugins\forum_description($this->get('dbal.conn'), 'phpbb_forums');
 
         $instance->set_name('forum_description');
 
@@ -3955,16 +3275,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.forum_rules' service.
+     * Gets the public 'text_reparser.forum_rules' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\forum_rules A phpbb\textreparser\plugins\forum_rules instance
+     * @return \phpbb\textreparser\plugins\forum_rules
      */
     protected function getTextReparser_ForumRulesService()
     {
-        $this->services['text_reparser.forum_rules'] = $instance = new \phpbb\textreparser\plugins\forum_rules($this->get('dbal.conn'), 'lol_forums');
+        $this->services['text_reparser.forum_rules'] = $instance = new \phpbb\textreparser\plugins\forum_rules($this->get('dbal.conn'), 'phpbb_forums');
 
         $instance->set_name('forum_rules');
 
@@ -3972,16 +3289,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.group_description' service.
+     * Gets the public 'text_reparser.group_description' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\group_description A phpbb\textreparser\plugins\group_description instance
+     * @return \phpbb\textreparser\plugins\group_description
      */
     protected function getTextReparser_GroupDescriptionService()
     {
-        $this->services['text_reparser.group_description'] = $instance = new \phpbb\textreparser\plugins\group_description($this->get('dbal.conn'), 'lol_groups');
+        $this->services['text_reparser.group_description'] = $instance = new \phpbb\textreparser\plugins\group_description($this->get('dbal.conn'), 'phpbb_groups');
 
         $instance->set_name('group_description');
 
@@ -3989,12 +3303,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.lock' service.
+     * Gets the public 'text_reparser.lock' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\lock\db A phpbb\lock\db instance
+     * @return \phpbb\lock\db
      */
     protected function getTextReparser_LockService()
     {
@@ -4002,12 +3313,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.manager' service.
+     * Gets the public 'text_reparser.manager' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\manager A phpbb\textreparser\manager instance
+     * @return \phpbb\textreparser\manager
      */
     protected function getTextReparser_ManagerService()
     {
@@ -4015,16 +3323,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.pm_text' service.
+     * Gets the public 'text_reparser.pm_text' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\pm_text A phpbb\textreparser\plugins\pm_text instance
+     * @return \phpbb\textreparser\plugins\pm_text
      */
     protected function getTextReparser_PmTextService()
     {
-        $this->services['text_reparser.pm_text'] = $instance = new \phpbb\textreparser\plugins\pm_text($this->get('dbal.conn'), 'lol_privmsgs');
+        $this->services['text_reparser.pm_text'] = $instance = new \phpbb\textreparser\plugins\pm_text($this->get('dbal.conn'), 'phpbb_privmsgs');
 
         $instance->set_name('pm_text');
 
@@ -4032,12 +3337,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.poll_option' service.
+     * Gets the public 'text_reparser.poll_option' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\poll_option A phpbb\textreparser\plugins\poll_option instance
+     * @return \phpbb\textreparser\plugins\poll_option
      */
     protected function getTextReparser_PollOptionService()
     {
@@ -4049,16 +3351,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.poll_title' service.
+     * Gets the public 'text_reparser.poll_title' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\poll_title A phpbb\textreparser\plugins\poll_title instance
+     * @return \phpbb\textreparser\plugins\poll_title
      */
     protected function getTextReparser_PollTitleService()
     {
-        $this->services['text_reparser.poll_title'] = $instance = new \phpbb\textreparser\plugins\poll_title($this->get('dbal.conn'), 'lol_topics');
+        $this->services['text_reparser.poll_title'] = $instance = new \phpbb\textreparser\plugins\poll_title($this->get('dbal.conn'), 'phpbb_topics');
 
         $instance->set_name('poll_title');
 
@@ -4066,16 +3365,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.post_text' service.
+     * Gets the public 'text_reparser.post_text' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\post_text A phpbb\textreparser\plugins\post_text instance
+     * @return \phpbb\textreparser\plugins\post_text
      */
     protected function getTextReparser_PostTextService()
     {
-        $this->services['text_reparser.post_text'] = $instance = new \phpbb\textreparser\plugins\post_text($this->get('dbal.conn'), 'lol_posts');
+        $this->services['text_reparser.post_text'] = $instance = new \phpbb\textreparser\plugins\post_text($this->get('dbal.conn'), 'phpbb_posts');
 
         $instance->set_name('post_text');
 
@@ -4083,16 +3379,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser.user_signature' service.
+     * Gets the public 'text_reparser.user_signature' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\textreparser\plugins\user_signature A phpbb\textreparser\plugins\user_signature instance
+     * @return \phpbb\textreparser\plugins\user_signature
      */
     protected function getTextReparser_UserSignatureService()
     {
-        $this->services['text_reparser.user_signature'] = $instance = new \phpbb\textreparser\plugins\user_signature($this->get('dbal.conn'), 'lol_users');
+        $this->services['text_reparser.user_signature'] = $instance = new \phpbb\textreparser\plugins\user_signature($this->get('dbal.conn'), 'phpbb_users');
 
         $instance->set_name('user_signature');
 
@@ -4100,12 +3393,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'text_reparser_collection' service.
+     * Gets the public 'text_reparser_collection' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\di\service_collection A phpbb\di\service_collection instance
+     * @return \phpbb\di\service_collection
      */
     protected function getTextReparserCollectionService()
     {
@@ -4125,12 +3415,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'upload_imagesize' service.
+     * Gets the public 'upload_imagesize' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \FastImageSize\FastImageSize A FastImageSize\FastImageSize instance
+     * @return \FastImageSize\FastImageSize
      */
     protected function getUploadImagesizeService()
     {
@@ -4138,12 +3425,9 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'user' service.
+     * Gets the public 'user' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\user A phpbb\user instance
+     * @return \phpbb\user
      */
     protected function getUserService()
     {
@@ -4151,22 +3435,19 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'user_loader' service.
+     * Gets the public 'user_loader' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\user_loader A phpbb\user_loader instance
+     * @return \phpbb\user_loader
      */
     protected function getUserLoaderService()
     {
-        return $this->services['user_loader'] = new \phpbb\user_loader($this->get('dbal.conn'), './', 'php', 'lol_users');
+        return $this->services['user_loader'] = new \phpbb\user_loader($this->get('dbal.conn'), './', 'php', 'phpbb_users');
     }
 
     /**
-     * Gets the 'version_helper' service.
+     * Gets the public 'version_helper' service.
      *
-     * @return \phpbb\version_helper A phpbb\version_helper instance
+     * @return \phpbb\version_helper
      */
     protected function getVersionHelperService()
     {
@@ -4174,68 +3455,13 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     }
 
     /**
-     * Gets the 'viewonline_helper' service.
+     * Gets the public 'viewonline_helper' shared service.
      *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \phpbb\viewonline_helper A phpbb\viewonline_helper instance
+     * @return \phpbb\viewonline_helper
      */
     protected function getViewonlineHelperService()
     {
         return $this->services['viewonline_helper'] = new \phpbb\viewonline_helper($this->get('filesystem'));
-    }
-
-    /**
-     * Gets the 'vse.similartopics.fulltext_support' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \vse\similartopics\core\fulltext_support A vse\similartopics\core\fulltext_support instance
-     */
-    protected function getVse_Similartopics_FulltextSupportService()
-    {
-        return $this->services['vse.similartopics.fulltext_support'] = new \vse\similartopics\core\fulltext_support($this->get('dbal.conn'));
-    }
-
-    /**
-     * Gets the 'vse.similartopics.listener' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \vse\similartopics\event\listener A vse\similartopics\event\listener instance
-     */
-    protected function getVse_Similartopics_ListenerService()
-    {
-        return $this->services['vse.similartopics.listener'] = new \vse\similartopics\event\listener($this->get('vse.similartopics.manager'));
-    }
-
-    /**
-     * Gets the 'vse.similartopics.manager' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \vse\similartopics\core\similar_topics A vse\similartopics\core\similar_topics instance
-     */
-    protected function getVse_Similartopics_ManagerService()
-    {
-        return $this->services['vse.similartopics.manager'] = new \vse\similartopics\core\similar_topics($this->get('auth'), $this->get('cache'), $this->get('config'), $this->get('dbal.conn'), $this->get('dispatcher'), $this->get('pagination'), $this->get('request'), $this->get('template'), $this->get('user'), $this->get('content.visibility'), './', 'php');
-    }
-
-    /**
-     * Gets the 'vse.similartopics.ucp_listener' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \vse\similartopics\event\ucp_listener A vse\similartopics\event\ucp_listener instance
-     */
-    protected function getVse_Similartopics_UcpListenerService()
-    {
-        return $this->services['vse.similartopics.ucp_listener'] = new \vse\similartopics\event\ucp_listener($this->get('auth'), $this->get('config'), $this->get('request'), $this->get('template'), $this->get('user'));
     }
 
     /**
@@ -4300,83 +3526,83 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'text_formatter.cache.parser.key' => '_text_formatter_parser',
             'text_formatter.cache.renderer.key' => '_text_formatter_renderer',
             'core.template.cache_path' => './cache/production/twig/',
-            'tables.acl_groups' => 'lol_acl_groups',
-            'tables.acl_options' => 'lol_acl_options',
-            'tables.acl_roles' => 'lol_acl_roles',
-            'tables.acl_roles_data' => 'lol_acl_roles_data',
-            'tables.acl_users' => 'lol_acl_users',
-            'tables.attachments' => 'lol_attachments',
-            'tables.auth_provider_oauth_token_storage' => 'lol_oauth_tokens',
-            'tables.auth_provider_oauth_states' => 'lol_oauth_states',
-            'tables.auth_provider_oauth_account_assoc' => 'lol_oauth_accounts',
-            'tables.banlist' => 'lol_banlist',
-            'tables.bbcodes' => 'lol_bbcodes',
-            'tables.bookmarks' => 'lol_bookmarks',
-            'tables.bots' => 'lol_bots',
-            'tables.captcha_qa_questions' => 'lol_captcha_questions',
-            'tables.captcha_qa_answers' => 'lol_captcha_answers',
-            'tables.captcha_qa_confirm' => 'lol_qa_confirm',
-            'tables.config' => 'lol_config',
-            'tables.config_text' => 'lol_config_text',
-            'tables.confirm' => 'lol_confirm',
-            'tables.disallow' => 'lol_disallow',
-            'tables.drafts' => 'lol_drafts',
-            'tables.ext' => 'lol_ext',
-            'tables.extensions' => 'lol_extensions',
-            'tables.extension_groups' => 'lol_extension_groups',
-            'tables.forums' => 'lol_forums',
-            'tables.forums_access' => 'lol_forums_access',
-            'tables.forums_track' => 'lol_forums_track',
-            'tables.forums_watch' => 'lol_forums_watch',
-            'tables.groups' => 'lol_groups',
-            'tables.icons' => 'lol_icons',
-            'tables.lang' => 'lol_lang',
-            'tables.log' => 'lol_log',
-            'tables.login_attempts' => 'lol_login_attempts',
-            'tables.migrations' => 'lol_migrations',
-            'tables.moderator_cache' => 'lol_moderator_cache',
-            'tables.modules' => 'lol_modules',
-            'tables.notification_types' => 'lol_notification_types',
-            'tables.notifications' => 'lol_notifications',
-            'tables.poll_options' => 'lol_poll_options',
-            'tables.poll_votes' => 'lol_poll_votes',
-            'tables.posts' => 'lol_posts',
-            'tables.privmsgs' => 'lol_privmsgs',
-            'tables.privmsgs_folder' => 'lol_privmsgs_folder',
-            'tables.privmsgs_rules' => 'lol_privmsgs_rules',
-            'tables.privmsgs_to' => 'lol_privmsgs_to',
-            'tables.profile_fields' => 'lol_profile_fields',
-            'tables.profile_fields_data' => 'lol_profile_fields_data',
-            'tables.profile_fields_options_language' => 'lol_profile_fields_lang',
-            'tables.profile_fields_language' => 'lol_profile_lang',
-            'tables.ranks' => 'lol_ranks',
-            'tables.reports' => 'lol_reports',
-            'tables.reports_reasons' => 'lol_reports_reasons',
-            'tables.search_results' => 'lol_search_results',
-            'tables.search_wordlist' => 'lol_search_wordlist',
-            'tables.search_wordmatch' => 'lol_search_wordmatch',
-            'tables.sessions' => 'lol_sessions',
-            'tables.sessions_keys' => 'lol_sessions_keys',
-            'tables.sitelist' => 'lol_sitelist',
-            'tables.smilies' => 'lol_smilies',
-            'tables.sphinx' => 'lol_sphinx',
-            'tables.styles' => 'lol_styles',
-            'tables.styles_template' => 'lol_styles_template',
-            'tables.styles_template_data' => 'lol_styles_template_data',
-            'tables.styles_theme' => 'lol_styles_theme',
-            'tables.styles_imageset' => 'lol_styles_imageset',
-            'tables.styles_imageset_data' => 'lol_styles_imageset_data',
-            'tables.teampage' => 'lol_teampage',
-            'tables.topics' => 'lol_topics',
-            'tables.topics_posted' => 'lol_topics_posted',
-            'tables.topics_track' => 'lol_topics_track',
-            'tables.topics_watch' => 'lol_topics_watch',
-            'tables.user_group' => 'lol_user_group',
-            'tables.user_notifications' => 'lol_user_notifications',
-            'tables.users' => 'lol_users',
-            'tables.warnings' => 'lol_warnings',
-            'tables.words' => 'lol_words',
-            'tables.zebra' => 'lol_zebra',
+            'tables.acl_groups' => 'phpbb_acl_groups',
+            'tables.acl_options' => 'phpbb_acl_options',
+            'tables.acl_roles' => 'phpbb_acl_roles',
+            'tables.acl_roles_data' => 'phpbb_acl_roles_data',
+            'tables.acl_users' => 'phpbb_acl_users',
+            'tables.attachments' => 'phpbb_attachments',
+            'tables.auth_provider_oauth_token_storage' => 'phpbb_oauth_tokens',
+            'tables.auth_provider_oauth_states' => 'phpbb_oauth_states',
+            'tables.auth_provider_oauth_account_assoc' => 'phpbb_oauth_accounts',
+            'tables.banlist' => 'phpbb_banlist',
+            'tables.bbcodes' => 'phpbb_bbcodes',
+            'tables.bookmarks' => 'phpbb_bookmarks',
+            'tables.bots' => 'phpbb_bots',
+            'tables.captcha_qa_questions' => 'phpbb_captcha_questions',
+            'tables.captcha_qa_answers' => 'phpbb_captcha_answers',
+            'tables.captcha_qa_confirm' => 'phpbb_qa_confirm',
+            'tables.config' => 'phpbb_config',
+            'tables.config_text' => 'phpbb_config_text',
+            'tables.confirm' => 'phpbb_confirm',
+            'tables.disallow' => 'phpbb_disallow',
+            'tables.drafts' => 'phpbb_drafts',
+            'tables.ext' => 'phpbb_ext',
+            'tables.extensions' => 'phpbb_extensions',
+            'tables.extension_groups' => 'phpbb_extension_groups',
+            'tables.forums' => 'phpbb_forums',
+            'tables.forums_access' => 'phpbb_forums_access',
+            'tables.forums_track' => 'phpbb_forums_track',
+            'tables.forums_watch' => 'phpbb_forums_watch',
+            'tables.groups' => 'phpbb_groups',
+            'tables.icons' => 'phpbb_icons',
+            'tables.lang' => 'phpbb_lang',
+            'tables.log' => 'phpbb_log',
+            'tables.login_attempts' => 'phpbb_login_attempts',
+            'tables.migrations' => 'phpbb_migrations',
+            'tables.moderator_cache' => 'phpbb_moderator_cache',
+            'tables.modules' => 'phpbb_modules',
+            'tables.notification_types' => 'phpbb_notification_types',
+            'tables.notifications' => 'phpbb_notifications',
+            'tables.poll_options' => 'phpbb_poll_options',
+            'tables.poll_votes' => 'phpbb_poll_votes',
+            'tables.posts' => 'phpbb_posts',
+            'tables.privmsgs' => 'phpbb_privmsgs',
+            'tables.privmsgs_folder' => 'phpbb_privmsgs_folder',
+            'tables.privmsgs_rules' => 'phpbb_privmsgs_rules',
+            'tables.privmsgs_to' => 'phpbb_privmsgs_to',
+            'tables.profile_fields' => 'phpbb_profile_fields',
+            'tables.profile_fields_data' => 'phpbb_profile_fields_data',
+            'tables.profile_fields_options_language' => 'phpbb_profile_fields_lang',
+            'tables.profile_fields_language' => 'phpbb_profile_lang',
+            'tables.ranks' => 'phpbb_ranks',
+            'tables.reports' => 'phpbb_reports',
+            'tables.reports_reasons' => 'phpbb_reports_reasons',
+            'tables.search_results' => 'phpbb_search_results',
+            'tables.search_wordlist' => 'phpbb_search_wordlist',
+            'tables.search_wordmatch' => 'phpbb_search_wordmatch',
+            'tables.sessions' => 'phpbb_sessions',
+            'tables.sessions_keys' => 'phpbb_sessions_keys',
+            'tables.sitelist' => 'phpbb_sitelist',
+            'tables.smilies' => 'phpbb_smilies',
+            'tables.sphinx' => 'phpbb_sphinx',
+            'tables.styles' => 'phpbb_styles',
+            'tables.styles_template' => 'phpbb_styles_template',
+            'tables.styles_template_data' => 'phpbb_styles_template_data',
+            'tables.styles_theme' => 'phpbb_styles_theme',
+            'tables.styles_imageset' => 'phpbb_styles_imageset',
+            'tables.styles_imageset_data' => 'phpbb_styles_imageset_data',
+            'tables.teampage' => 'phpbb_teampage',
+            'tables.topics' => 'phpbb_topics',
+            'tables.topics_posted' => 'phpbb_topics_posted',
+            'tables.topics_track' => 'phpbb_topics_track',
+            'tables.topics_watch' => 'phpbb_topics_watch',
+            'tables.user_group' => 'phpbb_user_group',
+            'tables.user_notifications' => 'phpbb_user_notifications',
+            'tables.users' => 'phpbb_users',
+            'tables.warnings' => 'phpbb_warnings',
+            'tables.words' => 'phpbb_words',
+            'tables.zebra' => 'phpbb_zebra',
             'core.disable_super_globals' => true,
             'datetime.class' => '\\phpbb\\datetime',
             'mimetype.guesser.priority.lowest' => -2,
@@ -4391,33 +3617,31 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
                 3 => 'passwords.driver.phpass',
             ),
             'debug.exceptions' => false,
-            'tables.thanks' => 'lol_thanks',
-            'tables.postbookmark' => 'lol_posts_bookmarks',
             'core.adm_relative_path' => 'adm/',
-            'core.table_prefix' => 'lol_',
+            'core.table_prefix' => 'phpbb_',
             'cache.driver.class' => 'phpbb\\cache\\driver\\file',
             'dbal.new_link' => false,
         );
     }
 }
 
-class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\template\twig\lexer implements \ProxyManager\Proxy\VirtualProxyInterface
+class phpbbtemplatetwiglexer_0000000005b8317f000000004271bc17 extends \phpbb\template\twig\lexer implements \ProxyManager\Proxy\VirtualProxyInterface
 {
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $valueHolder5919efb98d51f738278181 = null;
+    private $valueHolder5c081af65b38b661207500 = null;
 
     /**
      * @var \Closure|null initializer responsible for generating the wrapped object
      */
-    private $initializer5919efb98d52c055588545 = null;
+    private $initializer5c081af65b397527103583 = null;
 
     /**
      * @var bool[] map of public properties of the parent class
      */
-    private static $publicProperties5919efb98d4f1710605945 = array(
+    private static $publicProperties5c081af65b35b024649681 = array(
         
     );
 
@@ -4426,9 +3650,9 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function set_environment(\Twig_Environment $env)
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, 'set_environment', array('env' => $env), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, 'set_environment', array('env' => $env), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
-        return $this->valueHolder5919efb98d51f738278181->set_environment($env);
+        return $this->valueHolder5c081af65b38b661207500->set_environment($env);
     }
 
     /**
@@ -4436,9 +3660,9 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function tokenize($code, $filename = null)
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, 'tokenize', array('code' => $code, 'filename' => $filename), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, 'tokenize', array('code' => $code, 'filename' => $filename), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
-        return $this->valueHolder5919efb98d51f738278181->tokenize($code, $filename);
+        return $this->valueHolder5c081af65b38b661207500->tokenize($code, $filename);
     }
 
     /**
@@ -4446,9 +3670,9 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function fix_begin_tokens($code, $parent_nodes = array())
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, 'fix_begin_tokens', array('code' => $code, 'parent_nodes' => $parent_nodes), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, 'fix_begin_tokens', array('code' => $code, 'parent_nodes' => $parent_nodes), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
-        return $this->valueHolder5919efb98d51f738278181->fix_begin_tokens($code, $parent_nodes);
+        return $this->valueHolder5c081af65b38b661207500->fix_begin_tokens($code, $parent_nodes);
     }
 
     /**
@@ -4458,7 +3682,7 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function __construct($initializer)
     {
-        $this->initializer5919efb98d52c055588545 = $initializer;
+        $this->initializer5c081af65b397527103583 = $initializer;
     }
 
     /**
@@ -4466,16 +3690,16 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function & __get($name)
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, '__get', array('name' => $name), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, '__get', array('name' => $name), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
-        if (isset(self::$publicProperties5919efb98d4f1710605945[$name])) {
-            return $this->valueHolder5919efb98d51f738278181->$name;
+        if (isset(self::$publicProperties5c081af65b35b024649681[$name])) {
+            return $this->valueHolder5c081af65b38b661207500->$name;
         }
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5919efb98d51f738278181;
+            $targetObject = $this->valueHolder5c081af65b38b661207500;
 
             $backtrace = debug_backtrace(false);
             trigger_error('Undefined property: ' . get_parent_class($this) . '::$' . $name . ' in ' . $backtrace[0]['file'] . ' on line ' . $backtrace[0]['line'], \E_USER_NOTICE);
@@ -4483,7 +3707,7 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
             return;
         }
 
-        $targetObject = $this->valueHolder5919efb98d51f738278181;
+        $targetObject = $this->valueHolder5c081af65b38b661207500;
         $accessor = function & () use ($targetObject, $name) {
             return $targetObject->$name;
         };
@@ -4501,18 +3725,18 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function __set($name, $value)
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, '__set', array('name' => $name, 'value' => $value), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5919efb98d51f738278181;
+            $targetObject = $this->valueHolder5c081af65b38b661207500;
 
             return $targetObject->$name = $value;;
             return;
         }
 
-        $targetObject = $this->valueHolder5919efb98d51f738278181;
+        $targetObject = $this->valueHolder5c081af65b38b661207500;
         $accessor = function & () use ($targetObject, $name, $value) {
             return $targetObject->$name = $value;
         };
@@ -4529,18 +3753,18 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function __isset($name)
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, '__isset', array('name' => $name), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, '__isset', array('name' => $name), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5919efb98d51f738278181;
+            $targetObject = $this->valueHolder5c081af65b38b661207500;
 
             return isset($targetObject->$name);;
             return;
         }
 
-        $targetObject = $this->valueHolder5919efb98d51f738278181;
+        $targetObject = $this->valueHolder5c081af65b38b661207500;
         $accessor = function () use ($targetObject, $name) {
             return isset($targetObject->$name);
         };
@@ -4557,18 +3781,18 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function __unset($name)
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, '__unset', array('name' => $name), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, '__unset', array('name' => $name), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
         $realInstanceReflection = new \ReflectionClass(get_parent_class($this));
 
         if (! $realInstanceReflection->hasProperty($name)) {
-            $targetObject = $this->valueHolder5919efb98d51f738278181;
+            $targetObject = $this->valueHolder5c081af65b38b661207500;
 
             unset($targetObject->$name);;
             return;
         }
 
-        $targetObject = $this->valueHolder5919efb98d51f738278181;
+        $targetObject = $this->valueHolder5c081af65b38b661207500;
         $accessor = function () use ($targetObject, $name) {
             unset($targetObject->$name);
         };
@@ -4582,16 +3806,16 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
 
     public function __clone()
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, '__clone', array(), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, '__clone', array(), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
-        $this->valueHolder5919efb98d51f738278181 = clone $this->valueHolder5919efb98d51f738278181;
+        $this->valueHolder5c081af65b38b661207500 = clone $this->valueHolder5c081af65b38b661207500;
     }
 
     public function __sleep()
     {
-        $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, '__sleep', array(), $this->initializer5919efb98d52c055588545);
+        $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, '__sleep', array(), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
 
-        return array('valueHolder5919efb98d51f738278181');
+        return array('valueHolder5c081af65b38b661207500');
     }
 
     public function __wakeup()
@@ -4603,7 +3827,7 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function setProxyInitializer(\Closure $initializer = null)
     {
-        $this->initializer5919efb98d52c055588545 = $initializer;
+        $this->initializer5c081af65b397527103583 = $initializer;
     }
 
     /**
@@ -4611,7 +3835,7 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function getProxyInitializer()
     {
-        return $this->initializer5919efb98d52c055588545;
+        return $this->initializer5c081af65b397527103583;
     }
 
     /**
@@ -4619,7 +3843,7 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function initializeProxy()
     {
-        return $this->initializer5919efb98d52c055588545 && $this->initializer5919efb98d52c055588545->__invoke($this->valueHolder5919efb98d51f738278181, $this, 'initializeProxy', array(), $this->initializer5919efb98d52c055588545);
+        return $this->initializer5c081af65b397527103583 && ($this->initializer5c081af65b397527103583->__invoke($valueHolder5c081af65b38b661207500, $this, 'initializeProxy', array(), $this->initializer5c081af65b397527103583) || 1) && $this->valueHolder5c081af65b38b661207500 = $valueHolder5c081af65b38b661207500;
     }
 
     /**
@@ -4627,7 +3851,7 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function isProxyInitialized()
     {
-        return null !== $this->valueHolder5919efb98d51f738278181;
+        return null !== $this->valueHolder5c081af65b38b661207500;
     }
 
     /**
@@ -4635,7 +3859,7 @@ class phpbbtemplatetwiglexer_000000002acbf2210000000053f02d96 extends \phpbb\tem
      */
     public function getWrappedValueHolderValue()
     {
-        return $this->valueHolder5919efb98d51f738278181;
+        return $this->valueHolder5c081af65b38b661207500;
     }
 
 

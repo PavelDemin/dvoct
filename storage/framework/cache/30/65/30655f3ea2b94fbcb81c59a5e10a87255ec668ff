@@ -1,4 +1,4 @@
-1543766448a:1:{s:26:"widget_last_post_forum.htm";a:6:{s:8:"fileName";s:26:"widget_last_post_forum.htm";s:7:"content";s:1277:"description = "Последние сообщения на форуме"
+1544047142a:1:{s:26:"widget_last_post_forum.htm";a:6:{s:8:"fileName";s:26:"widget_last_post_forum.htm";s:7:"content";s:1277:"description = "Последние сообщения на форуме"
 ==
 <div class="widget widget__forum">
 						<h3>Последнее на форуме</h3>
@@ -39,7 +39,7 @@
 						<div class="redirect-link">
 							<a href="#">Перейти в раздел форум</a>
 						</div>
-					</div><!--.widget__forum-->";s:5:"mtime";i:1543644870;s:6:"markup";s:1200:"<div class="widget widget__forum">
+					</div><!--.widget__forum-->";s:5:"mtime";i:1543948553;s:6:"markup";s:1200:"<div class="widget widget__forum">
 						<h3>Последнее на форуме</h3>
 						<div class="widget__forum__list">
 							<ul>

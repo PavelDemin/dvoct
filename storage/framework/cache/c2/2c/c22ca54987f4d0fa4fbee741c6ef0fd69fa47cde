@@ -1,4 +1,4 @@
-1543766434a:1:{s:12:"register.htm";a:14:{s:8:"fileName";s:12:"register.htm";s:7:"content";s:767:"title = "Регистрация нового пользователя"
+1544046993a:1:{s:12:"register.htm";a:14:{s:8:"fileName";s:12:"register.htm";s:7:"content";s:767:"title = "Регистрация нового пользователя"
 url = "/register"
 layout = "default"
 is_hidden = 0
@@ -32,7 +32,7 @@ redirect = "index-page"
         {% component 'account::register' %}
         {% component 'session' %}
     </div>
-</div><!--.main-content-->";s:5:"mtime";i:1543671915;s:6:"markup";s:380:"<div class="sidebar press--right">
+</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:380:"<div class="sidebar press--right">
 
 
     {% component 'popularPosts' %}

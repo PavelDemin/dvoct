@@ -1,4 +1,4 @@
-1543766425a:1:{s:25:"articles/article-post.htm";a:16:{s:8:"fileName";s:25:"articles/article-post.htm";s:7:"content";s:1042:"title = "Статья"
+1544046993a:1:{s:25:"articles/article-post.htm";a:16:{s:8:"fileName";s:25:"articles/article-post.htm";s:7:"content";s:1042:"title = "Статья"
 url = "/articles/post/:slug"
 layout = "default"
 is_hidden = 0
@@ -42,7 +42,7 @@ if (!$post) return App::make('Cms\Classes\Controller')->setStatusCode(404)->run(
 <div class="col-md-9">
     {% component 'article::post' %}
     {% component 'relatedpost::related' %}
-</div>";s:5:"mtime";i:1543644870;s:6:"markup";s:257:"{% component 'SeoBlogPost' data=post %}
+</div>";s:5:"mtime";i:1543948553;s:6:"markup";s:257:"{% component 'SeoBlogPost' data=post %}
 <div class="col-md-3">
     {% component 'category_menu' %}
     {% component 'popularPosts' %}

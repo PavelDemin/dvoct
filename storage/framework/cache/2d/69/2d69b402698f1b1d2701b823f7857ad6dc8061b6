@@ -1,4 +1,4 @@
-1543766434a:1:{s:18:"news/news-post.htm";a:13:{s:8:"fileName";s:18:"news/news-post.htm";s:7:"content";s:722:"title = "Новости пост"
+1544046993a:1:{s:18:"news/news-post.htm";a:13:{s:8:"fileName";s:18:"news/news-post.htm";s:7:"content";s:722:"title = "Новости пост"
 url = "/news/post/:slug?"
 layout = "default"
 is_hidden = 0
@@ -26,7 +26,7 @@ $this->layout->components['SeoCmsPage']->seo_title = $this->page->components['ne
 </div><!--.sidebar-->
 <div class="main-content press--left">
     {% component 'news::news-post' %}
-</div><!--.main-content-->";s:5:"mtime";i:1543672044;s:6:"markup";s:246:"<div class="sidebar press--right">
+</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:246:"<div class="sidebar press--right">
     {% component 'popularPosts' %}
     {% partial "widget_last_post_forum" %}
 

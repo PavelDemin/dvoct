@@ -1,4 +1,4 @@
-1543766434a:1:{s:8:"maps.htm";a:14:{s:8:"fileName";s:8:"maps.htm";s:7:"content";s:1034:"title = "Карта"
+1544046993a:1:{s:8:"maps.htm";a:14:{s:8:"fileName";s:8:"maps.htm";s:7:"content";s:1034:"title = "Карта"
 url = "/maps"
 layout = "default"
 is_hidden = 0
@@ -40,7 +40,7 @@ $this->layout->components['SeoCmsPage']->seo_title = "Рыболовная ка�
         {% component 'report::index' %}
         </div>
     </div>
-</div><!--.main-content-->";s:5:"mtime";i:1543671964;s:6:"markup";s:516:"<div class="sidebar press--right">
+</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:516:"<div class="sidebar press--right">
     {% component 'popularPosts' %}
     {% partial "widget_last_post_forum" %}
 

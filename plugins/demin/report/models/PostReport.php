@@ -80,6 +80,7 @@ class PostReport extends Model
             $sort = [$sort];
         }
 
+
         foreach ($sort as $_sort) {
 
             if (in_array($_sort, array_keys(self::$allowedSortingOptions))) {

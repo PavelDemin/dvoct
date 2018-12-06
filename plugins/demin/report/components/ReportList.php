@@ -101,7 +101,7 @@ class ReportList extends ComponentBase
             'sort'    => $this->property('sortOrder'),
             'perPage' => $this->property('postsPerPage')
         ];*/
-
+ 
 
         //$postOptions = post('Filter', []);
         //$options = array_merge($params,post('Filter', []));
@@ -116,7 +116,7 @@ class ReportList extends ComponentBase
     }
 
 
-    public function onFilterTypeCatching() {
+    public function onLoadReports() {
         $this->prepareVars();
        // $this->prepareTypeCatching();
     }
@@ -129,10 +129,16 @@ class ReportList extends ComponentBase
         }
         if(post('type_catching')) {
             $this->options['type_catching'] = post('type_catching');
-         }
-            //'page'    => $this->property('pageNumber'),
-            $this->options['sort']    = $this->property('sortOrder');
-            $this->options['perPage'] = $this->property('postsPerPage');
+        }
+        if(post('sort')) {
+            $this->options['sort'] = post('sort');
+        } else {
+            $this->options['sort']  = $this->property('sortOrder');
+        }
+
+        //'page'    => $this->property('pageNumber'),
+      // 
+        $this->options['perPage'] = $this->property('postsPerPage');
 
         return $this->options = array_merge($this->options,post('Filter', []));
 

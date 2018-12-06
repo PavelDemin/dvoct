@@ -7,8 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
-    'Wikimedia\\Composer\\' => array($vendorDir . '/wikimedia/composer-merge-plugin/src'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Tohtamysh\\LaravelPhpbbBridge\\' => array($vendorDir . '/tohtamysh/laravel-phpbb-bridge/src/LaravelPhpbbBridge'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
     'System\\' => array($baseDir . '/modules/system'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),

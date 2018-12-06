@@ -1,4 +1,4 @@
-1543766434a:1:{s:14:"index-page.htm";a:16:{s:8:"fileName";s:14:"index-page.htm";s:7:"content";s:1445:"title = "Главная"
+1544047109a:1:{s:14:"index-page.htm";a:16:{s:8:"fileName";s:14:"index-page.htm";s:7:"content";s:1407:"title = "Главная"
 url = "/"
 layout = "default"
 description = "Главная страница сайта"
@@ -29,7 +29,6 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "articles/articles-category"
 postPage = "articles/article-post"
-
 ==
 <?php
 function onEnd()
@@ -48,7 +47,7 @@ function onEnd()
 <div class="col-md-3 col-sm-6 order-3">
     {% component 'video::last_video_block' %}
     {% partial "cloud_tags_block" %}
-</div>";s:5:"mtime";i:1543644870;s:6:"markup";s:369:"<div class="col-md-3 col-sm-6 order-2">
+</div>";s:5:"mtime";i:1544046500;s:6:"markup";s:369:"<div class="col-md-3 col-sm-6 order-2">
     {% component 'article::last_articles_block' %}
 </div>
 <div class="col-md-6 order-md-2 col-sm-12 order-1">
@@ -58,8 +57,7 @@ function onEnd()
 <div class="col-md-3 col-sm-6 order-3">
     {% component 'video::last_video_block' %}
     {% partial "cloud_tags_block" %}
-</div>";s:4:"code";s:286:"
-function onEnd()
+</div>";s:4:"code";s:283:"function onEnd()
 {
     $this->layout->components['SeoCmsPage']->seo_title = "Рыбалка в Хабаровском крае, рыбалка на Амуре, горная рыбалка, рыболовные отчеты, ловля хариуса, ловля тайменя";
-}";s:5:"title";s:14:"Главная";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:11:"description";s:42:"Главная страница сайта";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:19:"ReportSlider slider";a:0:{}s:15:"VideoList video";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"5";s:14:"noPostsMessage";s:17:"Нет видео";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:16:"video/video-post";}s:17:"ReportList report";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"9";s:14:"noPostsMessage";s:21:"Нет отчетов";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:19:"reports/report-post";}s:17:"blogPosts article";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:26:"articles/articles-category";s:8:"postPage";s:21:"articles/article-post";}}}
+}";s:5:"title";s:14:"Главная";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:11:"description";s:42:"Главная страница сайта";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:19:"ReportSlider slider";a:0:{}s:15:"VideoList video";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"5";s:14:"noPostsMessage";s:17:"Нет видео";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:16:"video/video-post";}s:17:"ReportList report";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"9";s:14:"noPostsMessage";s:21:"Нет отчетов";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:19:"reports/report-post";}s:17:"blogPosts article";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:26:"articles/articles-category";s:8:"postPage";s:21:"articles/article-post";}}}

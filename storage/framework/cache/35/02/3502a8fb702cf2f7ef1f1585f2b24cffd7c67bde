@@ -1,4 +1,4 @@
-1543766588a:1:{s:23:"reports/report-list.htm";a:14:{s:8:"fileName";s:23:"reports/report-list.htm";s:7:"content";s:749:"title = "Рыболовные отчеты"
+1544046994a:1:{s:23:"reports/report-list.htm";a:14:{s:8:"fileName";s:23:"reports/report-list.htm";s:7:"content";s:777:"title = "Рыболовные отчеты"
 url = "/reports/:page?|^[0-9]+$"
 layout = "default"
 description = "Страница с рыболовными отчетами"
@@ -14,7 +14,7 @@ postPage = "blog/post"
 
 [ReportList report]
 pageNumber = "{{ :page }}"
-postsPerPage = 3
+postsPerPage = 9
 noPostsMessage = "Нет отчетов"
 sortOrder = "published_at desc"
 postPage = "reports/report-post"
@@ -26,11 +26,11 @@ postPage = "reports/report-post"
 <div class="col-md-9">
     <h3 class="section-title">Рыболовные отчеты</h3>
 {% component 'report::list' %}
-</div>";s:5:"mtime";i:1543764645;s:6:"markup";s:226:"<div class="col-md-3">
+</div>";s:5:"mtime";i:1543965219;s:6:"markup";s:233:"<div class="col-md-3">
 		{% partial 'report/filter' %}
     {% component 'popularPosts' %}
 </div>
 <div class="col-md-9">
     <h3 class="section-title">Рыболовные отчеты</h3>
 {% component 'report::list' %}
-</div>";s:4:"code";N;s:5:"title";s:33:"Рыболовные отчеты";s:3:"url";s:24:"/reports/:page?|^[0-9]+$";s:6:"layout";s:7:"default";s:11:"description";s:59:"Страница с рыболовными отчетами";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:12:"popularPosts";a:4:{s:8:"category";s:15:"{{ :category }}";s:10:"postsLimit";s:1:"3";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:9:"blog/post";}s:17:"ReportList report";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"3";s:14:"noPostsMessage";s:21:"Нет отчетов";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:19:"reports/report-post";}}}
+</div>";s:4:"code";N;s:5:"title";s:33:"Рыболовные отчеты";s:3:"url";s:24:"/reports/:page?|^[0-9]+$";s:6:"layout";s:7:"default";s:11:"description";s:59:"Страница с рыболовными отчетами";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:12:"popularPosts";a:4:{s:8:"category";s:15:"{{ :category }}";s:10:"postsLimit";s:1:"3";s:14:"noPostsMessage";s:14:"No posts found";s:8:"postPage";s:9:"blog/post";}s:17:"ReportList report";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"9";s:14:"noPostsMessage";s:21:"Нет отчетов";s:9:"sortOrder";s:17:"published_at desc";s:8:"postPage";s:19:"reports/report-post";}}}

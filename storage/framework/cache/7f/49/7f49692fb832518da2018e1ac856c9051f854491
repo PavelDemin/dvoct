@@ -1,4 +1,4 @@
-1543766434a:1:{s:20:"video/video-post.htm";a:13:{s:8:"fileName";s:20:"video/video-post.htm";s:7:"content";s:1215:"title = "Видео ролик"
+1544046994a:1:{s:20:"video/video-post.htm";a:13:{s:8:"fileName";s:20:"video/video-post.htm";s:7:"content";s:1215:"title = "Видео ролик"
 url = "/video/:slug|^[a-z0-9\-]+$"
 layout = "default"
 is_hidden = 0
@@ -40,7 +40,7 @@ function onEnd() {
         </div>
     </div><!--.timeline-posts-->
     
-</div><!--.main-content-->";s:5:"mtime";i:1543672022;s:6:"markup";s:439:"<div class="sidebar press--right">
+</div><!--.main-content-->";s:5:"mtime";i:1543948553;s:6:"markup";s:439:"<div class="sidebar press--right">
     {% component 'popularPosts' %}
     {% partial "widget_last_post_forum" %}
 

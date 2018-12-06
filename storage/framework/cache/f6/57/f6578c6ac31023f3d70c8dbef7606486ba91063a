@@ -1,4 +1,4 @@
-1543766434a:1:{s:13:"tagSearch.htm";a:15:{s:8:"fileName";s:13:"tagSearch.htm";s:7:"content";s:1127:"title = "Поиск по тегам"
+1544046994a:1:{s:13:"tagSearch.htm";a:15:{s:8:"fileName";s:13:"tagSearch.htm";s:7:"content";s:1127:"title = "Поиск по тегам"
 url = "/articles/tags/:slug/:page?"
 layout = "default"
 description = "Поиск постов по тегам"
@@ -40,7 +40,7 @@ $this->layout->components['SeoCmsPage']->seo_title = "Статьи на тему
     {% endfor %}
     {% component 'tag::search-tag' %}
 </div>
-";s:5:"mtime";i:1543644870;s:6:"markup";s:297:"<div class="col-md-3">
+";s:5:"mtime";i:1543948553;s:6:"markup";s:297:"<div class="col-md-3">
     {% component 'category_menu' %}
     {% component 'popularPosts' %}
 </div>

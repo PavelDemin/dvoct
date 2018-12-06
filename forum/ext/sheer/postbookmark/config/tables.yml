@@ -1,2 +1,0 @@
-parameters:
-    tables.postbookmark: %core.table_prefix%posts_bookmarks
