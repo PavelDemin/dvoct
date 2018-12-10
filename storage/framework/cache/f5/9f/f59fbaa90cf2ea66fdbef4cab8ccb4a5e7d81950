@@ -1,4 +1,4 @@
-1544046994a:1:{s:23:"reports/report-post.htm";a:13:{s:8:"fileName";s:23:"reports/report-post.htm";s:7:"content";s:1160:"title = "Рыболовный отчет"
+1544368669a:1:{s:23:"reports/report-post.htm";a:13:{s:8:"fileName";s:23:"reports/report-post.htm";s:7:"content";s:1160:"title = "Рыболовный отчет"
 url = "/report/:slug|^[a-z0-9\-]+$"
 layout = "default"
 is_hidden = 0

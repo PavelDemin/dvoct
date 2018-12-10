@@ -1,4 +1,4 @@
-1544046993a:1:{s:30:"articles/articles-category.htm";a:14:{s:8:"fileName";s:30:"articles/articles-category.htm";s:7:"content";s:1030:"title = "Статьи по категориям"
+1544368669a:1:{s:30:"articles/articles-category.htm";a:14:{s:8:"fileName";s:30:"articles/articles-category.htm";s:7:"content";s:1030:"title = "Статьи по категориям"
 url = "/articles/category/:slug"
 layout = "default"
 is_hidden = 0

@@ -384,4 +384,6 @@
   'demin\\user\\components\\AuthUser' => 'plugins/demin/user/components/AuthUser.php',
   'Demin\\User\\Components\\AuthUser' => 'plugins/demin/user/components/AuthUser.php',
   'system\\Controllers\\updates' => 'modules/system/controllers/updates.php',
+  'demin\\authphpbb\\Plugin' => 'plugins/demin/authphpbb/Plugin.php',
+  'Demin\\AuthPhpbb\\Classes\\AuthPhpbbService' => 'plugins/demin/authphpbb/classes/AuthPhpbbService.php',
 );

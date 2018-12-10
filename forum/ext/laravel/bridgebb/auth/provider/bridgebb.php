@@ -46,8 +46,7 @@ namespace laravel\bridgebb\auth\provider {
             if (is_null($username)) {
                 return self::_error(LOGIN_ERROR_USERNAME, 'LOGIN_ERROR_USERNAME');
             }
-
-            return self::_apiValidate($username, $password);
+            self::_apiValidate($username, $password);
         }
 
         // If user auth on laravel side but not in phpBB try to auto login
@@ -102,7 +101,7 @@ namespace laravel\bridgebb\auth\provider {
 
         private function _makeApiRequest($data,$method) {
             global $request;
-
+           
             $ch = curl_init();
             $cooks = '';
             $cookies = $request->get_super_global(\phpbb\request\request_interface::COOKIE);
@@ -111,7 +110,7 @@ namespace laravel\bridgebb\auth\provider {
             }
 
             $curlConfig = [
-                CURLOPT_URL            => LARAVEL_URL.'/auth-bridge/login',
+                CURLOPT_URL            => 'http://dvoct.loc/auth-bridge/login',
                 CURLOPT_COOKIESESSION  => true,
                 CURLOPT_COOKIE         => $cooks,
                 CURLINFO_HEADER_OUT    => true,
@@ -128,7 +127,9 @@ namespace laravel\bridgebb\auth\provider {
 
             curl_setopt_array($ch, $curlConfig);
             $result = curl_exec($ch);
+            echo curl_error($ch);
             curl_close($ch);
+
             return $result;
         }
 
@@ -143,8 +144,10 @@ namespace laravel\bridgebb\auth\provider {
                     )
                 );
                 $request = self::_makeApiRequest($postdata,'POST');
-
+                echo $request;
                 $oResponse = json_decode($request, true);
+             //   echo "<pre>";
+              //  var_dump($oResponse['data']);
                 if ($oResponse['code'] === '200') {
                     return self::_handleAuthSuccess($username, $password, $oResponse['data']);
                 } else {

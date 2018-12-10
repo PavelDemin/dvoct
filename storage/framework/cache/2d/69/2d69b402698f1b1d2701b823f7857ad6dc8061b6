@@ -1,4 +1,4 @@
-1544046993a:1:{s:18:"news/news-post.htm";a:13:{s:8:"fileName";s:18:"news/news-post.htm";s:7:"content";s:722:"title = "Новости пост"
+1544368669a:1:{s:18:"news/news-post.htm";a:13:{s:8:"fileName";s:18:"news/news-post.htm";s:7:"content";s:722:"title = "Новости пост"
 url = "/news/post/:slug?"
 layout = "default"
 is_hidden = 0

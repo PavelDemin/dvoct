@@ -1,0 +1,6 @@
+plugin:
+    name: 'demin.authphpbb::lang.plugin.name'
+    description: 'demin.authphpbb::lang.plugin.description'
+    author: 'Pavel Demin'
+    icon: oc-icon-users
+    homepage: ''
